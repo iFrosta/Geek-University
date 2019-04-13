@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+    // параметрами.
+    //     Обязательно использовать оператор return.
+
+    let a;
+    let b;
+
+    RandomInt();
+    add(a,b);
+    subtract(a,b);
+    multiply(a,b);
+    divide(a,b);
+
+    function RandomInt() {
+        a = Math.floor(Math.random() * 201) - 100;
+        b = Math.floor(Math.random() * 201) - 100;
+        console.log(a,b);
+    }
+    function add(a, b) {
+        return console.log("Add", a + b);
+    }
+    function subtract(a, b) {
+        return console.log("subtract", a - b);
+    }
+    function multiply(a, b) {
+        return console.log("multiply", a * b);
+    }
+    function divide(a, b) {
+        return console.log("divide", a / b);
+    }
+
+</script>
+
+</body>
+</html>

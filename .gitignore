@@ -1,0 +1,11 @@
+
+*.mp4
+*.txt
+*.xml
+*.doc
+*.zip
+*.rar
+*.7z
+*.idea
+*.idea/
+*desktop.ini

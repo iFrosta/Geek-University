@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+//     1 С помощью цикла do…while написать алгоритм для вывода чисел от 0 до 10
+//     включительно, чтобы результат выглядел так:
+//         ```
+//      0 – это ноль
+//      1 – нечетное число
+//      2 – четное число
+//      3 – нечетное число
+//      …
+//      10 – четное число
+
+    let x = 0;
+
+    while (x <= 10)  {
+        if (x === 0) {
+            console.log(x,' - это ноль');
+        }
+        if (x % 2 === 1) {
+            console.log(x,' - это нечетное число');
+        } else if (x !== 0)  {
+            console.log(x,' - это четное число');
+        }
+        x++;
+    }
+
+
+</script>
+
+</body>
+</html>

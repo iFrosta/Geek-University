@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // 5 Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+    // где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости
+    // от
+    // переданного значения операции (использовать switch) выполнить одну из арифметических
+    //     операций
+    //     (использовать функции из задания 4) и вернуть полученное значение.
+
+    let a;
+    let b;
+    let operation;
+
+    console.log(mathOperation());
+
+    function mathOperation(a, b, operation) {
+        alert('Посчмтаем');
+        a = parseInt(prompt('Введите первое число'));
+        b = parseInt(prompt('Введите второе число'));
+        operation = prompt('Введите название операции');
+        switch (operation) {
+            case 'add':
+                return add(a, b);
+            case 'subtract':
+                return subtract(a, b);
+            case 'multiply':
+                return multiply(a, b);
+            case 'divide':
+                return divide(a, b);
+            default:
+                console.log('error');
+        }
+    }
+
+    function add(a, b) {
+        return a+b;
+    }
+    function subtract(a, b) {
+        return a-b;
+    }
+    function multiply(a, b) {
+        return a*b;
+    }
+    function divide(a, b) {
+        return a/b;
+    }
+
+</script>
+
+</body>
+</html>

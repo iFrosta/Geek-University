@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr {
+            width: 20px;
+            height: 20px;
+        }
+        td {
+            border: 2px solid #888888;
+            width: 20px;
+            height: 20px;
+            background-color: #EEEEEE;
+            text-align:center
+        }
+    </style>
+</head>
+<body>
+<table id="game"></table>
+
+<h1 id="test-id">Loading...</h1>
+<h2 id="test-load">&nbsp;</h2>
+
+<script>
+    "use strict";
+
+    const h1Tag = document.querySelector('h1');
+    const h2Tag = document.querySelector('h2');
+    setTimeout(() => h2Tag.textContent = 'html', 200);
+    setTimeout(() => h2Tag.textContent = 'css', 450);
+    setTimeout(() => h2Tag.textContent = 'js', 780);
+    setTimeout(() => h2Tag.textContent = 'done', 890);
+    setTimeout(() => h2Tag.textContent = ' ', 990);
+    setTimeout(() => h1Tag.textContent = 'Loaded!', 1000);
+    setTimeout(() => h1Tag.textContent = ' ', 1300);
+</script>
+
+<script>
+    "use strict";
+
+    // 1 Создать функцию, генерирующую шахматную доску. При этом можно использовать любые
+    // html-теги по своему желанию.
+    //     Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые
+    // ячейки.
+    //     Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F,
+    //     G, H.
+
+    function chess() {
+        const game = {
+            rows: 9,
+            cols: 9,
+        };
+
+        const board = document.getElementById('game');
+
+        for (let i = 0; i < game.rows; i++) {
+            const tr = document.createElement('tr');
+            board.appendChild(tr);
+            for (let k = 0; k < game.cols; k++) {
+                const td = document.createElement('td');
+                if (k % 2 === 0 && i % 2 === 0) {
+                    td.style.backgroundColor ="black";
+                } else {
+                    td.style.backgroundColor ="white";
+                }
+                tr.appendChild(td);
+                if (k % 2 !== 0 && i % 2 !== 0) {
+                    document.getElementById('game:last-child');
+                    td.style.backgroundColor ="black";
+                }
+            }
+        }
+
+        for (let i = 1; i < game.rows; i++) {
+            let ftd = document.getElementById('game').getElementsByTagName('tr')[i].getElementsByTagName('td')[0];
+            let number = document.createTextNode(game.rows-i);
+            ftd.style.backgroundColor ="white";
+            ftd.appendChild(number);
+        }
+
+        for (let i = 1; i < game.rows; i++) {
+            let ftr = document.getElementById('game').getElementsByTagName('tr')[0].getElementsByTagName('td')[i];
+            ftr.style.backgroundColor ="white";
+            const chrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            let chrsn = document.createTextNode(chrs[i-1]);
+            ftr.appendChild(chrsn);
+        }
+    }
+
+    chess();
+</script>
+
+</body>
+</html>

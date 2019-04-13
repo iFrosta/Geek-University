@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+<h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // 3**. На базе игры (приняв за пример), созданной на уроке, реализовать игру «Кто хочет стать
+    // миллионером?».
+    // Т.е. у вас должен быть главный объект содержащий всю логику игры, который будет иметь
+    // методы, например
+    // метод run, возможно метод init и т.д.
+    //     В игре должны быть заранее подготовлены список вопросов и ответов (как минимум 5 вопросов).
+    // Игра должна приветствовать пользователя, после чего задавать вопросы пользователю и
+    // предлагать варианты
+    // ответов в виде теста, например:
+    // Сколько букв в слове "привет":
+    // a. Пять.
+    //     b. Шесть.
+    //     c. Семь.
+    //     d. Куда я попал?
+    //     Проверять правильный вариант выбрал пользователь или нет, необходимо вести счет.
+    //     По окончании игры, когда было задано 5 вопросов, вы должны сообщить пользователю его счет и
+    // предложить
+    // сыграть снова.
+    //     Также должна быть возможность выхода из игры заранее, если пользователю надоело играть.
+
+    /**
+     * Инициализация игрока и его статов.
+     */
+
+    const playerStats = {
+        points: null,
+        attempts: null,
+        row: null,
+    };
+
+    const questions = [
+        "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
+        "Что говорит человек, когда замечает нечто необычное?",
+        "Что помогает туристу ориентироваться в незнакомом городе?",
+        "Какой наряд прославил баснописец Крылов?",
+        "Как звали старшую сестру императора Петра Первого?",
+    ];
+
+    const answer = {
+        answer: null,
+
+        move(dialog) {
+            switch (dialog) {
+                case 1:
+                    this.answer = 1;
+                    break;
+                case 2:
+                    this.answer = 2;
+                    break;
+                case 3:
+                    this.answer = 3;
+                    break;
+            }
+        },
+    };
+
+    const game = {
+        playerStats,
+        questions,
+        answer,
+
+        run() {
+            this.playerStats.points;
+            this.playerStats.attempts;
+
+            while (true) {
+
+                for (let i = 0; i < this.questions.length; i++) {
+
+                    alert(this.questions[i]);
+
+                    const answer = this.dialog();
+
+                    if (answer === -1) {
+                        alert('До свидания.');
+                        return;
+                    }
+
+                    this.display();
+
+                    // if (i = this.questions.length-1) {
+                    //     this.display();
+                    //     alert('До свидания.');
+                    //     return;
+                    // }
+                }
+
+            }
+
+        },
+
+        display() {
+
+            console.log('Points:',playerStats.points,'Attempts:',playerStats.attempts,'Stats:',playerStats.row);
+            console.log(questions.question1);
+
+
+        },
+
+        dialog() {
+            const availableAnswers = [-1, 1, 2, 3];
+
+            while (true) {
+                const dialog = parseInt(prompt('Введите число, номер ответа, -1 для выхода.'));
+
+                if (!availableAnswers.includes(dialog)) {
+                    alert(`Для ответа необходимо ввести одно из чисел: ${availableAnswers.join(', ')}.`);
+                    continue;
+                }
+
+                return dialog;
+            }
+        }
+    };
+
+    game.run();
+
+</script>
+
+</body>
+</html>

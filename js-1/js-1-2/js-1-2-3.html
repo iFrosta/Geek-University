@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // Объявить две переменные a и b и задать им целочисленные произвольные начальные
+    // значения.
+    //     Затем написать скрипт, который работает по следующему принципу:
+    //     - если a и b положительные, вывести их разность (ноль можно считать положительным
+    // числом);
+    // - если а и b отрицательные, вывести их произведение;
+    // - если а и b разных знаков, вывести их сумму;
+
+    let a;
+    let b;
+
+    RandomInt();
+
+    if (( a >= 0 ) && ( b >= 0 )) {
+        console.log("Condition 1 - asnwer:", a-b);
+    } else if (( a < 0 ) && ( b < 0 )) {
+        console.log("Condition 2 - asnwer:",a*b);
+    } else if (( a < 0 ) && ( b > 0 ) || ( a > 0 ) && ( b < 0 )) {
+        console.log("Condition 3 - asnwer:",a+b);
+    }
+
+    function RandomInt() {
+        a = Math.floor(Math.random() * 201) - 100;
+        b = Math.floor(Math.random() * 201) - 100;
+        console.log(a,b);
+    }
+
+</script>
+
+</body>
+</html>

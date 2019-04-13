@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    let number;
+    let attempts;
+
+    resetGame();
+    tryGuessNumber();
+
+    function resetGame() {
+        attempts = 0;
+        number = Math.floor(Math.random() * 100)
+    }
+
+    function tryGuessNumber() {
+        const userAnswer = parseInt(prompt('Введите число от 0 до 100, для выхода наберите -1.'));
+
+        if (userAnswer === -1) {
+            return alert('До свидания.');
+        }
+
+        if (Number.isNaN(userAnswer)) {
+            alert('Необходимо ввести целое число от 0 до 100.');
+            return tryGuessNumber();
+        }
+
+        attempts++;
+
+        if (userAnswer > number) {
+            alert('Попробуйте число меньше.');
+        } else if (userAnswer < number) {
+            alert('Попробуйте число больше.');
+        } else {
+            alert(`Поздравляю! Вы угадали число с ${attempts} попытки.`)
+            return;
+
+            if (!confirm('Хотите сыграть еще раз?')) {
+                alert('До свидания.');
+                return;
+            }
+
+            resetGame();
+        }
+
+        tryGuessNumber();
+    }
+
+</script>
+
+</body>
+</html>

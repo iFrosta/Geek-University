@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr {
+            width: 30px;
+            height: 30px;
+        }
+        td {
+            border: 2px solid #888888;
+            width: 30px;
+            height: 30px;
+            background-color: #EEEEEE;
+            text-align:center
+        }
+    </style>
+</head>
+<body>
+<table id="game"></table>
+
+<h1 id="test-id">Loading...</h1>
+<h2 id="test-load">&nbsp;</h2>
+
+<script>
+    "use strict";
+
+    const h1Tag = document.querySelector('h1');
+    const h2Tag = document.querySelector('h2');
+    setTimeout(() => h2Tag.textContent = 'html', 200);
+    setTimeout(() => h2Tag.textContent = 'css', 450);
+    setTimeout(() => h2Tag.textContent = 'js', 780);
+    setTimeout(() => h2Tag.textContent = 'done', 890);
+    setTimeout(() => h2Tag.textContent = ' ', 990);
+    setTimeout(() => h1Tag.textContent = 'Loaded!', 1000);
+    setTimeout(() => h1Tag.textContent = ' ', 1300);
+</script>
+
+<script>
+    "use strict";
+
+    // 2*. Заполнить созданную таблицу фигурами, фигуры должны выглядеть как картинки, либо
+    // можно использовать символы (существуют символы шахматных фигур) причем все фигуры
+    // должны стоять на своих местах и быть соответственно черными и белыми.
+
+    function chess() {
+        const game = {
+            rows: 9,
+            cols: 9,
+        };
+
+        //Нахождение обьекта в котором будет доска
+        const board = document.getElementById('game');
+
+        //Создание доски
+        for (let i = 0; i < game.rows; i++) {
+            const tr = document.createElement('tr');
+            board.appendChild(tr);
+            for (let k = 0; k < game.cols; k++) {
+                const td = document.createElement('td');
+                if (k % 2 === 0 && i % 2 === 0) {
+                    td.style.backgroundColor ="gray";
+                } else {
+                    td.style.backgroundColor ="white";
+                }
+                tr.appendChild(td);
+                if (k % 2 !== 0 && i % 2 !== 0) {
+                    document.getElementById('game:last-child');
+                    td.style.backgroundColor ="gray";
+                }
+            }
+        }
+
+        //Заполнения буквами и цифрами
+        for (let i = 1; i < game.rows; i++) {
+            let ftd = document.getElementById('game').getElementsByTagName('tr')[i].getElementsByTagName('td')[0];
+            let ftr = document.getElementById('game').getElementsByTagName('tr')[0].getElementsByTagName('td')[i];
+            let number = document.createTextNode(game.rows-i);
+            ftd.style.backgroundColor ="white";
+            ftr.style.backgroundColor ="white";
+            const chrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            let chrsn = document.createTextNode(chrs[i-1]);
+            ftr.appendChild(chrsn);
+            ftd.appendChild(number);
+        }
+
+        //Заполнения фигурами
+        for (let i = 1; i < game.rows; i++) {
+            let wp = document.getElementById('game').getElementsByTagName('tr')[2].getElementsByTagName('td')[i];
+            wp.innerHTML = '&#9817';
+
+            let wpp = document.getElementById('game').getElementsByTagName('tr')[1].getElementsByTagName('td')[i];
+            const wpo = ['&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;'];
+            wpp.innerHTML = wpo[i-1];
+
+            let bp = document.getElementById('game').getElementsByTagName('tr')[7].getElementsByTagName('td')[i];
+            bp.innerHTML = '&#9823;';
+
+            let bpp = document.getElementById('game').getElementsByTagName('tr')[8].getElementsByTagName('td')[i];
+            const bpo = ['&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;'];
+            bpp.innerHTML = bpo[i-1];
+        }
+    }
+
+    chess();
+</script>
+
+</body>
+</html>

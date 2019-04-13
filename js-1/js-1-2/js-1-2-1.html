@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // 1 Объясните почему код даёт именно такие результаты?
+    let a = 1, b = 1, c, d; // обьявляем переменные a b c d, присваиваем a и b еденицу
+    // a++ - это значение a перед увеличенем, ++a - это значения a после увеличения
+    c = ++a; // c = 1(a) + 1 = 2
+    alert(c); // 2
+    d = b++; // d = 1(b) = 1
+    alert(d); // 1
+    c = 2+ ++a; //  2 + (a)2+1 = 2 + 3 = 5
+    alert(c); // 5
+    d = 2+ b++; // 2 + (b)2 = 4
+    alert(d); // 4
+    alert(a); // 3
+    alert(b); // 3
+
+</script>
+
+</body>
+</html>

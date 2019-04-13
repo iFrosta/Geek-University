@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+    <h1>Loaded</h1>
+<script>
+    "use strict";
+
+    // 5*. Дан массив (создать такой же, с такими же значениями):
+    // ```
+    // const arr = [
+    // [2, 4, 6],
+    // [1, 5, 10],
+    // [7, 4, 1],
+    // ];
+    // ```
+
+    // Задания:
+    //     1 Найти массив, у которого сумма всех чисел максимальна, вывести в console.log
+    // индекс этого массива.
+    // 2 Получить и вывести в console.log минимальное значение найденное в массиве,
+    //     который мы получили в первом пункте.
+
+    const arr = [
+        [2, 4, 6], //12
+        [1, 5, 10],//16
+        [6, 4, 1],//11
+        ];
+    console.log(arr);
+
+    let clone = arr.slice(0,arr.length);
+    console.log('Доп. задание',clone);
+
+    let s = 0;
+    let r;
+    let m = 0;
+
+    for (let i = 0; i < clone.length; i++) {
+        let x = 0;
+        for (let k = 0; k < clone[i].length; k++) {
+            x = x + clone[i][k];
+        }
+        if (i === 0) {
+            s = x;
+            m = s;
+        } else if (s < x) {
+            s = x;
+            r = i;
+        }
+        if (x < m) {
+            m = x;
+        }
+    }
+
+    console.log('1 Найти массив, у которого сумма всех чисел максимальна, индекс этого массива',r);
+    console.log('2 Получить и вывести в console.log минимальное значение найденное в массиве, который мы получили в первом пункте.',m);
+
+</script>
+
+</body>
+</html>

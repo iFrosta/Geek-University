@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Field</title>
+</head>
+<body>
+<h1>Loaded</h1>
+<script>
+    "use strict";
+
+//     1 Написать функцию, преобразующую число в объект. Передавая на вход число в диапазоне [0,
+//         999],
+//         мы должны получить на выходе объект, в котором в соответствующих свойствах описаны
+//     разряды числа:
+//         - единицы (в свойстве frsttigit)
+//     - десятки (в свойстве secondtigit)
+//     - сотни (в свойстве thirdtigit)
+//     Например, для числа 45 мы должны получить следующий объект:
+//         ```
+// {
+// frsttigit: 5,
+// secondtigit: 4,
+// thirdtigit: 0,
+// }
+// ```
+//     Если число было передано вне [0, 999] диапазона, не целое число или вообще не число,
+//         необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+    // let num = prompt('Введите число  диапазоне от 0 до 999]');
+
+    intToObj(565);    // {units: 5, tens: 6, hundreds: 5}
+    intToObj(45);   //  {units: 5, tens: 4, hundreds: 0}
+    intToObj(231);   // {units: 1, tens: 3, hundreds: 2}
+    intToObj(0);   //  {units: 0, tens: 0, hundreds: 0}
+    intToObj(999);   //  {units: 9, tens: 9, hundreds: 9}
+    intToObj(1129);   // error {}
+    intToObj('Hello');   // error {}
+
+    function intToObj(num) {
+        if (num >= 0 && num <= 999 ) {
+            const numForm = {
+                units: Math.floor(num) % 10,
+                tens: Math.floor(num / 10) % 10,
+                hundreds: Math.floor(num / 100) % 10,
+            };
+            console.log(numForm);
+            return numForm;
+        } else {
+            const numForm = {};
+            console.log('error',numForm);
+            return numForm;
+        }
+    }
+    
+</script>
+
+</body>
+</html>
