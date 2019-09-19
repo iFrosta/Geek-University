@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+}
+
+thead tr {
+    height: 100px;
+}
+
+td, th, caption {
+    border: 1px solid #000;
+}
+
+th, td {
+    width: 100px;
+}
+
+caption {
+    border-bottom: none;
+}

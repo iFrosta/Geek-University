@@ -1,0 +1,25 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #909090;
+}
+
+.container {
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+@media (max-width:767px ) {
+    .container {
+        margin-top: 47px;
+    }
+}
+.input-group-css {
+    padding-top: 20px;
+}

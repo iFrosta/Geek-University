@@ -1,0 +1,66 @@
+body {
+    background: #f8f8f8;
+}
+
+.main-menu {
+    list-style: none;
+}
+
+.main-menu li a {
+    color: #12bef3;
+    font-size: 28px;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.about-form input[type="text"],
+.about-form input[type="email"] {
+    width: 400px;
+    height: 30px;
+    color: #063670;
+    font-size: 20px;
+}
+
+.product-header {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background: #eaeaea;
+}
+
+.product-shortDescription {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.product-fullDescription {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.product-features {
+    color: #274e7d;
+    font-size: 20px;
+    font-style: bold;
+}
+
+.product-features li {
+    list-style: none;
+    background: url(../images/product/other/drones_watching-512.png) no-repeat left center;
+    background-size: 0.7%;
+    padding-left: 25px;
+}
+
+.product-img {
+    width: 500px;
+    border: 4px solid #08d5e4;
+}
+
+.products-img {
+    width: 300px;
+    height: 200px;
+}

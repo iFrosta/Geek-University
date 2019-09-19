@@ -1,0 +1,130 @@
+.header {
+    height: 700px;
+    background: url(../images/indexBack.jpg);
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+}
+
+.headerInside {
+    width: 1170px;
+    height: inherit;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    display: block;
+    width: 125px;
+    height: 111px;
+    position: absolute;
+    left: 69px;
+    top: 24px;
+    background: url(../images/surfhouseLogo.png);
+}
+
+.content {
+    background-color:rgb(248, 248, 248);
+    width: 1500px;
+    height: 3365px;
+    margin: auto
+}
+
+.welcome {
+    background-color: #fff51f;
+    width: 270px;
+    height: 300px;
+    position: absolute;
+    top: 336px;
+    padding: 82px 25px 0 25px;
+    box-sizing: border-box;
+}
+
+.welcomeGeneral {
+    text-transform: uppercase; 
+    font-family: Raleway;
+    color:  #333333;
+    font-size: 30px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 700;
+    line-height: 30px;/* Приближение из-за подстановки шрифтов */
+    text-align: left;
+}
+
+.welcomeText {
+    font-family: Raleway;
+    color:  #333333;
+    font-size: 18px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 700;
+    line-height: 14px;/* Приближение из-за подстановки шрифтов */
+    text-align: left;
+    margin-top: 20px;
+}
+
+.welcomeRight {
+    position: absolute;
+    top: 250px;
+    left: 750px;
+    
+}
+
+.welcomeRightGeneral {
+    text-transform: uppercase; 
+    font-family: Raleway;
+    color:  #fff51f;
+    font-size: 48px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 700;
+    line-height: 34px;/* Приближение из-за подстановки шрифтов */
+    text-align: left;
+}
+
+.welcomeRightText {
+    margin-top: 20px;
+    font-family: Raleway;
+    color:  #fff51f;
+    font-size: 18px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+    line-height: 24px;/* Приближение из-за подстановки шрифтов */
+    text-align: left;
+}
+
+
+.welcomeRightButton {
+    background-color:  #fff51f;
+    width: 124px;
+    height: 49px;
+    margin-top: 50px;
+}
+
+.welcomeRightButtonText {
+    font-family: Raleway;
+    color:  #000000;
+    font-size: 14px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 800;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 16px;
+    position: absolute;
+}
+
+
+.headerSocial {
+    height:100px;
+    margin-left: 1000px;
+    top: 50px;
+    position: absolute;
+}
+
+.headerSocial a {
+    text-decoration: none;
+}
+
+.headerSocial i {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.headerSocial i:hover {
+    color: #abeafa;
+}
