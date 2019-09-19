@@ -2,7 +2,7 @@
     <br>    
     <img 
         alt="WEB"
-        src="https://ifrosta.ru/files/images/WEB.png"
+        src="https://projects.ifrosta.ru/GitHub/img/WEB.png"
         width=500px
     />
   <h1>Geek-University</h1>
@@ -14,7 +14,7 @@ ____
 # Содержание
 
 1. [GeekBrains. HTML/CSS. Основы создания сайтов](#htmlcss)
-2. [GeekBrains. HTML5 и CSS3. Современные средства Web-разработки](#html5css3)
+2. [GeekBrains. HTML5 и CSS3. Современные средства Web-разработки](#html5css3)<a href="https://projects.ifrosta.ru/TheBrand/index.html"> - [ Project link ]</a>
 3. [GeekBrains. JavaScript. Уровень 1. Интерактивные веб-приложения](#js1)
 4. [GeekBrains. JavaScript. Уровень 2. Продвинутый курс](#js2)
 5. [GeekBrains. ReactJS. Профессиональная frontend-разработка](#react)
