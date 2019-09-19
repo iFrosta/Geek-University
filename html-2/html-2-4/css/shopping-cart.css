@@ -1,0 +1,277 @@
+.arrivals {
+  width: 100%;
+  height: 148px;
+  background-color: #f8f3f4;
+  text-transform: uppercase;
+}
+.arrivals > .inside {
+  width: 1600px;
+  justify-content: space-between;
+}
+.arrivals > .inside > span {
+  color: #f16d7f;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.arrivals > .inside p {
+  color: #636363;
+  font-weight: 300;
+}
+.arrivals > .inside p > span {
+  color: #f16d7f;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.checkout {
+  margin: 80px 0;
+  flex-direction: column;
+}
+.checkout > .grid > .top {
+  flex-direction: column;
+}
+.checkout > .grid > .top > .titles {
+  color: #222222;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+  border-bottom: 1px solid #eaeaea;
+}
+.checkout > .grid > .top > .titles > ul {
+  display: flex;
+}
+.checkout > .grid > .top > .titles > ul :first-child {
+  margin-right: 300px;
+}
+.checkout > .grid > .top > .titles > ul :nth-child(5) {
+  margin-left: 80px;
+}
+.checkout > .grid > .top > .titles > ul :last-child {
+  margin-left: 50px;
+}
+.checkout > .grid > .top > .titles > ul > li {
+  margin-left: 90px;
+  list-style-type: none;
+}
+.checkout > .grid > .top > .item {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+.checkout > .grid > .top > .item > img {
+  margin-right: 20px;
+}
+.checkout > .grid > .top > .item > .details {
+  margin-right: 100px;
+  flex-direction: column;
+}
+.checkout > .grid > .top > .item > .details > span {
+  color: #222222;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.checkout > .grid > .top > .item > .details > p {
+  margin: 0;
+  padding: 0;
+  color: #6f6e6e;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+}
+.checkout > .grid > .top > .item > .details > p > strong {
+  color: #222222;
+  font-weight: 600;
+  margin-right: 15px;
+}
+.checkout > .grid > .top > .item :nth-child(3) {
+  margin-left: 256px;
+}
+.checkout > .grid > .top > .item :nth-child(4) {
+  margin-left: 121px;
+  margin-right: 54px;
+}
+.checkout > .grid > .top > .item :nth-child(5) {
+  margin-left: 55px;
+  margin-right: 30px;
+}
+.checkout > .grid > .top > .item :nth-child(6) {
+  margin-left: 72px;
+  margin-right: 56px;
+}
+.checkout > .grid > .top > .item > :last-child {
+  margin-left: 30px;
+}
+.checkout > .grid > .top > .item > p {
+  margin-left: 100px;
+  color: #656565;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.checkout > .grid > .top > .item > label {
+  margin-left: 100px;
+}
+.checkout > .grid > .top > .item > label input {
+  text-align: center;
+  width: 54px;
+  height: 30px;
+  color: #656565;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+}
+.checkout > .grid > .top > .item > svg {
+  color: #c0c0c0;
+}
+.checkout > .grid > .top > .item > svg :hover {
+  color: #f16d7f;
+}
+.checkout > .grid > .bot {
+  margin: 40px 20px;
+  justify-content: space-between;
+}
+.checkout > .grid > .bot button {
+  width: 235px;
+  height: 50px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.checkout > .grid > .bot button:hover {
+  border: 1px solid #eaeaea;
+  background-color: #f16d7f;
+  color: #eaeaea;
+  transition: all 0.3s ease-out;
+}
+.checkout .processed form {
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+.checkout .processed form a {
+  position: relative;
+}
+.checkout .processed form a svg {
+  position: absolute;
+  right: 15px;
+  top: 24px;
+  color: #bdbdbd;
+}
+.checkout .processed form :nth-child(2) {
+  margin-top: 20px;
+}
+.checkout .processed form input {
+  margin: 10px 0;
+  width: 355px;
+  height: 45px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+}
+.checkout .processed form input[type=text] {
+  padding-left: 16px;
+  text-transform: capitalize;
+}
+.checkout .processed form input[type=submit] {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.checkout .processed form input:focus {
+  outline: none !important;
+  color: #5d5d5d;
+}
+.checkout .processed form input::placeholder {
+  margin-bottom: 11px;
+  color: #a4a4a4;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.35px;
+}
+.checkout .processed form span {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.checkout .processed .discount p {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 300;
+}
+.checkout .processed .order {
+  margin-left: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-end;
+  align-items: flex-end;
+  width: 360px;
+  height: 214px;
+  background-color: #f5f3f3;
+}
+.checkout .processed .order .submit {
+  margin-top: 20px;
+  margin-right: 15px;
+  width: 273px;
+  height: 50px;
+  background-color: #f16d7f;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.checkout .processed .order .submit:hover {
+  border: 1px solid #f16d7f;
+  background-color: #eaeaea;
+  color: #f16d7f;
+  transition: all 0.3s ease-out;
+}
+.checkout .processed .order div {
+  position: relative;
+  margin-right: 50px;
+  text-align: right;
+  padding-bottom: 20px;
+}
+.checkout .processed .order div::after {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  content: "";
+  width: 272px;
+  height: 1px;
+  background-color: #e6e6e6;
+}
+.checkout .processed .order div p {
+  color: #4a4a4a;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.checkout .processed .order div span {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.checkout .processed .order div span strong {
+  color: #f16d7f;
+}
