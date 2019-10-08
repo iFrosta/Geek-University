@@ -51,7 +51,7 @@ class Kernel
     protected function registerConfigs(): void
     {
         try {
-            $fileLocator = new FileLocator(__DIR__ . DIRECTORY_SEPARATOR . 'config');
+            $fileLocator = new FileLocator(__DIR__ . DIRECTORY_SEPARATOR);
             $loader = new PhpFileLoader($this->containerBuilder, $fileLocator);
             $loader->load('parameters.php');
         } catch (\Throwable $e) {
