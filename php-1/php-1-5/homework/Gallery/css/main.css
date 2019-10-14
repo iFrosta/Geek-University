@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+    color: #4A4A4A;
+}
+.Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.Gallery a {
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.Gallery a:hover {opacity: 0.7;}
+.Gallery a img {
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.75);
+}
+.single {
+    flex-direction: column;
+}
+.single a img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+.stats {
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.views {
+    margin: 0 10px;
+    font-weight: 700;
+}
+.likes {
+    margin: 0 10px;
+    font-weight: 700;
+    color: red;
+}
