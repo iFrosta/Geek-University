@@ -27,9 +27,9 @@ function prepareVariables($page)
 
 function updateViews(){
   $db = getDb();
+  $id = $_GET['id'];
   // Обновляем views count = views + current view
   $sql = "UPDATE gallery SET `views`= `views` + 1 WHERE `id` = '".intval($id)."'";
-  echo $sql;
   $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
 }
 
