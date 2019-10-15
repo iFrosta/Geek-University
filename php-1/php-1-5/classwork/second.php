@@ -9,7 +9,7 @@ $sql = "SELECT * FROM `news` WHERE id={$id}";
 
 var_dump($sql);
 
-$result = @mysqli_query($db, $sql) or die(mysqli_error($db)); // @ - уберает выввод функции
+$result = @mysqli_query($db, $sql) or die(mysqli_error($db)); // @ - убирает выввод функции
 
 $news = "";
 

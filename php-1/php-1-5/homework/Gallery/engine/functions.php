@@ -15,10 +15,15 @@ function prepareVariables($page)
       $params["gallery"] = getGallery();
       break;
     case 'preview':
-      $content = getGalleryContent($_GET['id']);
-      $params['id'] = $content['id'];
-      $params['views'] = $content['views'];
-      updateViews();
+      if (empty((int)$_GET['id'])) {
+        Die("Файла не существует, 404");
+      } else {
+        $content =getGalleryContent((int)$_GET['id']);
+        $params['id'] = $content['id'];
+        $params['views'] = $content['views'];
+        updateViews();
+      }
+
       break;
   }
   return $params;
@@ -26,7 +31,7 @@ function prepareVariables($page)
 
 function updateViews(){
   $db = getDb();
-  $id = $_GET['id'];
+  $id =(int)$_GET['id'];
   // Обновляем views count = views + current view
   $sql = "UPDATE gallery SET `views`= `views` + 1 WHERE `id` = '".intval($id)."'";
   $result = @mysqli_query($db, $sql) or die(mysqli_error($db));

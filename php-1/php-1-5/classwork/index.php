@@ -7,7 +7,7 @@ $db = @mysqli_connect("localhost","root","","geek") or die("Error:" . mysqli_con
 
 $sql = "SELECT * FROM `news` WHERE 1";
 
-$result = @mysqli_query($db, $sql) or die(mysqli_error($db)); // @ - уберает выввод функции
+$result = @mysqli_query($db, $sql) or die(mysqli_error($db)); // @ - убирает выввод функции
 
 $news = "";
 
