@@ -17,7 +17,6 @@ function prepareVariables($page)
     case 'preview':
       $content = getGalleryContent($_GET['id']);
       $params['id'] = $content['id'];
-      $params['big'] = $content['big'];
       $params['views'] = $content['views'];
       updateViews();
       break;

@@ -6,8 +6,8 @@ define("PUBLIC_DIR", '../public/');
 
 // устанавливаем директорию файлов
 define("filesPath", 'files/');
-$small_path = filesPath . "small/";
-$big_path = filesPath . "big/";
+define("fileSmallPath", 'files/small/');
+define("fileBigPath", 'files/big/');
 
 /* DB config */
 define('HOST', 'localhost');
