@@ -9,4 +9,19 @@
     }
     echo $id . '.jpg' ?>'/></a>
   <div class='views'><?=$views?> views</div>
+  <div class='feedback'>
+    <? foreach ($feedback as $item): ?>
+      <p>
+        <b><?=$item['name']?> - </b> <?=$item['feedback']?>
+        <a href="/preview/edit/<?=$item['id']?>">[edit]</a>
+        <a href="/preview/delete/<?=$item['id']?>">[x]</a><br>
+      </p>
+    <?endforeach;?>
+    <form action="/preview/add/<?=$item['id']?>" method="post"><br>
+      Оставьте отзыв: <br>
+      <input type="text" name="name" placeholder="Ваше Имя" value="<?=$name?>"><br>
+      <input type="text" name="message" placeholder="Ваш отзыв" value="<?=$message?>"><br>
+      <input type="submit">
+    </form>
+  </div>
 </div>

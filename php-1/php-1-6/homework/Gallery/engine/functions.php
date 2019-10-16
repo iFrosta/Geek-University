@@ -22,21 +22,62 @@ function prepareVariables($page, $action, $id)
         $params['id'] = $content['id'];
         $params['views'] = $content['views'];
         updateViews($id);
+        doImgFeedbackAction($params, $action, $id);
+        $params['feedback'] = getImgFeedback($id);
       }
       break;
     case 'feedback':
-      doFeedbackAction($paramsm, $action, $id);
-      $params['feedback'] = getAllFeedback();
+      doFeedbackAction($params, $action, $id);
       $params['submitVal'] = 'Отправить';
+      $params['feedback'] = getAllFeedback();
       break;
   }
   return $params;
 }
 
-function doFeedbackAction(&$params, $action, $id){
-  if ($_GET['status'] == 1) {$params['error'] = "Отзыв добавлен!";}
-  if ($_GET['status'] == 2) {$params['error'] = "Отзыв удален!";}
-  if ($_GET['status'] == 3) {$params['error'] = "Отзыв отредактирован!";}
+function doImgFeedbackAction(&$params, $action, $id)
+{
+  if ($_GET['status'] == 1) {
+    $params['error'] = "Отзыв добавлен!";
+  }
+  if ($_GET['status'] == 2) {
+    $params['error'] = "Отзыв удален!";
+  }
+  if ($_GET['status'] == 3) {
+    $params['error'] = "Отзыв отредактирован!";
+  }
+
+  if ($action == "add") {
+    $error = addImgFeedback($id);
+    header("Location: /preview/$id/?status=1"); // Обязательно закрывающий /
+  }
+
+  if ($action == "delete") {
+    $error = deleteImgFeedback($id);
+    header("Location: /preview/?status=2"); // Обязательно закрывающий /
+  }
+
+  if ($action == "edit") {
+    $error = editImgFeedBack($id);
+    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
+    $params['submitVal'] = 'Изменить отзыв';
+    $params['name'] = 'Изменить отзыв';
+    $params['feedback'] = 'Изменить отзыв';
+    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
+  }
+}
+
+function doFeedbackAction(&$params, $action, $id)
+{
+  if ($_GET['status'] == 1) {
+    $params['error'] = "Отзыв добавлен!";
+  }
+  if ($_GET['status'] == 2) {
+    $params['error'] = "Отзыв удален!";
+  }
+  if ($_GET['status'] == 3) {
+    $params['error'] = "Отзыв отредактирован!";
+  }
 
   if ($action == "add") {
     $error = addFeedBack();
@@ -50,17 +91,23 @@ function doFeedbackAction(&$params, $action, $id){
 
   if ($action == "edit") {
     $error = editFeedBack($id);
-    header("Location: /feedback/?status=3"); // Обязательно закрывающий /
+    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
+    $params['submitVal'] = 'Изменить отзыв';
+    $params['name'] = 'Изменить отзыв';
+    $params['feedback'] = 'Изменить отзыв';
+    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
   }
 }
 
+// Feedback
 function editFeedBack($id)
 {
-  $db = getDb();
-  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
-  $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
-  $sql = "UPDATE `feedback` SET `id`={$id},`name`={$name},`feedback`={$message} WHERE 1";
-  var_dump($name, $message, $sql);
+  $sql = "SELECT * FROM  `feedback` WHERE id={$id}";
+  $item = getAssocResult($sql);
+  var_dump($item);
+  $name = $item[0]['name'];
+  $message = $item[0]['feedback'];
+  echo $name . ' - ' . $message;
   return executeQuery($sql);
 }
 
@@ -84,7 +131,39 @@ function getAllFeedback()
   $sql = "SELECT * FROM `feedback` ORDER BY id DESC";
   return getAssocResult($sql);
 }
+// END Feedback
 
+// Img Feedback
+function deleteImgFeedback($id)
+{
+  $sql = "DELETE FROM `feedback-img` WHERE id={$id}";
+  return executeQuery($sql);
+}
+
+function addImgFeedback($id)
+{
+  $db = getDb();
+  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
+  $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
+  $sql = "INSERT INTO `feedback-img`(`name`, `feedback`, `imgID`) VALUES ('{$name}','{$message}','{$id}')";
+  return executeQuery($sql);
+}
+
+function getImgFeedback($id)
+{
+  $sql = "SELECT * FROM `feedback-img` WHERE `imgID` = {$id}";
+//  $sql = "SELECT * FROM `feedback-img` WHERE id={$id}";
+  return getAssocResult($sql);
+}
+
+function getAllImgFeedback()
+{
+  $sql = "SELECT * FROM `feedback-img` ORDER BY id DESC";
+  return getAssocResult($sql);
+}
+// END Img Feedback
+
+// Img views
 function updateViews($id)
 {
   $db = getDb();
