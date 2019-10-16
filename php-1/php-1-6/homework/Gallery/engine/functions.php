@@ -37,6 +37,7 @@ function prepareVariables($page, $action, $id)
 
 function doImgFeedbackAction(&$params, $action, $id)
 {
+
   if ($_GET['status'] == 1) {
     $params['error'] = "Отзыв добавлен!";
   }
@@ -54,7 +55,7 @@ function doImgFeedbackAction(&$params, $action, $id)
 
   if ($action == "delete") {
     $error = deleteImgFeedback($id);
-    header("Location: /preview/?status=2"); // Обязательно закрывающий /
+    header("Location: /preview/$id/?status=2"); // Обязательно закрывающий /
   }
 
   if ($action == "edit") {

@@ -22,6 +22,11 @@ if ($url_array[1] == "") {
       $action = $url_array[2];
       if (is_numeric($url_array[3])) {
         $id = $url_array[3];
+      } else {
+        $action = $url_array[3];
+        if (is_numeric($url_array[4])) {
+          $id = $url_array[4];
+        }
       }
     }
   }
