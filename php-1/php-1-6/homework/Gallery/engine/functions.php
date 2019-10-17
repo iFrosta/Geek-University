@@ -24,6 +24,9 @@ function prepareVariables($page, $action, $id)
         updateViews($id);
         doImgFeedbackAction($params, $action, $id);
         $params['feedback'] = getImgFeedback($id);
+        if (empty($params['feedback'])) {
+          $params['nofeedback'] = 'Будьте первым кто оставит отзыв!';
+        }
       }
       break;
     case 'feedback':
@@ -47,11 +50,16 @@ function doImgFeedbackAction(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
-  if ($action == "edit") {
-    $error = editImgFeedBack($id);
-    $params['submitVal'] = 'Изменить отзыв';
-    $params['name'] = 'Изменить отзыв';
-    $params['feedback'] = 'Изменить отзыв';
+  if ($action == "update") {
+    if ($_POST) {
+      $feed = [
+        'id' => $_POST['id'],
+        'name' => $_POST['name'],
+        'feedback' => $_POST['feedback'],
+        'imgID' => $_POST['imgID'],
+      ];
+      $error = updateImgFeedBack($feed);
+    }
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 }
@@ -80,10 +88,6 @@ function doFeedbackAction(&$params, $action, $id)
 
   if ($action == "edit") {
     $error = editFeedBack($id);
-    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
-    $params['submitVal'] = 'Изменить отзыв';
-    $params['name'] = 'Изменить отзыв';
-    $params['feedback'] = 'Изменить отзыв';
     // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
   }
 }
@@ -120,9 +124,21 @@ function getAllFeedback()
   $sql = "SELECT * FROM `feedback` ORDER BY id DESC";
   return getAssocResult($sql);
 }
+
 // END Feedback
 
 // Img Feedback
+function updateImgFeedback($id)
+{
+  $sql = "SELECT * FROM  `feedback` WHERE id={$id}";
+  $item = getAssocResult($sql);
+  var_dump($item);
+  $name = $item[0]['name'];
+  $message = $item[0]['feedback'];
+  echo $name . ' - ' . $message;
+  return executeQuery($sql);
+}
+
 function deleteImgFeedback($id)
 {
   $sql = "DELETE FROM `feedback-img` WHERE id={$id}";
@@ -150,6 +166,7 @@ function getAllImgFeedback()
   $sql = "SELECT * FROM `feedback-img` ORDER BY id DESC";
   return getAssocResult($sql);
 }
+
 // END Img Feedback
 
 // Img views
