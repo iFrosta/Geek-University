@@ -37,34 +37,22 @@ function prepareVariables($page, $action, $id)
 
 function doImgFeedbackAction(&$params, $action, $id)
 {
-
-  if ($_GET['status'] == 1) {
-    $params['error'] = "Отзыв добавлен!";
-  }
-  if ($_GET['status'] == 2) {
-    $params['error'] = "Отзыв удален!";
-  }
-  if ($_GET['status'] == 3) {
-    $params['error'] = "Отзыв отредактирован!";
-  }
-
   if ($action == "add") {
     $error = addImgFeedback($id);
-    header("Location: /preview/$id/?status=1"); // Обязательно закрывающий /
+    header("Location: /preview/$id"); // Обязательно закрывающий /
   }
 
   if ($action == "delete") {
     $error = deleteImgFeedback($id);
-    header("Location: /preview/$id/?status=2"); // Обязательно закрывающий /
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
   if ($action == "edit") {
     $error = editImgFeedBack($id);
-    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
     $params['submitVal'] = 'Изменить отзыв';
     $params['name'] = 'Изменить отзыв';
     $params['feedback'] = 'Изменить отзыв';
-    // header("Location: /feedback/?status=3"); // Обязательно закрывающий /
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 }
 

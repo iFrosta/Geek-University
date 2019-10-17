@@ -17,8 +17,7 @@
         <a href="/preview/delete/<?=$item['id']?>">[x]</a><br>
       </p>
     <?endforeach;?>
-    <? foreach ($feedback as $item): ?>
-    <form action="/preview/add/<?=$item['id']?>" method="post"><?endforeach;?><br>
+    <form action="/preview/add/<?=$id?>" method="post">
       Оставьте отзыв: <br>
       <input type="text" name="name" placeholder="Ваше Имя" value="<?=$name?>"><br>
       <input type="text" name="message" placeholder="Ваш отзыв" value="<?=$message?>"><br>
