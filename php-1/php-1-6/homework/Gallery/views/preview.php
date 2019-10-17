@@ -17,12 +17,12 @@
       <? foreach ($feedback as $item): ?>
         <p>
           <b><?= $item['name'] ?> - </b> <?= $item['feedback'] ?>
-          <a href="/preview/update/<?= $item['id'] ?>">[edit]</a>
+          <a href="/preview/edit/<?= $item['id']?>/?backid=<?=$id?>">[edit]</a>
           <a href="/preview/delete/<?= $item['id'] ?>">[x]</a><br>
         </p>
       <? endforeach; ?>
     <? endif; ?>
-    <? if (!$params['update']): ?>
+    <? if ($params['update'] != 'yes'): ?>
       <form action="/preview/add/<?= $id ?>" method="post">
         Оставьте отзыв: <br>
         <input type="text" name="name" placeholder="Ваше Имя" value="<?= $name ?>"><br>
@@ -30,7 +30,7 @@
         <input type="submit">
       </form>
     <? else: ?>
-      <form action="/preview/update/<?= "{$params['id']}/{$params['update']['id']}" ?>" method="post">
+      <form action="/preview/edit/<?= "{$params['id']}/{$params['update']['id']}" ?>" method="post">
         Оставьте отзыв: <br>
         <input type="text" name="name" placeholder="Ваше Имя" value="<?= $params['update']['name'] ?>"><br>
         <input type="text" name="message" placeholder="Ваш отзыв" value="<?= $$params['update']['feedback'] ?>"><br>

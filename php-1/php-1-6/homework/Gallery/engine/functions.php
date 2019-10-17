@@ -50,18 +50,11 @@ function doImgFeedbackAction(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
-  if ($action == "update") {
-    if ($_POST) {
-      $feed = [
-        'id' => $_POST['id'],
-        'name' => $_POST['name'],
-        'feedback' => $_POST['feedback'],
-        'imgID' => $_POST['imgID'],
-      ];
-      $error = updateImgFeedBack($feed);
-    }
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  if ($action == "edit") {
+    $error = editFeedBack($id);
   }
+
+  return $params;
 }
 
 function doFeedbackAction(&$params, $action, $id)
@@ -130,12 +123,11 @@ function getAllFeedback()
 // Img Feedback
 function updateImgFeedback($id)
 {
-  $sql = "SELECT * FROM  `feedback` WHERE id={$id}";
-  $item = getAssocResult($sql);
-  var_dump($item);
-  $name = $item[0]['name'];
-  $message = $item[0]['feedback'];
-  echo $name . ' - ' . $message;
+  $db = getDb();
+  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
+  $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
+  $sql = "INSERT INTO `feedback-img`(`name`, `feedback`, `imgID`) VALUES ('{$name}','{$message}','{$id}')";
+
   return executeQuery($sql);
 }
 
