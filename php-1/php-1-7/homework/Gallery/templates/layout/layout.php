@@ -7,13 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
   <title><?=$title?></title>
 </head>
 <body>
 <header>
   <?=$menu?>
 </header>
-<?=$content?>
+<div class="container">
+  <?=$content?>
+</div>
 <footer>
   <a href="https://www.ifrosta.ru">- Made by iFrosta -</a>
 </footer>

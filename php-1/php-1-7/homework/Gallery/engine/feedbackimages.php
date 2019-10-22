@@ -11,9 +11,26 @@ function doImgFeedbackAction(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
-  if ($action == "edit") {
-    $error = editFeedBack($id);
-  }
+//  if ($action == "edit") {
+//    if (isset($_POST['send'])) {
+//      updateFeedbackGood();
+//      $backid = $_GET['backid'];
+//      header("Location: /image/{$backid}/?status=edited");
+//    } else {
+//      $params['textAction'] = "Править";
+//      $params['formAction'] = "edit";
+//      $message = getOneFeedBackGood($id);
+//      $params['name'] = $message['name'];
+//      $params['message'] = $message['feedback'];
+//      $params['id'] = $message['id'];
+//    }
+//
+//  }
+//  if ($action == 'edit') {
+//    $params['feedback'] = getAllFeedbackGoods((int)$_GET['backid']);
+//  } else {
+//    $params['feedback'] = getAllFeedbackGoods($id);
+//  }
 
   return $params;
 }
@@ -24,7 +41,7 @@ function updateImgFeedback($id)
   $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
   $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
   $sql = "INSERT INTO `feedback-img`(`name`, `feedback`, `imgID`) VALUES ('{$name}','{$message}','{$id}')";
-
+//  $sql = "UPDATE `feedback_goods` SET `name` = '{$name}', `feedback` = '{$message}' WHERE `feedback_goods`.`id` = {$id};";
   return executeQuery($sql);
 }
 

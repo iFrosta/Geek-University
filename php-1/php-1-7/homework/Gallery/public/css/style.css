@@ -19,6 +19,12 @@ nav a {
 .auth {
     margin: 10px 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth span {
+    margin: 0 10px;
+    color: #034F80;
 }
 header, footer {
     margin: 0 auto;
@@ -34,6 +40,9 @@ header {
     background: aliceblue;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.container {
+    /*height: 88vh;*/
 }
 .Gallery {
     margin: 0 auto;
@@ -114,9 +123,27 @@ header {
     padding: 10px 15px;
     border: 1px solid gray;
 }
+button, .buttonAdd {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px 15px;
+    color: #034F80;
+    border: 1px solid #034F80;
+    background: unset;
+}
+.cart {
+    border: unset !important;
+}
+.cart img {
+    width: auto;
+    height: 20px;
+    fill: #034F80;
+}
 footer {
     min-height: 70px;
+    /*background: #5f646a;*/
 }
 footer a {
-    color: gray;
+    color: #5f646a;
 }
