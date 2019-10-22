@@ -10,7 +10,7 @@
     echo $id . '.jpg' ?>'/></a>
   <div class='views'><?= $views ?> views</div>
   <div class='feedback'>
-    <span>Feedback</span>
+    <span>--- Feedback ---</span>
     <? if (empty($params['feedback'])): ?>
       <span><? echo $nofeedback; ?></span>
     <? else: ?>
