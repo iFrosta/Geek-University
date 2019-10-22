@@ -1,6 +1,6 @@
 <?php
 //Файл констант
-define("TEMLATES_DIR", '../views/');
+define("TEMLATES_DIR", '../templates/');
 define("LAYOUTS_DIR", 'layout/');
 define("PUBLIC_DIR", '../public/');
 
@@ -17,6 +17,10 @@ define('DB', 'root');
 
 //Тут же подключим основные функции нашего приложения, пока это render
 //Можете кстати подключить и в главном index.php если такая вложенность напрягает
-include_once "../engine/functions.php";
-//include_once "../engine/log.php";
+include_once "../engine/controller.php";
 include_once "../engine/db.php";
+include_once "../engine/feedback.php";
+include_once "../engine/feedbackimages.php";
+include_once "../engine/images.php";
+include_once "../engine/news.php";
+include_once "../engine/render.php";

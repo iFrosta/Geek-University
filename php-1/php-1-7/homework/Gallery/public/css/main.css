@@ -1,6 +1,21 @@
+body {
+    margin: 0;
+}
 h1, h2 {
     text-align: center;
     color: #4A4A4A;
+}
+nav {
+
+}
+header {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 70px;
+    height: auto;
 }
 .Gallery {
     display: flex;
