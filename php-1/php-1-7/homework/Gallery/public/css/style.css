@@ -7,11 +7,23 @@ h1, h2 {
     color: #4A4A4A;
 }
 nav {
-
+    margin: 10px 20px;
+}
+nav a {
+    margin: 5px;
+    color: #034F80;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #034F80;
+}
+.auth {
+    margin: 10px 20px;
+    display: flex;
 }
 header, footer {
     margin: 0 auto;
     display: flex;
+    /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -20,6 +32,8 @@ header, footer {
 header {
     min-height: 70px;
     background: aliceblue;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .Gallery {
     margin: 0 auto;
@@ -92,8 +106,6 @@ header {
     margin: 20px auto 10px;
     font-weight: 600;
     font-size: 24px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid gray;
 }
 .button {
     position: absolute;
