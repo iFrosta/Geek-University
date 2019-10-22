@@ -17,8 +17,11 @@ function prepareVariables($page, $action, $id)
         Die("Файла не существует, 404");
       } else {
         $content = getGalleryContent($id);
+        $params['name'] = $content['name'];
         $params['id'] = $content['id'];
         $params['views'] = $content['views'];
+        $params['description'] = $content['description'];
+        $params['price'] = $content['price'];
         updateViews($id);
         doImgFeedbackAction($params, $action, $id);
         $params['feedback'] = getImgFeedback($id);
@@ -31,6 +34,11 @@ function prepareVariables($page, $action, $id)
       doFeedbackAction($params, $action, $id);
       $params['submitVal'] = 'Отправить';
       $params['feedback'] = getAllFeedback();
+      break;
+    case 'cart':
+//      doFeedbackAction($params, $action, $id);
+//      $params['submitVal'] = 'Отправить';
+//      $params['feedback'] = getAllFeedback();
       break;
   }
   return $params;

@@ -140,6 +140,22 @@ button, .buttonAdd {
     height: 20px;
     fill: #034F80;
 }
+.description {
+    max-width: 700px;
+    margin: 10px;
+    color: gray;
+}
+.description span {
+    color: #034F80;
+}
+.price {
+    margin: 10px 0 5px;
+    color: #ee5b17;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 footer {
     min-height: 70px;
     /*background: #5f646a;*/

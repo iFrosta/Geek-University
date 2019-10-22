@@ -27,4 +27,5 @@ include_once ENGINE_DIR . "render.php";
 include_once ENGINE_DIR . "feedback.php";
 include_once ENGINE_DIR . "feedbackimages.php";
 include_once ENGINE_DIR . "images.php";
+include_once ENGINE_DIR . "cart.php";
 include_once ENGINE_DIR . "auth.php";

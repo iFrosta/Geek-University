@@ -8,6 +8,7 @@
       if ($item['id'] < 10) { // Т.к. название файлов до 10 имеет 0, добавляем 0
         echo '0';
       }
-      echo $item['id'] . '.jpg' ?>' width="150" height="100"/></a>
+      echo $item['id'] . '.jpg' ?>' width="150" height="100"/>
+    </a>
   <? endforeach; ?>
 </div>

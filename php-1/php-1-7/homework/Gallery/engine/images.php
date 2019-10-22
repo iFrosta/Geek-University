@@ -12,7 +12,7 @@ function getGalleryContent($id)
 {
   $id = (int)$id;
 
-  $sql = "SELECT * FROM gallery WHERE id = {$id}";
+  $sql = "SELECT * FROM goods WHERE id = {$id}";
   $gallery = getAssocResult($sql);
 
   //В случае если новости нет, вернем пустое значение
