@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 <a class="button" style="color:black;" href="/index">Back</a>
 <h1>- Image -</h1>
 <div class="Gallery single">
@@ -9,6 +8,7 @@
     }
     echo $id . '.jpg' ?>'/></a>
   <div class='views'><?= $views ?> views</div>
+  <a href="/preview/addCart/" class="buttonAdd">Add to cart</a>
   <div class='feedback'>
     <span>--- Feedback ---</span>
     <? if (empty($params['feedback'])): ?>
