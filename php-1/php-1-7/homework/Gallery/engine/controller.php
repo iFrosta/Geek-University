@@ -17,7 +17,7 @@ function prepareVariables($page, $action, $id)
         Die("Файла не существует, 404");
       } else {
         $content = getGalleryContent($id);
-        $params['name'] = $content['name'];
+        $params['nameImg'] = $content['name'];
         $params['id'] = $content['id'];
         $params['views'] = $content['views'];
         $params['description'] = $content['description'];

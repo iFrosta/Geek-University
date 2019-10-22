@@ -121,7 +121,9 @@ header {
     top: 15px;
     left: 20px;
     padding: 10px 15px;
-    border: 1px solid gray;
+    border: 1px solid #034F80;
+    color: #034F80 !important;
+    text-decoration: none;
 }
 button, .buttonAdd {
     text-decoration: none;
@@ -162,4 +164,5 @@ footer {
 }
 footer a {
     color: #5f646a;
+    text-decoration: none;
 }

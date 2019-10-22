@@ -1,8 +1,12 @@
- <nav>
-   <a href="/">Галерея</a>
-   <a href="/feedback/">Отзывы</a>
-   <a href="/cart/" class="cart"><img src="img/icons/cart.svg"></a>
- </nav>
+<?
+  $rndNum = rand(1,15);
+?>
+<nav>
+  <a href="/">Галерея</a>
+  <a href="/preview/<?=$rndNum?>">Мне повезет!</a>
+  <a href="/feedback/">Отзывы</a>
+  <a href="/cart/" class="cart"><img src="/img/icons/cart.svg"></a>
+</nav>
 <div class="auth">
   <span>Добро пожаловать <?= $user ?></span>
   <? if (!$allow) echo "

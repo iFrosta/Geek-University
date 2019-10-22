@@ -1,7 +1,7 @@
 <a class="button" style="color:black;" href="/index">Back</a>
 <h1>- Image -</h1>
 <div class="Gallery single">
-  <div class='views'><?= $name ?></div>
+  <div class='views'><?= $nameImg ?></div>
   <a class='photo' href='/preview/<?= $id ?>'>
     <img src='../<?= fileBigPath;
     if ($id < 10) { // Т.к. название файлов до 10 имеет 0, добавляем 0
@@ -11,7 +11,7 @@
   <div class='views'><?= $views ?> views</div>
   <div class='description'><span>Description</span>:<br><?=$description?></div>
   <div class='price'><?=$price?>$
-    <a href="/preview/addCart/" class="buttonAdd">Add to cart</a>
+    <a href="/preview/addCart/<?= $id ?>" class="buttonAdd">Add to cart</a>
   </div>
   <div class='feedback'>
     <span>--- Feedback ---</span>

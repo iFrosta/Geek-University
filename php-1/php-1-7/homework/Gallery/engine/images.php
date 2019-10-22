@@ -4,7 +4,7 @@ function updateViews($id)
 {
   $db = getDb();
   // Обновляем views count = views + current view
-  $sql = "UPDATE gallery SET `views`= `views` + 1 WHERE `id` = '" . $id . "'";
+  $sql = "UPDATE goods SET `views`= `views` + 1 WHERE `id` = '" . $id . "'";
   $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
 }
 
@@ -25,7 +25,7 @@ function getGalleryContent($id)
 
 function getGallery()
 {
-  $sql = "SELECT * FROM gallery ORDER BY views DESC";
+  $sql = "SELECT * FROM goods ORDER BY views DESC";
   $gallery = getAssocResult($sql);
   return $gallery;
 }
