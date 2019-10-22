@@ -1,33 +1,43 @@
 <?
 
-session_id();
-
 function updateCartOf($id)
 {
-$db = getDb();
+  $sessionID = session_id();
+  $db = getDb();
 // Обновляем views count = views + current view
-$sql = "UPDATE goods SET `views`= `views` + 1 WHERE `id` = '" . $id . "'";
-$result = @mysqli_query($db, $sql) or die(mysqli_error($db));
-}
-
-function getCartOf($id)
-{
-$id = (int)$id;
-
-$sql = "SELECT * FROM goods WHERE id = {$id}";
-$gallery = getAssocResult($sql);
-
-//В случае если новости нет, вернем пустое значение
-$result = [];
-if (isset($gallery[0]))
-$result = $gallery[0];
-
-return $result;
+  $sql = "UPDATE cart SET `id_good`= {$id}, `id_session`={$sessionID} WHERE 1";
+  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
 }
 
 function getCart()
 {
-$sql = "SELECT * FROM goods ORDER BY views DESC";
-$gallery = getAssocResult($sql);
-return $gallery;
+  $sessionID = session_id();
+
+  $sql = "
+          SELECT cart.id as cart_id, 
+          goods.id as goods_id, goods.name as name, goods.price as price
+          FROM `cart`, `goods` WHERE 'id_session' = {$sessionID} 
+          AND `cart` . `id_good` = `goods` . `id`";
+//  $sql = "SELECT * FROM `cart`, `goods` WHERE 'id_session' = {$sessionID} AND `cart` . `id_good` = `goods` . `id`";
+//  $sql = "SELECT * FROM cart WHERE 'id_session' = {$sessionID}";
+  $gallery = getAssocResult($sql);
+
+  $result = [];
+  if (isset($gallery[0]))
+    $result = $gallery[0];
+
+  return $gallery;
+}
+
+function createSession()
+{
+  $sessionID = session_id();
+  $db = getDb();
+//  $sql = "SELECT * FROM cart WHERE `id_session` = '$sessionID'";
+//  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
+  $sql = "SELECT EXISTS(SELECT * FROM cart WHERE `id_session` = '$sessionID')";
+  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
+//  $sql = "INSERT INTO `cart`(id_good,id_session) VALUES ('0','$sessionID')";
+
+  return executeQuery($sql);
 }

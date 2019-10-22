@@ -9,8 +9,8 @@
     }
     echo $id . '.jpg' ?>'/></a>
   <div class='views'><?= $views ?> views</div>
-  <div class='description'><span>Description</span>:<br><?=$description?></div>
-  <div class='price'><?=$price?>$
+  <div class='description'><span>Description</span>:<br><?= $description ?></div>
+  <div class='price'><?= $price ?>$
     <a href="/preview/addCart/<?= $id ?>" class="buttonAdd">Add to cart</a>
   </div>
   <div class='feedback'>
@@ -21,7 +21,7 @@
       <? foreach ($feedback as $item): ?>
         <p>
           <b><?= $item['name'] ?> - </b> <?= $item['feedback'] ?>
-          <a href="/preview/edit/<?= $item['id']?>/?backid=<?=$id?>">[edit]</a>
+          <a href="/preview/edit/<?= $item['id'] ?>/?backid=<?= $id ?>">[edit]</a>
           <a href="/preview/delete/<?= $item['id'] ?>">[x]</a><br>
         </p>
       <? endforeach; ?>

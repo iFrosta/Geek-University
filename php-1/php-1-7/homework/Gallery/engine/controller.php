@@ -9,7 +9,6 @@ function prepareVariables($page, $action, $id)
   $params = [];
   switch ($page) {
     case 'index':
-      $params["db"] = getDb();
       $params["gallery"] = getGallery();
       break;
     case 'preview':
@@ -36,6 +35,8 @@ function prepareVariables($page, $action, $id)
       $params['feedback'] = getAllFeedback();
       break;
     case 'cart':
+      createSession();
+      $params["cart"] = getCart();
 //      doFeedbackAction($params, $action, $id);
 //      $params['submitVal'] = 'Отправить';
 //      $params['feedback'] = getAllFeedback();
