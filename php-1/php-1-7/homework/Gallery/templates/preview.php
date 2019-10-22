@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<a style="color:black;" href="/index">< - Back</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<a class="button" style="color:black;" href="/index">Back</a>
 <h1>- Image -</h1>
 <div class="Gallery single">
   <a class='photo' href='/preview/<?= $id ?>'>
@@ -10,7 +10,7 @@
     echo $id . '.jpg' ?>'/></a>
   <div class='views'><?= $views ?> views</div>
   <div class='feedback'>
-    <span>- Feedback: -</span>
+    <span>Feedback</span>
     <? if (empty($params['feedback'])): ?>
       <span><? echo $nofeedback; ?></span>
     <? else: ?>

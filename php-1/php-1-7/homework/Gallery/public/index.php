@@ -1,7 +1,5 @@
 <?php
-//Точка входа в приложение, сюда мы попадаем каждый раз когда загружаем страницу
-
-//Первым делом подключим файл с константами настроек
+session_start();
 include "../config/main.php";
 
 $url_array = explode("/", $_SERVER['REQUEST_URI']);
@@ -37,5 +35,4 @@ $params = prepareVariables($page, $action, $id);
 //Вызываем рендер, и передаем в него имя шаблона и массив подстановок
 echo render($page, $params);
 
-
-
+closeDb();

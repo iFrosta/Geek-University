@@ -1,13 +1,8 @@
 <?
 //3. Добавить функционал отзывов к каждому изображению.
 ?>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<nav>
-
-</nav>
-<header>
-  <h1>- Gallery -</h1>
-</header>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<h1>- Gallery -</h1>
 <div class="Gallery">
   <? foreach ($gallery as $item): ?>
     <a class='photo' href='/preview/<?= $item['id'] ?>'>

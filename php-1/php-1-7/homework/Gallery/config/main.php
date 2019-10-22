@@ -2,7 +2,10 @@
 //Файл констант
 define("TEMLATES_DIR", '../templates/');
 define("LAYOUTS_DIR", 'layout/');
+define("ENGINE_DIR", "../engine/");
 define("PUBLIC_DIR", '../public/');
+
+define("SITE_TITLE", 'Gallery');
 
 // устанавливаем директорию файлов
 define("filesPath", 'files/');
@@ -17,10 +20,11 @@ define('DB', 'root');
 
 //Тут же подключим основные функции нашего приложения, пока это render
 //Можете кстати подключить и в главном index.php если такая вложенность напрягает
-include_once "../engine/controller.php";
-include_once "../engine/db.php";
-include_once "../engine/feedback.php";
-include_once "../engine/feedbackimages.php";
-include_once "../engine/images.php";
-include_once "../engine/news.php";
-include_once "../engine/render.php";
+include_once ENGINE_DIR . "controller.php";
+include_once ENGINE_DIR . "db.php";
+include_once ENGINE_DIR . "render.php";
+
+include_once ENGINE_DIR . "feedback.php";
+include_once ENGINE_DIR . "feedbackimages.php";
+include_once ENGINE_DIR . "images.php";
+include_once ENGINE_DIR . "auth.php";
