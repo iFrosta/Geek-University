@@ -28,7 +28,7 @@ function placeOrder()
   $phone = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['phone'])));
   $address = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['email'])));
   $sql = "INSERT INTO `orders`(`id`, `session`, `name`, `phone`, `address`, `login`) 
-          VALUES (NULL,'{$name}','$sessionID','{$phone}','{$address}', 'nologin')";
+          VALUES (NULL,'{$sessionID}','$name','{$phone}','{$address}', 'nologin')";
   return executeQuery($sql);
 }
 
@@ -53,16 +53,5 @@ function getCart()
   $sql = "SELECT * FROM cart WHERE id_session = '$sessionID'";
   $gallery = getAssocResult($sql);
 
-  $result = [];
-  if (isset($gallery[0]))
-    $result = $gallery[0];
-
   return $gallery;
 }
-
-//  $sql = "
-//          SELECT cart.id as cart_id,
-//          goods.id as goods_id, goods.name as name, goods.price as price
-//          FROM `cart`, `goods` WHERE 'id_session' = {$sessionID}
-//          AND `cart` . `id_good` = `goods` . `id`";
-//  $sql = "SELECT * FROM `cart`, `goods` WHERE 'id_session' = {$sessionID} AND `cart` . `id_good` = `goods` . `id`";
