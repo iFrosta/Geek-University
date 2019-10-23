@@ -27,6 +27,7 @@ function prepareVariables($page, $action, $id)
         if (empty($params['feedback'])) {
           $params['nofeedback'] = 'Будьте первым кто оставит отзыв!';
         }
+        cart($params, $action, $id);
       }
       break;
     case 'feedback':
@@ -35,7 +36,7 @@ function prepareVariables($page, $action, $id)
       $params['feedback'] = getAllFeedback();
       break;
     case 'cart':
-      createSession();
+//      createSession();
       $params["cart"] = getCart();
 //      doFeedbackAction($params, $action, $id);
 //      $params['submitVal'] = 'Отправить';

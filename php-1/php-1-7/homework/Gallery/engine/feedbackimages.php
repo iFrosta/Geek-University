@@ -11,26 +11,26 @@ function doImgFeedbackAction(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
-//  if ($action == "edit") {
-//    if (isset($_POST['send'])) {
-//      updateFeedbackGood();
-//      $backid = $_GET['backid'];
-//      header("Location: /image/{$backid}/?status=edited");
-//    } else {
-//      $params['textAction'] = "Править";
-//      $params['formAction'] = "edit";
-//      $message = getOneFeedBackGood($id);
-//      $params['name'] = $message['name'];
-//      $params['message'] = $message['feedback'];
-//      $params['id'] = $message['id'];
-//    }
-//
-//  }
-//  if ($action == 'edit') {
-//    $params['feedback'] = getAllFeedbackGoods((int)$_GET['backid']);
-//  } else {
-//    $params['feedback'] = getAllFeedbackGoods($id);
-//  }
+  if ($action == "edit") {
+    if (isset($_POST['send'])) {
+      updateImgFeedback($id);
+      $backid = $_GET['backid'];
+      header("Location: /preview/{$backid}/?status=edited");
+    } else {
+      $params['textAction'] = "Править";
+      $params['formAction'] = "edit";
+      $message = getImgFeedback($id);
+      $params['name'] = $message['name'];
+      $params['message'] = $message['feedback'];
+      $params['id'] = $message['id'];
+    }
+
+  }
+  if ($action == 'edit') {
+    $params['feedback'] = getImgFeedback((int)$_GET['backid']);
+  } else {
+    $params['feedback'] = getImgFeedback($id);
+  }
 
   return $params;
 }

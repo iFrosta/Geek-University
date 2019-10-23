@@ -52,6 +52,9 @@ header {
     justify-content: center;
     align-items: center;
 }
+.column {
+    flex-direction: column;
+}
 .Gallery a {
     position: relative;
     margin: 10px;
@@ -134,6 +137,11 @@ button, .buttonAdd {
     border: 1px solid #034F80;
     background: unset;
 }
+button:hover, .buttonAdd:hover {
+    color: #ffff;
+    border: 1px solid #032746;
+    background: #034F80;
+}
 .cart {
     border: unset !important;
 }
@@ -157,6 +165,22 @@ button, .buttonAdd {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.cart-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-item strong {
+    font-weight: 700;
+    font-size: 20px;
+}
+.cart-item label {
+    margin: 5px 5px 5px 10px;
+    color: orangered;
+}
+.start {
+    align-items: baseline;
 }
 footer {
     min-height: 70px;
