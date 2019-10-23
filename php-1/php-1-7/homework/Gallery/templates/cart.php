@@ -30,15 +30,19 @@ if (!empty($cart)) { ?>
     <? } ?>
   </div>
   <div class="Gallery order column">
-  <? if ($status === 1) { ?>
-    <h2>Order:</h2>
+    <? if ($_GET['status'] === '1') { ?>
+      <h2>Order:</h2>
       <form action="/cart/order/" method="post">
-        <input type="text" name="name" placeholder="name" value="<?=$name?>"><br>
-        <input type="tel" name="phone" placeholder="phone" value="<?=$phone?>"><br>
-        <input type="email" name="email" placeholder="address" value="<?=$message?>"><br>
+        <input type="text" name="name" placeholder="name" value="<?= $name ?>"><br>
+        <input type="tel" name="phone" placeholder="phone" value="<?= $phone ?>"><br>
+        <input type="email" name="email" placeholder="address" value="<?= $message ?>"><br>
         <input type="submit" value="Submit">
       </form>
- <? } else {?>
-    <a class="buttonAdd" href="/cart/?status=1">Order</a>
-  <? } ?>
+    <? } else { ?>
+      <? if ($_GET['status'] === '2') { ?>
+        <h2>Your order has been processed!</h2>
+      <? } else { ?>
+        <a class="buttonAdd" href="/cart/?status=1">Order</a>
+      <? } ?>
+    <? } ?>
   </div>

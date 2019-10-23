@@ -36,9 +36,6 @@ function prepareVariables($page, $action, $id)
     case 'cart':
       $params["cart"] = getCart();
       cart($params, $action, $id);
-      if (!empty($_GET['status'])) {
-        $params['status'] = 1;
-      }
       break;
   }
   return $params;

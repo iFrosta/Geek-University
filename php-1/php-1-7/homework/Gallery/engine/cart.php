@@ -12,10 +12,9 @@ function cart(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
-  if ($action == "order") {
+  if (!empty($_POST['name'])) {
     $error = placeOrder();
-    echo 'here1';
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header("Location: /cart/?status=2");
   }
 
   return $params;
@@ -27,7 +26,7 @@ function placeOrder()
   $sessionID = session_id();
   $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
   $phone = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['phone'])));
-  $address = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['address'])));
+  $address = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['email'])));
   $sql = "INSERT INTO `orders`(`id`, `session`, `name`, `phone`, `address`, `login`) 
           VALUES (NULL,'{$name}','$sessionID','{$phone}','{$address}', 'nologin')";
   return executeQuery($sql);
