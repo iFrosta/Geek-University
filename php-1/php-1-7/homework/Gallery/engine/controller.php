@@ -1,11 +1,6 @@
 <?php
-/*
- * Функция подготовки переменных для передачи их в шаблон
- */
 function prepareVariables($page, $action, $id)
 {
-//Для каждой страницы готовим массив со своим набором переменных
-//для подстановки их в соотвествующий шаблон
   $params = [];
   switch ($page) {
     case 'index':
@@ -28,6 +23,9 @@ function prepareVariables($page, $action, $id)
           $params['nofeedback'] = 'Будьте первым кто оставит отзыв!';
         }
         cart($params, $action, $id);
+        if (!empty($params['added'])) {
+          echo $params['added'];
+        }
       }
       break;
     case 'feedback':
@@ -36,11 +34,8 @@ function prepareVariables($page, $action, $id)
       $params['feedback'] = getAllFeedback();
       break;
     case 'cart':
-//      createSession();
       $params["cart"] = getCart();
-//      doFeedbackAction($params, $action, $id);
-//      $params['submitVal'] = 'Отправить';
-//      $params['feedback'] = getAllFeedback();
+      cart($params, $action, $id);
       break;
   }
   return $params;

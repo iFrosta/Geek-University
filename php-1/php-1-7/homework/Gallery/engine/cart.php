@@ -6,17 +6,24 @@ function cart(&$params, $action, $id)
     header("Location: /preview/$id"); // Обязательно закрывающий /
   }
 
-//  if ($action == "delete") {
-//    $error = deleteImgFeedback($id);
-//    header('Location: ' . $_SERVER['HTTP_REFERER']);
-//  }
+  if ($action == "delete") {
+    $error = deleteItemFromCart($id);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
 
   return $params;
 }
 
+function deleteItemFromCart($id)
+{
+  $sessionID = session_id();
+  $sql = "DELETE FROM `cart` WHERE id_session = '$sessionID' AND id_good = '$id'";
+  return executeQuery($sql);
+}
+
+
 function addToCart($id)
 {
-  $db = getDb();
   $sessionID = session_id();
   $sql = "INSERT INTO `cart`(`id`, `id_good`, `id_session`) VALUES (NULL,'{$id}','{$sessionID}')";
   return executeQuery($sql);

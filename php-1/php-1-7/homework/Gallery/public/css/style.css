@@ -167,9 +167,16 @@ button:hover, .buttonAdd:hover {
     align-items: center;
 }
 .cart-item {
+    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    transition: 0.3s;
+    min-width: 100%;
+}
+.cart-item:hover {
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.75);
+    transition: 0.3s;
 }
 .cart-item strong {
     font-weight: 700;
@@ -177,6 +184,17 @@ button:hover, .buttonAdd:hover {
 }
 .cart-item label {
     margin: 5px 5px 5px 10px;
+    color: orangered;
+}
+.cart-del {
+    display: block;
+    position: absolute !important;
+    top: 42px;
+    right: 10px;
+    color: gray;
+    text-decoration: none;
+}
+.cart-del:hover {
     color: orangered;
 }
 .start {
