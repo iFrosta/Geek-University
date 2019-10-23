@@ -1,9 +1,10 @@
 <?
 function cart(&$params, $action, $id)
 {
+
   if ($action == "addCart") {
     $error = addToCart($id);
-    header("Location: /preview/$id"); // Обязательно закрывающий /
+    header("Location: /preview/$id");
   }
 
   if ($action == "delete") {
@@ -11,7 +12,25 @@ function cart(&$params, $action, $id)
     header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
+  if ($action == "order") {
+    $error = placeOrder();
+    echo 'here1';
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+  }
+
   return $params;
+}
+
+function placeOrder()
+{
+  $db = getDb();
+  $sessionID = session_id();
+  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
+  $phone = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['phone'])));
+  $address = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['address'])));
+  $sql = "INSERT INTO `orders`(`id`, `session`, `name`, `phone`, `address`, `login`) 
+          VALUES (NULL,'{$name}','$sessionID','{$phone}','{$address}', 'nologin')";
+  return executeQuery($sql);
 }
 
 function deleteItemFromCart($id)
@@ -21,21 +40,11 @@ function deleteItemFromCart($id)
   return executeQuery($sql);
 }
 
-
 function addToCart($id)
 {
   $sessionID = session_id();
   $sql = "INSERT INTO `cart`(`id`, `id_good`, `id_session`) VALUES (NULL,'{$id}','{$sessionID}')";
   return executeQuery($sql);
-}
-
-function updateCartOf($id)
-{
-  $sessionID = session_id();
-  $db = getDb();
-// Обновляем views count = views + current view
-  $sql = "UPDATE cart SET `id_good`= {$id}, `id_session`={$sessionID} WHERE 1";
-  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
 }
 
 function getCart()
@@ -50,19 +59,6 @@ function getCart()
     $result = $gallery[0];
 
   return $gallery;
-}
-
-function createSession()
-{
-  $sessionID = session_id();
-  $db = getDb();
-//  $sql = "SELECT * FROM cart WHERE `id_session` = '$sessionID'";
-//  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
-  $sql = "SELECT EXISTS(SELECT * FROM cart WHERE id_session = '$sessionID')";
-  $result = @mysqli_query($db, $sql) or die(mysqli_error($db));
-//  $sql = "INSERT INTO `cart`(id_good,id_session) VALUES ('0','$sessionID')";
-
-  return executeQuery($sql);
 }
 
 //  $sql = "
