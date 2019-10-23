@@ -13,7 +13,6 @@ if (is_auth()) {
   $user = get_user();
 }
 
-
 if (isset($_GET['send'])) {
   $login = $_GET['login'];
   $pass = $_GET['pass'];
@@ -23,7 +22,7 @@ if (isset($_GET['send'])) {
   } else {
     if (isset($_GET['save'])) {
       $hash = uniqid(rand(), true);
-      $db = get_db();
+      $db = getDb();
       $id = mysqli_real_escape_string($db, strip_tags(stripslashes($_SESSION['id'])));
       $sql = "UPDATE `users` SET `hash` = '{$hash}' WHERE `users`.`id` = {$id}";
       $result = mysqli_query($db, $sql);
@@ -37,18 +36,9 @@ if (isset($_GET['send'])) {
   }
 }
 
-function get_db()
-{
-  static $db = '';
-  if (empty($db)) {
-    $db = mysqli_connect('localhost', 'root', '', 'news');
-  }
-  return $db;
-}
-
 function auth($login, $pass)
 {
-  $db = get_db();
+  $db = getDb();
   $login = mysqli_real_escape_string($db, strip_tags(stripslashes($login)));
   /*
       $options = [
@@ -71,7 +61,7 @@ function is_auth()
 {
   if (isset($_COOKIE["hash"])) {
     $hash = $_COOKIE["hash"];
-    $db = get_db();
+    $db = getDb();
     $sql = "SELECT * FROM `users` WHERE `hash`='{$hash}'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_assoc($result);

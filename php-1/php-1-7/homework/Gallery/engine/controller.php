@@ -37,6 +37,9 @@ function prepareVariables($page, $action, $id)
       $params["cart"] = getCart();
       cart($params, $action, $id);
       break;
+    case 'orders':
+
+      break;
   }
   return $params;
 }

@@ -41,7 +41,6 @@ function updateImgFeedback($id)
   $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
   $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
   $sql = "INSERT INTO `feedback-img`(`name`, `feedback`, `imgID`) VALUES ('{$name}','{$message}','{$id}')";
-//  $sql = "UPDATE `feedback_goods` SET `name` = '{$name}', `feedback` = '{$message}' WHERE `feedback_goods`.`id` = {$id};";
   return executeQuery($sql);
 }
 
@@ -63,7 +62,6 @@ function addImgFeedback($id)
 function getImgFeedback($id)
 {
   $sql = "SELECT * FROM `feedback-img` WHERE `imgID` = {$id}";
-//  $sql = "SELECT * FROM `feedback-img` WHERE id={$id}";
   return getAssocResult($sql);
 }
 

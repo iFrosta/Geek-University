@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 17 2019 г., 22:09
+-- Время создания: Окт 24 2019 г., 00:52
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.3.9
 
@@ -42,7 +42,10 @@ CREATE TABLE `feedback-img` (
 INSERT INTO `feedback-img` (`id`, `name`, `feedback`, `imgID`) VALUES
 (2, 'Егор', 'Хорошая картина', 2),
 (3, 'Леша', 'Просто космос', 1),
-(4, 'Андрей', 'Ого', 3);
+(4, 'Андрей', 'Ого', 3),
+(11, 'Петр', 'Фотошоп!', 8),
+(12, 'Сергей', 'Хм', 8),
+(13, 'Сергей', 'Отлично', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -62,7 +65,7 @@ ALTER TABLE `feedback-img`
 -- AUTO_INCREMENT для таблицы `feedback-img`
 --
 ALTER TABLE `feedback-img`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
