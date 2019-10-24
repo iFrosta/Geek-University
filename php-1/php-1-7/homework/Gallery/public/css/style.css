@@ -202,7 +202,7 @@ button:hover, .buttonAdd:hover {
 }
 .auth input[type='text'], input[type='password'] {
     width: 150px;
-    height: 20px;
+    height: 25px;
     padding-left: 10px;
     border: unset;
     outline: none;

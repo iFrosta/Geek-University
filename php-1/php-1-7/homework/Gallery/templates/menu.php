@@ -6,13 +6,14 @@
   <a href="/cart/" class="cart"><img src="/img/icons/cart.svg"></a>
 </nav>
 <div class="auth">
-  <span>Welcome <?= $user ?></span>
+<!--  <span>Welcome --><?//= $user ?><!--</span>-->
   <? if (!$allow) echo "
     <form>
       <input type='text' name='login' placeholder='login'>
       <input type='password' name='pass' placeholder='password'>
       <input type='checkbox' name='save'> <strong>Save?</strong>
       <input type='submit' name='send' value='sign in'>
+      <input type='submit' name='send' value='sign up'>
     </form>";
   else echo "Welcome, {$user} <a href='?logout'>выход</a>";
   ?>

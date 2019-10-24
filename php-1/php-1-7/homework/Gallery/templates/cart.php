@@ -41,6 +41,7 @@ if (!empty($cart)) { ?>
     <? } else { ?>
       <? if ($_GET['status'] === '2') { ?>
         <h2>Your order has been processed!</h2>
+        <?session_regenerate_id();?>
       <? } else { ?>
         <a class="buttonAdd" href="/cart/?status=1">Order</a>
       <? } ?>
