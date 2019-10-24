@@ -24,6 +24,7 @@ if (!empty($cart)) { ?>
       <a class="cart-del" href="/cart/delete/<?= $item['id_good'] ?>">[ x ]</a>
     </div>
   <? endforeach; ?>
+  <?=$sum?>
   <? } else { ?>
   <div class="Gallery column">
     <h2>Ваша корзина пуста,<br> Вперед за покупками!</h2>

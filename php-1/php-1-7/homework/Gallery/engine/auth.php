@@ -14,6 +14,11 @@ if (is_auth()) {
 }
 
 if (isset($_GET['send'])) {
+  if ($_GET['send'] == 'sign up')
+    Create_User();
+}
+
+if (isset($_GET['send'])) {
   $login = $_GET['login'];
   $pass = $_GET['pass'];
 
@@ -77,12 +82,14 @@ function get_user()
   return is_auth() ? $_SESSION['login'] : false;
 }
 
-function Create_User(){
+function Create_User()
+{
   $db = getDb();
   $hash = uniqid(rand(), true);
   $login = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['login'])));
   $pass = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['pass'])));
-  $sql = "INSERT INTO `users`(`id`, `login`, `pass`, `hash`) 
-          VALUES (NULL,'{$login}','$pass','{$hash}')";
-  return executeQuery($sql);
+  echo $login . ' ' . $pass;
+//  $sql = "INSERT INTO `users`(`id`, `login`, `pass`, `hash`)
+//          VALUES (NULL,'{$login}','$pass','{$hash}')";
+//  return executeQuery($sql);
 }

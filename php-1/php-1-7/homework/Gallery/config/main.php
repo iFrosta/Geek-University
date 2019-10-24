@@ -29,3 +29,4 @@ include_once ENGINE_DIR . "feedbackimages.php";
 include_once ENGINE_DIR . "images.php";
 include_once ENGINE_DIR . "cart.php";
 include_once ENGINE_DIR . "auth.php";
+include_once ENGINE_DIR . "orders.php";

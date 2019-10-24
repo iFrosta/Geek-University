@@ -38,7 +38,20 @@ function prepareVariables($page, $action, $id)
       cart($params, $action, $id);
       break;
     case 'orders':
+      $params["cart"] = getAllOrders();
+      break;
+    case 'logout':
+      session_destroy();
+      setcookie("hash");
+      header("Location: /");
+      break;
 
+    case 'login':
+      if (login()) {
+        //     $params['allow'] = true;
+        //     $params['user'] = get_user();
+      }
+      header("Location: /");
       break;
   }
   return $params;
