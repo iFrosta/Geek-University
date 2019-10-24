@@ -35,7 +35,7 @@ if (!empty($cart)) { ?>
       <form action="/cart/order/" method="post">
         <input type="text" name="name" placeholder="name" value="<?= $name ?>"><br>
         <input type="tel" name="phone" placeholder="phone" value="<?= $phone ?>"><br>
-        <input type="email" name="email" placeholder="address" value="<?= $message ?>"><br>
+        <input type="email" name="email" placeholder="email" value="<?= $email ?>"><br>
         <input type="submit" value="Submit">
       </form>
     <? } else { ?>

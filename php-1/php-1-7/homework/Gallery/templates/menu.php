@@ -1,21 +1,19 @@
-<?
-  $rndNum = rand(1,15);
-?>
+<? $rndNum = rand(1, 15); ?>
 <nav>
-  <a href="/">Галерея</a>
-  <a href="/preview/<?=$rndNum?>">Мне повезет!</a>
-  <a href="/feedback/">Отзывы</a>
+  <a href="/">Gallery</a>
+  <a href="/preview/<?= $rndNum ?>">I'm Feeling Lucky</a>
+  <a href="/feedback/">Feedback</a>
   <a href="/cart/" class="cart"><img src="/img/icons/cart.svg"></a>
 </nav>
 <div class="auth">
-  <span>Добро пожаловать <?= $user ?></span>
+  <span>Welcome <?= $user ?></span>
   <? if (!$allow) echo "
     <form>
-      <input type='text' name='login' placeholder='Логин'>
-      <input type='password' name='pass' placeholder='Пароль'>
-      Save? <input type='checkbox' name='save'>
-      <input type='submit' name='send'>
+      <input type='text' name='login' placeholder='login'>
+      <input type='password' name='pass' placeholder='password'>
+      <input type='checkbox' name='save'> <strong>Save?</strong>
+      <input type='submit' name='send' value='sign in'>
     </form>";
-  else echo "Добро пожаловать, {$user} <a href='?logout'>выход</a>";
+  else echo "Welcome, {$user} <a href='?logout'>выход</a>";
   ?>
 </div>

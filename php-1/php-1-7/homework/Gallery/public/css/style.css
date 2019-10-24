@@ -148,7 +148,7 @@ button:hover, .buttonAdd:hover {
 .cart img {
     width: auto;
     height: 20px;
-    fill: #034F80;
+    filter: invert(0) sepia(1) saturate(7.4) hue-rotate(165.6deg) brightness(1);
 }
 .description {
     max-width: 700px;
@@ -199,6 +199,35 @@ button:hover, .buttonAdd:hover {
 }
 .start {
     align-items: baseline;
+}
+.auth input[type='text'], input[type='password'] {
+    width: 150px;
+    height: 20px;
+    padding-left: 10px;
+    border: unset;
+    outline: none;
+}
+.auth input[type='checkbox'] {
+
+}
+.auth input[type='submit'] {
+    margin-left: 10px;
+    width: 80px;
+    height: 30px;
+    color: #034F80;
+    border: 1px solid #034F80;
+    outline: none;
+    background: none;
+    transition: 0.3s;
+}
+.auth input[type='submit']:hover {
+    color: #ffffff;
+    background: #034F80;
+    border: 1px solid #034F80;
+    transition: 0.3s;
+}
+.auth strong {
+    color: #034F80;
 }
 footer {
     min-height: 70px;
