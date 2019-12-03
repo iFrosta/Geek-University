@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!--
+      made by ifrosta.ru @ifrosta on GeekBrains Geek-University
+    -->
+    <url>
+        <loc>index.html</loc>
+        <lastmod>2018-11-15</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>pages/shopping-cart.html</loc>
+        <lastmod>2018-11-15</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>pages/checkout.html</loc>
+        <lastmod>2018-11-15</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>pages/single-page.html</loc>
+        <lastmod>2018-11-15</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>pages/product.html</loc>
+        <lastmod>2018-11-15</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
