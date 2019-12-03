@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  margin: 0 0 40px;
+  display: flex;
+  min-height: 70px;
+  width: 100vw;
+  background: aliceblue;
+
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    position: relative;
+    margin: 0 35px;
+
+    &:after {
+      content: " ";
+      display: block;
+      background: #034F80;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 3px;
+      right: -16px;
+    }
+  }
+
+  .btn-cart {
+    margin: 0 35px;
+    padding: 10px 15px;
+    color: #034F80;
+    border: 1px solid #034F80;
+    background: unset;
+  }
+}
+
+button {
+  text-decoration: none;
+  cursor: pointer;
+
+  margin: 10px;
+  padding: 10px 20px;
+  background: unset;
+  color: #034F80;
+  border: 1px solid #034F80;
+
+  transition: all .5s;
+
+  &:hover {
+    background: #034F80;
+    color: #ffffff;
+  }
+}
+
+main {
+  .products {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 20px;
+
+    .product-item {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      margin: 20px;
+      width: 300px;
+      height: 250px;
+
+      box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+      transition: all .5s;
+
+      h3 {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        color: #034F80;
+      }
+
+      p {
+        font-weight: 600;
+        position: absolute;
+        bottom: -40px;
+        right: 95px;
+      }
+
+      img {
+        max-width: 90%;
+        max-height: 55%;
+        height: auto;
+        object-fit: contain;
+
+        transition: all .5s;
+      }
+
+      .buy-btn {
+        position: absolute;
+        bottom: -58px;
+        right: -10px;
+      }
+
+      &:hover {
+        transition: all .5s;
+
+        img {
+          transform: rotate(-3deg) scale(1.05);
+        }
+      }
+    }
+  }
+}
