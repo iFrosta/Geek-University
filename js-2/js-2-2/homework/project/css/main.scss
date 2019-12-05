@@ -13,33 +13,37 @@ header {
   display: flex;
   min-height: 70px;
   width: 100vw;
-  background: aliceblue;
+  background: #202025;
 
   align-items: center;
   justify-content: space-between;
+
+  box-shadow: 0 0 13px -6px rgba(0, 0, 0, 0.3);
 
   h1 {
     position: relative;
     margin: 0 35px;
 
-    &:after {
-      content: " ";
-      display: block;
-      background: #034F80;
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      top: 3px;
-      right: -16px;
+    color: #ffffff;
+
+    span {
+      color: #0382c8;
     }
+
   }
 
   .btn-cart {
     margin: 0 35px;
     padding: 10px 15px;
-    color: #034F80;
-    border: 1px solid #034F80;
+    color: #0382c8;
+    border: unset;
+    //border: 1px solid #034F80;
     background: unset;
+
+    &:hover {
+      background: unset;
+      color: #059ceb;
+    }
   }
 }
 
