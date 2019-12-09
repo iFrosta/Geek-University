@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="ajax-block"></div>
+<button id="ajax-get">Async get data</button>
+
+<script>
+    //JSON
+
+    // let userJson = '{"name": "Anna", "age": 25, "isAdmin": true}';
+    //
+    // // console.log(userJson);
+    //
+    // let user = JSON.parse(userJson);
+    // // console.log(user);
+    //
+    // user.dateCreated = '2018-06-19';
+    // user.address = {
+    //     city: "Saint Peterburg",
+    //     postalCode: 1999999
+    // };
+    //
+    // // console.log(user);
+    // let jsonUser = JSON.stringify(user, ['name', 'dateCreated', 'address', 'city', 'postalCode'], 4);
+    //
+    // // console.log(jsonUser);
+    //
+    // let user2 = JSON.parse(jsonUser, (key, value) => {
+    //     // console.log(key, value);
+    //     if (key === 'dateCreated'){
+    //         value = new Date(value);
+    //     }
+    //     return value
+    // })
+    // console.log(user2);
+
+    //Callback
+
+    // let num = (a, cb) => {
+    //     setTimeout(() => {
+    //         let b = 20 + a;
+    //         cb(b)
+    //     }, 300);
+    // };
+    //
+    // num(5, (data) => {
+    //     console.log(data);
+    // });
+
+    // getData((data) => {
+    //     getJob(data, () => {
+    //         get
+    //     })
+    // })
+
+    // Promise
+
+    // let num2 = (a) => {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if(a){
+    //                 resolve(a+10)
+    //             } else {
+    //                 reject('Error')
+    //             }
+    //         }, 1000)
+    //     });
+    // };
+    //
+    // num2(10)
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     });
+    // num2()
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    //     .catch(error => {
+    //         console.log(`${error} from catch callback`);
+    //     });
+
+
+    window.onload = () => {
+        document.getElementById('ajax-get').addEventListener('click', () => {
+
+            //ES5
+
+            // let xhr = new XMLHttpRequest();
+            // xhr.open('GET', 'tel.json', true); // true - асинхронный запрос
+            //
+            // xhr.onreadystatechange = () => {
+            //     console.log(xhr.readyState);
+            //     // 0 - запрос не инициализирован
+            //     // 1 - загрузка данных
+            //     // 2 - запрос принят сервером
+            //     // 3 - идет обмен данными
+            //     // 4 - запрос выполнен
+            //     if (xhr.readyState !== 4){
+            //         return // выход
+            //     }
+            //     if(xhr.status !== 200){
+            //         console.log(`Error ${xhr.status} ${xhr.statusText}`);
+            //     } else {
+            //         // console.log(`ok ${xhr.responseText}`);
+            //         let data = JSON.parse(xhr.responseText);
+            //         let block = document.getElementById('ajax-block');
+            //         block.insertAdjacentHTML('beforeend', `<p>${data.name} - <strong>${data.tel}</strong></p>`)
+            //     }
+            // };
+            //
+            // xhr.send();
+
+            // ES6
+
+            // fetch('tel.json')
+            //     .then(result => result.json())
+            //     .then(data => {
+            //         // console.log(data);
+            //         let block = document.getElementById('ajax-block');
+            //         block.insertAdjacentHTML('beforeend', `<p>${data.name} - <strong>${data.tel}</strong></p>`)
+            //     });
+
+        })
+    }
+
+
+</script>
+</body>
+</html>

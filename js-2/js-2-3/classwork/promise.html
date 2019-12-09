@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Promise
+
+    let getData = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve([345, 234, 863]);
+        },1500)
+    });
+
+    let getJob = userID => {
+        return new Promise((resolve, reject) => {
+            setTimeout(ID => {
+                let userData = {
+                    name: 'John',
+                    job: 'full-stack developer'
+                };
+                resolve(`User ${ID} is ${userData.job}`);
+            }, 1500, userID)
+        })
+    };
+
+    // getData
+    //     .then(IDs => {
+    //         console.log(IDs);
+    //         return getJob(IDs[1])
+    //     })
+    //     .then(job => console.log(job));
+
+    async function getJobAW() {
+        let IDs = await getData;
+        console.log(IDs);
+        let job = await getJob(IDs[2]);
+        console.log(job);
+        return job
+    }
+
+    // let a = getJobAW();
+    // console.log(a);
+    getJobAW()
+    .then(data => console.log(data));
+</script>
+</body>
+</html>
