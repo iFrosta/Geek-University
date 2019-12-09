@@ -6,10 +6,12 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  display: flex;
 }
 
 header {
-  margin: 0 0 40px;
+  z-index: 2;
+  position: fixed;
   display: flex;
   min-height: 70px;
   width: 100vw;
@@ -29,7 +31,7 @@ header h1 span {
 header .btn-cart {
   margin: 0 35px;
   padding: 10px 15px;
-  color: #0382c8;
+  color: #ffffff;
   border: unset;
   background: unset;
 }
@@ -53,6 +55,51 @@ button:hover {
   color: #ffffff;
 }
 
+.left {
+  z-index: 1;
+  position: fixed;
+  overflow-y: hidden;
+  margin: 0;
+  width: 150px;
+  height: 100vh;
+  background: #2f2a2d;
+  color: #ffffff;
+  box-shadow: 0 0 13px -6px rgba(0, 0, 0, 0.3);
+}
+.left .inside {
+  padding: 100px 0 0 20px;
+}
+.left .inside .catalog_title {
+  margin: 10px 0;
+  font-weight: 600;
+}
+.left .inside ul {
+  list-style-type: none;
+}
+.left .inside ul li {
+  margin: 5px 0 5px 5px;
+  transition: all 0.5s;
+}
+.left .inside ul li:hover {
+  color: #059ceb;
+  transition: all 0.5s;
+}
+.left .copyright {
+  font-size: 13px;
+  text-decoration: none;
+  color: #cccccc;
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+}
+.left .copyright span {
+  color: #ffffff;
+}
+
+main {
+  z-index: 0;
+  padding: 100px 0 0 150px;
+}
 main .products {
   display: flex;
   align-items: flex-start;
@@ -61,14 +108,16 @@ main .products {
   padding: 0 20px;
 }
 main .products .product-item {
+  user-select: none;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
+  margin: 15px;
   width: 300px;
   height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
   transition: all 0.5s;
 }
@@ -81,8 +130,8 @@ main .products .product-item h3 {
 main .products .product-item p {
   font-weight: 600;
   position: absolute;
-  bottom: -40px;
-  right: 95px;
+  bottom: 20px;
+  right: 105px;
 }
 main .products .product-item img {
   max-width: 90%;
@@ -93,8 +142,8 @@ main .products .product-item img {
 }
 main .products .product-item .buy-btn {
   position: absolute;
-  bottom: -58px;
-  right: -10px;
+  bottom: 0;
+  right: 0;
 }
 main .products .product-item:hover {
   transition: all 0.5s;
