@@ -9,12 +9,12 @@ class ProductsList {
   }
   _fetchProducts(){
     this.goods = [
-      {id: 1, category: "Notebooks", title: 'Notebook', price: 2000, img: 'https://static.re-store.ru/upload/iblock/4fc/4fc2f36b75ade15f78baeefb04209361.jpg'},
-      {id: 2, category: "Mouses", title: 'Mouse', price: 40, img:' https://img.mvideo.ru/Pdb/50048743b.jpg'},
-      {id: 3, category: "Keyboards", title: 'Keyboard', price: 200, img: 'https://www.logitechg.com/content/dam/gaming/en/products/pro-x-keyboard/pro-x-keyboard-hero.png.imgw.1318.1318.jpeg'},
-      {id: 4, category: "Periphery", title: 'Gamepad', price: 50, img: 'https://avatars.mds.yandex.net/get-mpic/1855911/img_id7980936131697456187.jpeg/9hq'},
-      {id: 5, category: "Chairs", title: 'Chair', price: 150, img: 'https://cdn11.bigcommerce.com/s-1ovkgbcja1/images/stencil/1280x1280/products/212/1965/PDP-TH-1__51615.1562964688.jpg?c=2?imbypass=on'},
-      {id: 6, category: "Periphery", title: 'Mouse pad', price: 20, img: 'https://images-na.ssl-images-amazon.com/images/I/A16NEfK2mZL._SL1500_.jpg'}
+      {id: 1, category: "Notebooks", title: 'Notebook', price: 2000, sale: 1, img: 'https://static.re-store.ru/upload/iblock/4fc/4fc2f36b75ade15f78baeefb04209361.jpg'},
+      {id: 2, category: "Mouses", title: 'Mouse', price: 40, sale: 0, img:' https://img.mvideo.ru/Pdb/50048743b.jpg'},
+      {id: 3, category: "Keyboards", title: 'Keyboard', price: 200, sale: 0, img: 'https://www.logitechg.com/content/dam/gaming/en/products/pro-x-keyboard/pro-x-keyboard-hero.png.imgw.1318.1318.jpeg'},
+      {id: 4, category: "Periphery", title: 'Gamepad', price: 50, sale: 0, img: 'https://avatars.mds.yandex.net/get-mpic/1855911/img_id7980936131697456187.jpeg/9hq'},
+      {id: 5, category: "Chairs", title: 'Chair', price: 399, sale: 1, img: 'https://cdn11.bigcommerce.com/s-1ovkgbcja1/images/stencil/1280x1280/products/212/1965/PDP-TH-1__51615.1562964688.jpg?c=2?imbypass=on'},
+      {id: 6, category: "Periphery", title: 'Mouse pad', price: 20, sale: 0, img: 'https://images-na.ssl-images-amazon.com/images/I/A16NEfK2mZL._SL1500_.jpg'}
     ];
   }
   _render(){
@@ -36,13 +36,18 @@ class ProductItem {
     this.price = product.price;
     this.id = product.id;
     this.img = product.img;
+    this.sale = product.sale;
   }
   render() {
-    return `<div class="product-item" data-id="item-${this.id}">
-            <h3>${this.title}</h3>
-            <p>${this.price}$</p>
+    (this.sale ) ? this.sale = 'sale' : this.sale = '';
+
+    return `<div class="product-item ${this.sale}" data-id="item-${this.id}">
+            <div class="product-info">
+              <h3>${this.title}</h3>
+              <p>${this.price}$</p>
+              <button class="buy-btn">Buy</button>
+            </div>
             <img src="${this.img}" alt="product-img">
-            <button class="buy-btn">Купить</button>
           </div>`
   }
 }
