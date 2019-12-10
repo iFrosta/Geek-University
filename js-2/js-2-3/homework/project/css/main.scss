@@ -40,12 +40,97 @@ header {
     }
   }
 
-  .btn-cart {
+  .cart {
+    display: flex;
     margin: 0 35px;
     padding: 10px 15px;
     color: #ffffff;
     border: unset;
     background: unset;
+
+    form {
+      position: relative;
+      margin: 0 20px;
+      padding-top: 12px;
+
+      input {
+        color: #ffffff;
+        border: unset;
+        border-bottom: 2px solid #ffffff;
+        background: unset;
+        height: 30px;
+        padding: 0 25px 0 5px;
+        outline: none;
+      }
+      button {
+        position: absolute;
+        right: -24px;
+        bottom: 0;
+        border: unset;
+        color: #ffffff;
+        outline: none;
+        i {
+
+        }
+        &:hover {
+          border: unset;
+          background: unset;
+          color: #b5b5b5;
+        }
+      }
+    }
+
+    .btn-cart {
+      height: 35px;
+      font-size: 18px;
+      padding: 0 36px;
+      border: 1px solid #35353b;
+      color: #ffffff;
+      background: #35353b;
+      border-radius: 5px;
+      box-shadow: 0 0 13px -5px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        border: 1px solid #034F80;
+        background: unset;
+        color: #059ceb;
+      }
+    }
+
+    .cart-block {
+      position: absolute;
+      top: 70px;
+      right: 60px;
+      width: 280px;
+      min-height: 150px;
+      border-radius: 10px;
+      height: auto;
+
+      background: #f6f6f6;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.4);
+
+      transition: all .4s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 39px;
+
+        width: 15px;
+        height: 15px;
+
+        background: #f6f6f6;
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        transform: rotate(45deg);
+      }
+    }
+
+    .invisible {
+      display: none;
+    }
 
     &:hover {
       background: unset;

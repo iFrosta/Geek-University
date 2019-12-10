@@ -23,7 +23,7 @@ class ProductsList {
     this._getProducts()
       .then(data => {
           this.goods = [...data];
-          console.log(this.calcSum());
+          console.log('Summary price:', this.calcSum());
           this._render()
         })
   }
@@ -72,19 +72,26 @@ class ProductItem {
 
 new ProductsList();
 
-// class Cart {
-//   constructor(container = '.cart') {
-//     this.container = container;
-//     this.goods = [];
-//     this.allProducts = [];
-//   }
-// }
-//
-// class CartItem {
-//   constructor(product){
-//     this.title = product.title;
-//     this.price = product.price;
-//     this.id = product.id;
-//     this.img = product.img;
-//   }
-// }
+class Cart {
+  constructor(container = '.cart') {
+    this.container = container;
+    this.goods = [];
+    this.allProducts = [];
+  }
+}
+
+class CartItem {
+  constructor(product){
+    this.title = product.title;
+    this.price = product.price;
+    this.id = product.id;
+    this.img = product.img;
+  }
+}
+
+document.querySelector('.btn-cart').addEventListener('click',showCart);
+let cartBlock = document.querySelector('.cart-block');
+
+function showCart() {
+  (cartBlock.classList.contains('invisible')) ? cartBlock.classList.remove('invisible') : cartBlock.classList.add('invisible');
+}
