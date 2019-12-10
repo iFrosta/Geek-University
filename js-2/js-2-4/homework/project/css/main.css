@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+}
+
+button, i, a {
+  cursor: pointer;
+}
+
+header {
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #202025;
+  box-shadow: 0 0 13px -6px rgba(0, 0, 0, 0.3);
+}
+header h1 {
+  position: relative;
+  margin: 0 35px;
+  color: #ffffff;
+}
+header h1 span {
+  color: #0382c8;
+}
+header .cart {
+  display: flex;
+  margin: 0 35px;
+  padding: 10px 15px;
+  color: #ffffff;
+  border: unset;
+  background: unset;
+}
+header .cart form {
+  position: relative;
+  margin: 0 20px;
+  padding-top: 12px;
+}
+header .cart form input {
+  color: #ffffff;
+  border: unset;
+  border-bottom: 2px solid #ffffff;
+  background: unset;
+  height: 30px;
+  padding: 0 25px 0 5px;
+  outline: none;
+}
+header .cart form button {
+  position: absolute;
+  right: -24px;
+  bottom: 0;
+  border: unset;
+  color: #ffffff;
+  outline: none;
+}
+header .cart form button:hover {
+  border: unset;
+  background: unset;
+  color: #b5b5b5;
+}
+header .cart .btn-cart {
+  height: 35px;
+  font-size: 18px;
+  padding: 0 36px;
+  border: 1px solid #35353b;
+  color: #ffffff;
+  background: #35353b;
+  border-radius: 5px;
+  box-shadow: 0 0 13px -5px rgba(0, 0, 0, 0.2);
+}
+header .cart .btn-cart:hover {
+  border: 1px solid #034F80;
+  background: unset;
+  color: #059ceb;
+}
+header .cart .cart-block {
+  position: absolute;
+  top: 70px;
+  right: 60px;
+  width: 280px;
+  min-height: 150px;
+  border-radius: 10px;
+  height: auto;
+  color: black;
+  background: #f6f6f6;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s;
+}
+header .cart .cart-block::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 39px;
+  width: 15px;
+  height: 15px;
+  background: #f6f6f6;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  transform: rotate(45deg);
+}
+header .cart .invisible {
+  display: none;
+}
+header .cart:hover {
+  background: unset;
+  color: #059ceb;
+}
+
+button {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px 20px;
+  background: unset;
+  color: #034F80;
+  border: 1px solid #034F80;
+  transition: all 0.5s;
+}
+button:hover {
+  background: #034F80;
+  color: #ffffff;
+}
+
+.left {
+  z-index: 1;
+  position: fixed;
+  overflow-y: hidden;
+  margin: 0;
+  width: 150px;
+  height: 100vh;
+  color: #034F80;
+  background: #ebebeb;
+  box-shadow: 0 0 13px -6px rgba(0, 0, 0, 0.3);
+}
+.left .inside {
+  padding: 115px 0 0 20px;
+}
+.left .inside .catalog_title {
+  margin: 10px 0;
+  font-weight: 600;
+}
+.left .inside ul {
+  list-style-type: none;
+}
+.left .inside ul li {
+  cursor: pointer;
+  margin: 5px 0 5px 5px;
+  transition: all 0.5s;
+}
+.left .inside ul li:hover {
+  color: #059ceb;
+  transition: all 0.5s;
+}
+.left .copyright {
+  font-size: 13px;
+  text-decoration: none;
+  color: #034F80;
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+}
+.left .copyright span {
+  color: #023559;
+}
+
+main {
+  z-index: 0;
+  padding: 100px 0 0 150px;
+}
+main .products {
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+main .products .product-item {
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  padding: 0 2em;
+  width: auto;
+  max-width: 600px;
+  height: 200px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.35);
+  transition: all 0.5s;
+}
+main .products .product-item .product-info {
+  margin: 0 10px;
+  padding: 0 20px 0 0;
+}
+main .products .product-item .product-info h3 {
+  color: #034F80;
+}
+main .products .product-item .product-info p {
+  font-weight: 600;
+}
+main .products .product-item .product-info .buy-btn {
+  border-radius: 15px;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+main .products .product-item img {
+  max-width: 90%;
+  max-height: 55%;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.5s;
+}
+main .products .product-item:hover {
+  transition: all 0.5s;
+}
+main .products .product-item:hover img {
+  transform: rotate(-3deg) scale(1.05);
+}
+main .products .sale::before {
+  content: "SALE";
+  text-align: center;
+  display: block;
+  color: white;
+  background: #034F80;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: 15px;
+  right: -25px;
+  transform: rotate(-45deg);
+}
