@@ -153,30 +153,39 @@ class Cart extends List {
   _updateCart(product) {
     let block = document.querySelector(`.cart-item[data-id="${product.id_product}"]`);
     block.querySelector('.product-quantity').textContent = `Quantity: ${product.quantity}`;
-    block.querySelector('.product-price').textContent = `$${product.quantity*product.price}`;
+    block.querySelector('.product-price').textContent = `$${product.quantity * product.price}`;
   }
-  _init(){
-    document.querySelector('.btn-cart').addEventListener('click',() => {
+
+  _init() {
+    document.querySelector('.btn-cart').addEventListener('click', () => {
       document.querySelector(this.container).classList.toggle('invisible');
-    })
+    });
     document.querySelector(this.container).addEventListener('click', e => {
-      if(e.target.classList.contains('del-btn')){
+      if (e.target.classList.contains('del-btn')) {
         this.removeProduct(e.target);
       }
-    })
+    });
+
+    // function emptyCart(container) {
+    //   const emptyString = '<p class="empty-cart">The cart is empty</p>';
+    //   if (!document.querySelector(container).firstChild) {
+    //     document.querySelector(container).innerHTML = emptyString;
+    //   }
+    // }
   }
 }
 
 class CartItem extends Item {
-  constructor(el, img = 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png'){
+  constructor(el, img = 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png') {
     super(el, img);
     this.quantity = el.quantity;
+    this.img = img;
   }
 
   render() {
-   return `<div class="cart-item" data-id="${this.id_product}">
+    return `<div class="cart-item" data-id="${this.id_product}">
       <div class="product-bio">
-          <img src="${this.img}" alt="Some image">
+          <img src="${this.img}" alt="img">
           <div class="product-desc">
               <p class="product-title">${this.product_name}</p>
               <p class="product-quantity">Quantity: ${this.quantity}</p>

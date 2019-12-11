@@ -6,7 +6,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  display: flex;
 }
 
 button, i, a {
@@ -27,6 +26,7 @@ header {
 header h1 {
   position: relative;
   margin: 0 35px;
+  cursor: pointer;
   color: #ffffff;
 }
 header h1 span {
@@ -86,12 +86,12 @@ header .cart .cart-block {
   position: absolute;
   top: 70px;
   right: 60px;
-  width: 280px;
-  min-height: 150px;
+  width: 350px;
+  min-height: 100px;
   border-radius: 10px;
   height: auto;
   color: black;
-  background: #f6f6f6;
+  background: rgba(246, 246, 246, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.4);
   transition: all 0.4s;
@@ -107,6 +107,63 @@ header .cart .cart-block::before {
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   transform: rotate(45deg);
+}
+header .cart .cart-block .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  margin: 10px;
+  transition: 0.3s;
+}
+header .cart .cart-block .cart-item .product-bio {
+  display: flex;
+}
+header .cart .cart-block .cart-item .product-bio img {
+  margin: 0 15px 0 10px;
+  width: 80px;
+  height: auto;
+}
+header .cart .cart-block .cart-item .product-bio .product-desc .product-title {
+  color: #034F80;
+  font-size: 20px;
+  font-weight: 600;
+}
+header .cart .cart-block .cart-item .product-bio .product-desc .product-quantity {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+header .cart .cart-block .cart-item .product-bio .product-desc .product-single-price {
+  margin-top: 5px;
+}
+header .cart .cart-block .cart-item .right-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .cart .cart-block .cart-item .right-block .product-price {
+  font-weight: 700;
+}
+header .cart .cart-block .cart-item .right-block button {
+  height: 35px;
+  font-size: 18px;
+  line-height: 12px;
+  border: 1px solid #35353b;
+  color: #ffffff;
+  background: #35353b;
+  border-radius: 5px;
+  box-shadow: 0 0 13px -5px rgba(0, 0, 0, 0.2);
+}
+header .cart .cart-block .cart-item .right-block button:hover {
+  border: 1px solid #034F80;
+  background: unset;
+  color: #059ceb;
+}
+header .cart .cart-block .cart-item:hover {
+  box-shadow: 0 0 13px -5px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
 }
 header .cart .invisible {
   display: none;
@@ -176,6 +233,7 @@ button:hover {
 main {
   z-index: 0;
   padding: 100px 0 0 150px;
+  height: 96vh;
 }
 main .products {
   padding: 0 20px;
@@ -191,7 +249,7 @@ main .products .product-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin: 10px;
   padding: 0 2em;
   width: auto;
   max-width: 600px;
