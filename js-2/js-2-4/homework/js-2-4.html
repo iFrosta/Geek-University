@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // Task 1
+  console.log('------ Task 1 ------');
+
+  let text1 = "'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец 'Мы уезжаем завтра утром', — сказал отец";
+  console.log('Before: ' + text1);
+
+  console.log('After:  ' + text1.replace(/'/g, '"'));
+
+
+  // Task 2
+  console.log('------ Task 2 ------');
+
+  let text2 = "'We are leaving tomorrow morning', said the father, they can't gotcha us";
+  console.log('Before: ' + text2);
+
+  console.log('After:  ' + text2.replace(/([a-z]+), ', ([a-z]+)/i, ''));
+</script>
+</body>
+</html>
