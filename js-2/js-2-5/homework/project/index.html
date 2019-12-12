@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-mart</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1><span>E</span>-mart</h1>
+    <div class="cart">
+      <form action="#" class="search-form">
+        <input type="text" class="search-field">
+        <button type="submit" class="btn-search">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <button class="btn-cart" type="button">Cart</button>
+      <div class="cart-block invisible"></div>
+    </div>
+  </header>
+  <main>
+    <div class="products">
+      <div class="product-item" v-for="product of products" :key="product.id_product">
+        <div class="product-info">
+          <h3>{{product.product_name}}</h3>
+          <p>{{product.price}}$</p>
+          <button class="buy-btn" @click="addProduct(product)">Buy</button>
+        </div>
+        <img :src="product.img" alt="product-img">
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
