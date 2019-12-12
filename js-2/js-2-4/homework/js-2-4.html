@@ -5,6 +5,7 @@
   <title>Title</title>
 </head>
 <body>
+<p>Open console</p>
 <script>
   // Task 1
   console.log('------ Task 1 ------');
@@ -21,7 +22,7 @@
   let text2 = "'We are leaving tomorrow morning', said the father, they can't gotcha us";
   console.log('Before: ' + text2);
 
-  console.log('After:  ' + text2.replace(/([a-z]+), ', ([a-z]+)/i, ''));
+  console.log('After:  ' + text2.replace(/\B'|'\B/g, '"'));
 </script>
 </body>
 </html>

@@ -5,14 +5,61 @@
   <title>Title</title>
 </head>
 <body>
-
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  body, form, label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form, label {
+    flex-direction: column;
+  }
+  label {
+    margin: 0;
+  }
+  input {
+    width: 150px;
+    padding: 5px 15px;
+    margin: 5px 0;
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    margin-top: 5px;
+    width: 150px;
+    height: 30px;
+  }
+  .error {
+    color: #ff3c3f;
+  }
+  .valid {
+    border: 2px solid #6bff13;
+  }
+  .invalid {
+    border: 2px solid #ff3c3f;
+  }
+</style>
+<form action="#" id="form">
+  <label>Name <input type="text" name="name" id="name"></label>
+  <label>Phone <input type="tel" name="phone" id="phone"></label>
+  <label>Email <input type="email" name="email" id="email"></label>
+  <button id="form-submit">Submit</button>
+</form>
+<script src="validator.js"></script>
 <script>
-
-  let text = '+7 (000)000-00-00'.replace(/-/g, ':');
-  // let regexp1 = new RegExp("'", 'g');
-  //
-  // console.log(text.replace(regexp1, '"'));
-  console.log(text);
+  window.onload = () => {
+    document.getElementById('form').addEventListener('submit', e => {
+      let valid = new Validator('form');
+      if(!valid.valid){
+        e.preventDefault();
+      }
+    })
+  }
 </script>
 </body>
 </html>
