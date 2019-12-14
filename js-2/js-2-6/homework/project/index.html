@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-mart</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1><span>E</span>-mart</h1>
+    <div class="cart">
+      <form @submit.prevent="filter" action="#" class="search-form">
+        <input v-model="search" type="text" class="search-field">
+        <button type="submit" class="btn-search">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <button @click="showCart = !showCart" class="btn-cart" type="button">Cart</button>
+      <div v-show="showCart" class="cart-block">
+        <div v-if="!cartItems.length" class="empty">Your Cart is empty! 🦊</div>
+        <div v-for="item of cartItems" :key="item.id_product" class="cart-item">
+          <div class="product-bio">
+            <img :src="item.img" alt="img">
+            <div class="product-desc">
+              <p class="product-title">{{item.product_name}}</p>
+              <p class="product-quantity">Quantity: {{item.quantity}}</p>
+              <p class="product-single-price">${{item.price}} each</p>
+            </div>
+          </div>
+          <div class="right-block">
+            <p class="product-price">${{item.quantity * item.price}}</p>
+            <button @click="remove(item)" class="del-btn">&times;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="products">
+      <div v-if="!products.length" class="">No products :(</div>
+      <div v-for="product of filtered" :key="product.id_product" class="product-item">
+        <div class="product-info">
+          <h3>{{product.product_name}}</h3>
+          <p>{{product.price}}$</p>
+          <button class="buy-btn" @click="add(product)">Buy</button>
+        </div>
+        <img :src="product.img" alt="product-img">
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
