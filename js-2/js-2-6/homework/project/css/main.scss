@@ -8,7 +8,6 @@ $leftWidth: 150px;
 
 body {
   font-family: "Montserrat", sans-serif;
-  //display: flex;
 }
 
 button, i, a {
@@ -76,10 +75,6 @@ header {
         color: #ffffff;
         outline: none;
 
-        i {
-
-        }
-
         &:hover {
           border: unset;
           background: unset;
@@ -133,11 +128,6 @@ header {
         border-style: solid;
         border-width: 0 13px 13px 13px;
         border-color: transparent transparent rgba(246, 246, 246, 0.8) transparent;
-
-        //background: rgba(246, 246, 246, 0.8);
-        //border-left: 1px solid rgba(0, 0, 0, 0.2);
-        //border-top: 1px solid rgba(0, 0, 0, 0.2);
-        //transform: rotate(-45deg);
       }
 
       .empty {
@@ -164,8 +154,6 @@ header {
           }
 
           .product-desc {
-            //padding-right: 70px;
-
             .product-title {
               color: #034F80;
               font-size: 20px;
