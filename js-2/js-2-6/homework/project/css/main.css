@@ -325,3 +325,16 @@ main .products .sale::before {
   right: -25px;
   transform: rotate(-45deg);
 }
+
+.error {
+  position: fixed;
+  width: 100vh;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+}
+.error p {
+  display: block;
+  padding: 1em 2em;
+  background: #e54020;
+}

@@ -13,22 +13,20 @@
   <header>
     <h1><span>E</span>-mart</h1>
     <div class="cart">
-      <!--<form ref="products" @submit.prevent="filter" v-on:keydown="filter" action="#" class="search-form">-->
-        <!--<input v-model="search" type="text" class="search-field">-->
-        <!--<button type="submit" class="btn-search">-->
-          <!--<i class="fas fa-search"></i>-->
-        <!--</button>-->
-      <!--</form>-->
+      <search-el></search-el>
       <cart ref="cart"></cart>
     </div>
   </header>
   <main>
     <products ref="products"></products>
+    <error ref="error"></error>
   </main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/CartComp.js"></script>
 <script src="js/ProductComp.js"></script>
+<script src="js/SearchComp.js"></script>
+<script src="js/ErrorComp.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

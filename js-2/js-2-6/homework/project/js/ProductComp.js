@@ -24,8 +24,8 @@ Vue.component('products', {
       });
   },
   methods: {
-    filter() {
-      let regexp = new RegExp(this.search, 'i');
+    filter(string) {
+      let regexp = new RegExp(string, 'i');
       this.filtered = this.products.filter(el => regexp.test(el.product_name));
     }
   },
@@ -40,7 +40,7 @@ Vue.component('product', {
               <div class="product-info">
                 <h3>{{product.product_name}}</h3>
                 <p>$ {{product.price}}</p>
-                <button class="buy-btn" @click="$parent.$parent.$refs.cart.add(product)">Buy</button>
+                <button class="buy-btn" @click="$root.$refs.cart.add(product)">Buy</button>
               </div>
               <img :src="product.img ? product.img : 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png'" alt="product-img">
             </div>`

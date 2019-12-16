@@ -147,7 +147,6 @@ header {
       }
 
       .summary {
-        //border-top: 1px solid rgba(0, 0, 0, 0.2);
         line-height: 50px;
         text-align: right;
         padding-right: 20px;
@@ -397,5 +396,23 @@ main {
         transform: rotate(-45deg);
       }
     }
+  }
+}
+
+.error {
+  position: fixed;
+  width: 100vh;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+
+  p {
+    display: block;
+    padding: 1em 2em;
+    background: #e54020;
+  }
+
+  button {
+
   }
 }
