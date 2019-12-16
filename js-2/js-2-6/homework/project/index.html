@@ -29,10 +29,10 @@
       <div v-for="product of filtered" :key="product.id_product" class="product-item">
         <div class="product-info">
           <h3>{{product.product_name}}</h3>
-          <p>{{product.price}}$</p>
+          <p>${{product.price}}</p>
           <button class="buy-btn" @click="add(product)">Buy</button>
         </div>
-        <img :src="product.img" alt="product-img">
+        <img :src="product.img ? product.img : imgCatalog" alt="product-img">
       </div>
     </div>
   </main>
