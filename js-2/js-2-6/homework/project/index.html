@@ -13,7 +13,7 @@
   <header>
     <h1><span>E</span>-mart</h1>
     <div class="cart">
-      <form @submit.prevent="filter" action="#" class="search-form">
+      <form @submit.prevent="filter" v-on:keydown="filter" action="#" class="search-form">
         <input v-model="search" type="text" class="search-field">
         <button type="submit" class="btn-search">
           <i class="fas fa-search"></i>
@@ -24,17 +24,7 @@
     </div>
   </header>
   <main>
-    <div class="products">
-      <div v-if="!products.length" class="">No products :(</div>
-      <div v-for="product of filtered" :key="product.id_product" class="product-item">
-        <div class="product-info">
-          <h3>{{product.product_name}}</h3>
-          <p>${{product.price}}</p>
-          <button class="buy-btn" @click="add(product)">Buy</button>
-        </div>
-        <img :src="product.img ? product.img : imgCatalog" alt="product-img">
-      </div>
-    </div>
+    <products :products="filtered" @add="add"></products>
   </main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
