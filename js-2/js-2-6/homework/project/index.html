@@ -13,18 +13,17 @@
   <header>
     <h1><span>E</span>-mart</h1>
     <div class="cart">
-      <form @submit.prevent="filter" v-on:keydown="filter" action="#" class="search-form">
-        <input v-model="search" type="text" class="search-field">
-        <button type="submit" class="btn-search">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-      <button @click="showCart = !showCart" class="btn-cart" type="button">Cart</button>
-      <cart :cart-items="cartItems" :visibility="showCart" @remove="remove"></cart>
+      <!--<form ref="products" @submit.prevent="filter" v-on:keydown="filter" action="#" class="search-form">-->
+        <!--<input v-model="search" type="text" class="search-field">-->
+        <!--<button type="submit" class="btn-search">-->
+          <!--<i class="fas fa-search"></i>-->
+        <!--</button>-->
+      <!--</form>-->
+      <cart ref="cart"></cart>
     </div>
   </header>
   <main>
-    <products :products="filtered" @add="add"></products>
+    <products ref="products"></products>
   </main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
