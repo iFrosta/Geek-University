@@ -15,13 +15,6 @@ Vue.component('products', {
           this.filtered.push(el);
         }
       });
-    this.$parent.getJson(`getProducts.json`)
-      .then(data => {
-        for (let el of data) {
-          this.products.push(el);
-          this.filtered.push(el);
-        }
-      });
   },
   methods: {
     filter(string) {

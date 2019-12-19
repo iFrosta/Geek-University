@@ -9,20 +9,24 @@ Vue.component('cart', {
   },
   methods: {
     add(product) {
-      this.$parent.getJson(`/api/cart`)
-        .then(data => {
-          if (data.result === 1) {
-            let find = this.cartItems.find(el => el.id_product === product.id_product);
-            if (find) {
+      let find = this.cartItems.find(el => el.id_product === product.id_product);
+      if (find) {
+        this.$parent.putJson(`/api/cart/${find.id_product}`, {quantity: 1})
+          .then(data => {
+            if (data.result === 1) {
               find.quantity++;
-            } else {
-              let cartProduct = Object.assign({quantity: 1}, product);
+            }
+          })
+      } else {
+        let cartProduct = Object.assign({quantity: 1}, product);
+        this.$parent.putJson(`/api/cart/`, cartProduct)
+          .then(data => {
+            console.log(data);
+            if (data.result === 1) {
               this.cartItems.push(cartProduct);
             }
-          } else {
-            console.log('error add to cart error');
-          }
-        })
+          })
+      }
     },
     remove(product) {
       this.$parent.getJson(`${API}/deleteFromBasket.json`)
@@ -47,7 +51,7 @@ Vue.component('cart', {
     }
   },
   mounted() {
-    this.$parent.getJson(`${API + this.cartUrl}`)
+    this.$parent.getJson(`/api/cart/`)
       .then(data => {
         for (let el of data.contents) {
           this.cartItems.push(el);

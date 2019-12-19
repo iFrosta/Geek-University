@@ -332,8 +332,10 @@ main .products .sale::before {
 
 .error {
   position: fixed;
-  width: 100vh;
-  height: 100vw;
+  top: 74px;
+  left: 0;
+  width: 100vw;
+  height: 66vw;
   background: rgba(0, 0, 0, 0.35);
   color: #ffffff;
 }
@@ -341,4 +343,14 @@ main .products .sale::before {
   display: block;
   padding: 1em 2em;
   background: #e54020;
+}
+.error button {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.error button:hover {
+  background: #9f2e1b;
 }

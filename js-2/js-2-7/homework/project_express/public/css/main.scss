@@ -404,8 +404,10 @@ main {
 
 .error {
   position: fixed;
-  width: 100vh;
-  height: 100vw;
+  top: 74px;
+  left: 0;
+  width: 100vw;
+  height: 66vw;
   background: rgba(0, 0, 0, 0.35);
   color: #ffffff;
 
@@ -416,6 +418,15 @@ main {
   }
 
   button {
+    position: absolute;
+    top: -4px;
+    right: 0;
 
+    color: #ffffff;
+    border: 1px solid #ffffff;
+
+    &:hover {
+      background: #9f2e1b;
+    }
   }
 }

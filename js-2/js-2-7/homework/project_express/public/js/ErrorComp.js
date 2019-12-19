@@ -5,7 +5,7 @@ Vue.component('error', {
     }
   },
   methods: {
-    setError() {
+    setError(error) {
       this.text = error;
     }
   },
@@ -15,8 +15,7 @@ Vue.component('error', {
     }
   },
   template: `<div v-if="showError" class="error">
-              <p></p>
+              <p>{{ text }}</p>
               <button @click="setError('')">&times;</button>
-              {{ text }}
             </div>`
 });
