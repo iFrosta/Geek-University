@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Brand</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="//use.fontawesome.com/releases/v5.10.1/js/all.js"
+          integrity="sha384-aC/bNmpJEYrEVX5KNHN+m0CmvycQX9wDnYv8X2gdXQjrbtDP5OcU5DRiXwL6bPwr"
+          crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script defer type="text/javascript" src="js/animations.js"></script>
+</head>
+<body>
+<header>
+  <div class="container flex">
+    <div class="left">
+      <a class="logo flex" href="index.html">
+        <img src="img/index/logo.png" alt="Brand logo">
+        BRAN<span>D</span>
+      </a>
+      <form id="form" action="#" class="flex">
+        <span>Browse</span>
+        <i class="fas fa-sort-down"></i>
+        <label>
+          <input type="text" placeholder="Search for item...">
+        </label>
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+        <div id="browse-menu" class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+              <li><a href="pages/single-page.html">Leggings/Pants</a></li>
+              <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
+              <li><a href="pages/single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="header-right" class="right">
+      <img id="cart" src="img/index/cart.svg" alt="cart">
+      <a href="#">My Account
+        <i class="fas fa-sort-down"></i>
+      </a>
+      <div id="cart-inside" class="cart">
+        <div class="items align flex">
+          <div class="item flex align pointer">
+            <img src="img/index/cart-1.png" alt="item-1">
+            <div class="info">
+              <span>Rebox Zane</span>
+              <div class="rating">
+                <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>	</span>
+              </div>
+              <label>1 x $250</label>
+            </div>
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="item flex align pointer">
+            <img src="img/index/cart-2.png" alt="item-1">
+            <div class="info">
+              <span>Rebox Zane</span>
+              <div class="rating">
+                <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
+              </div>
+              <label>1 x $250</label>
+            </div>
+            <i class="fas fa-times-circle"></i>
+          </div>
+        </div>
+        <div class="checkout flex align">
+          <div class="counter flex ">
+            <div class="total">TOTAL</div>
+            <div class="price">$500.00</div>
+          </div>
+          <button class="pointer" onclick="window.location.href='pages/checkout.html'">CHECKOUT</button>
+          <a href="pages/shopping-cart.html">GO TO CART</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="container">
+    <ul class="menu">
+      <li><a class="active" href="#">home</a></li>
+      <li>
+        <a href="#">man</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+              <li><a href="pages/single-page.html">Leggings/Pants</a></li>
+              <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
+              <li><a href="pages/single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <a href="#" class="sale">
+              <img src="img/index/bg-menu.png" alt="bg-menu">
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">women</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+              <li><a href="pages/single-page.html">Leggings/Pants</a></li>
+              <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
+              <li><a href="pages/single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
+              <li><a href="pages/single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">kids</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+              <li><a href="pages/single-page.html">Blazers</a></li>
+              <li><a href="pages/single-page.html">Denim</a></li>
+              <li><a href="pages/single-page.html">Leggings/Pants</a></li>
+              <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
+              <li><a href="pages/single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+              <li><a href="pages/single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="pages/single-page.html">Dresses</a></li>
+              <li><a href="pages/single-page.html">Tops</a></li>
+              <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">accessories</a></li>
+      <li><a href="#">featured</a></li>
+      <li><a href="#">hot deals</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="slider">
+  <div class="container bg flex">
+    <div class="text">
+      <h2>THE BRAND</h2>
+      <p>OF LUXURIOUS <span>fashion</span></p>
+    </div>
+  </div>
+</div>
+<div class="offers container">
+  <div class="left">
+    <div class="big" onclick="window.location.href='pages/products.html'">
+      <div class="label">
+        <p>hot deal</p>
+        <span>for men</span>
+      </div>
+    </div>
+    <div class="small" onclick="window.location.href='pages/products.html'">
+      <div class="label">
+        <p>LUXURIOUS & trendy</p>
+        <span>ACCESSORIES</span>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="small" onclick="window.location.href='pages/products.html'">
+      <div class="label">
+        <p>new arrivals</p>
+        <span>women</span>
+      </div>
+    </div>
+    <div class="big" onclick="window.location.href='pages/products.html'">
+      <div class="label">
+        <p>30% offer</p>
+        <span>FOR kids</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="items container flex">
+  <h3>Featured Items</h3>
+  <h4>Shop for items based on what we featured in this week</h4>
+  <div class="grid flex align">
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_1.png" alt="item-1">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_2.png" alt="item-2">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_3.png" alt="item-3">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_4.png" alt="item-4">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_5.png" alt="item-5">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_6.png" alt="item-6">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_7.png" alt="item-7">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+    <div class="box flex pointer">
+      <div class="add flex align">
+        <a class="add-to-cart flex align" href="pages/single-page.html">
+          <img src="img/index/cart_white.png" alt="cart">
+          Add to Cart
+        </a>
+      </div>
+      <img src="img/items/item_8.png" alt="item-8">
+      <span>Mango  People  T-shirt</span>
+      <label>$52.00</label>
+    </div>
+  </div>
+  <button class="flex align pointer" onclick="document.location.href='pages/products.html'">
+    Browse All Product
+    <img src="img/index/arrow.png" alt="arrow">
+  </button>
+</div>
+<div class="offer-tab container flex align">
+  <img class="bg" src="img/index/bg-shadow.png" alt="shadow">
+  <label>
+    30%<span>OFFER</span>
+    <strong>FOR WOMEN</strong>
+  </label>
+  <div class="features flex align">
+    <div class="panel">
+      <img src="img/index/ic_car.png" alt="delivery">
+      <span>Free Delivery</span>
+      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+    </div>
+    <div class="panel">
+      <img src="img/index/ic_sale.png" alt="sale">
+      <span>Sales & discounts</span>
+      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+    </div>
+    <div class="panel">
+      <img src="img/index/ic_crown.png" alt="crown">
+      <span>Quality assurance</span>
+      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+    </div>
+  </div>
+</div>
+<div class="subscribe flex align">
+  <div class="bg"></div>
+  <div class="line"></div>
+  <div class="left flex">
+    <img src="img/index/ic_women.png" alt="avatar">
+    <div class="text flex">
+      <p>
+        “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+        a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+      </p>
+      <div class="author">
+        <span>Bin Burhan</span>
+        Dhaka, Bd
+      </div>
+      <div class="select flex">
+        <a></a>
+        <a class="active"></a>
+      </div>
+    </div>
+  </div>
+  <div class="right flex align">
+    <p>
+      <span>Subscribe</span>
+      FOR OUR NEWSLETTER AND PROMOTION
+    </p>
+    <form class="flex align">
+      <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" name="email"
+             required placeholder="Enter Your Email">
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
+</div>
+<footer>
+  <div class="top flex align">
+    <div class="left">
+      <a class="logo flex" href="index.html">
+        <img src="img/index/logo.png" alt="Brand logo">
+        BRAN<span>D</span>
+      </a>
+      <p>
+        Objectively transition extensive data rather than cross functional solutions.
+        Monotonectally syndicate multidisciplinary materials before go forward benefits.
+        Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.
+      </p>
+      <p>
+        Efficiently plagiarize 24/365 action items and focused infomediaries.
+        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+      </p>
+    </div>
+    <div class="right flex align">
+      <ul>
+        company
+        <li><a href="index.html">Home </a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul>
+        INFORMATION
+        <li><a href="#">Tearms & Condition</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">How to Buy</a></li>
+        <li><a href="#">How to Sell</a></li>
+        <li><a href="#">Promotion</a></li>
+      </ul>
+      <ul>
+        SHOP CATEGORY
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Child</a></li>
+        <li><a href="#">Apparel</a></li>
+        <li><a href="#">Brows All</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bot flex">
+    <div class="left">
+      © 2018 Brand All Rights Reserved. Made by <a href="https://ifrosta.ru">@ifrosta</a>
+    </div>
+    <a class="sitemap" href="sitemap.xml">Sitemap</a>
+    <div class="right">
+      <a id="ic-facebook" href="#">
+        <img src="img/index/ic-facebook.png" alt="facebook">
+      </a>
+      <a id="ic-twitter" class="active" href="#">
+        <img src="img/index/ic-twitter.png" alt="twitter">
+      </a>
+      <a id="ic-linkedin" class="inactive" href="#">
+        <img src="img/index/ic-linkedin.png" alt="linkedin">
+      </a>
+      <a id="ic-pinterest" href="#">
+        <img src="img/index/ic-pinterest.png" alt="pinterest">
+      </a>
+      <a id="ic-google" href="#">
+        <img src="img/index/ic-google.png" alt="google">
+      </a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

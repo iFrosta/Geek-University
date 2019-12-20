@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Brand - Cart</title>
+  <!--
+    made by ifrosta.ru @ifrosta on GeekBrains Geek-University
+  -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/layout.min.css">
+  <link rel="stylesheet" href="../css/shopping-cart.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="//use.fontawesome.com/releases/v5.10.1/js/all.js" integrity="sha384-aC/bNmpJEYrEVX5KNHN+m0CmvycQX9wDnYv8X2gdXQjrbtDP5OcU5DRiXwL6bPwr" crossorigin="anonymous"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script defer type="text/javascript" src="../js/animations.js"></script>
+</head>
+<body>
+<header>
+  <div class="container flex">
+    <div class="left">
+      <a class="logo flex" href="../index.html">
+        <img src="../img/index/logo.png" alt="Brand logo">
+        BRAN<span>D</span>
+      </a>
+      <form id="form" action="#" class="flex">
+        <span>Browse</span>
+        <i class="fas fa-sort-down"></i>
+        <label>
+          <input type="text" placeholder="Search for item...">
+        </label>
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+        <div id="browse-menu" class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+              <li><a href="single-page.html">Blazers</a></li>
+              <li><a href="single-page.html">Denim</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="header-right" class="right">
+      <img id="cart" src="../img/index/cart.svg" alt="cart">
+      <a href="single-page.html">My Account
+        <i class="fas fa-sort-down"></i>
+      </a>
+      <div id="cart-inside" class="cart">
+        <div class="items align flex">
+          <div class="item flex align pointer">
+            <img src="../img/index/cart-1.png" alt="item-1">
+            <div class="info">
+              <span>Rebox Zane</span>
+              <div class="rating">
+                <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>	</span>
+              </div>
+              <label>1  x   $250</label>
+            </div>
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="item flex align pointer">
+            <img src="../img/index/cart-2.png" alt="item-1">
+            <div class="info">
+              <span>Rebox Zane</span>
+              <div class="rating">
+                <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
+              </div>
+              <label>1  x   $250</label>
+            </div>
+            <i class="fas fa-times-circle"></i>
+          </div>
+        </div>
+        <div class="checkout flex align">
+          <div class="counter flex ">
+            <div class="total">TOTAL</div>
+            <div class="price">$500.00</div>
+          </div>
+          <button class="pointer" onclick="window.location.href='checkout.html'">CHECKOUT</button>
+          <a href="shopping-cart.html">GO TO CART</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="container">
+    <ul class="menu">
+      <li><a class="active" href="../index.html">home</a></li>
+      <li>
+        <a href="single-page.html">man</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+              <li><a href="single-page.html">Blazers</a></li>
+              <li><a href="single-page.html">Denim</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <a href="single-page.html" class="sale">
+              <img src="../img/index/bg-menu.png" alt="bg-menu">
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="single-page.html">women</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+              <li><a href="single-page.html">Blazers</a></li>
+              <li><a href="single-page.html">Denim</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+              <li><a href="single-page.html">Denim</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="single-page.html">kids</a>
+        <div class="submenu">
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+              <li><a href="single-page.html">Blazers</a></li>
+              <li><a href="single-page.html">Denim</a></li>
+              <li><a href="single-page.html">Leggings/Pants</a></li>
+              <li><a href="single-page.html">Skirts/Shorts</a></li>
+              <li><a href="single-page.html">Accessories </a></li>
+            </ul>
+          </div>
+          <div class="sublist">
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+              <li><a href="single-page.html">Jackets/Coats</a></li>
+            </ul>
+            <span>Women</span>
+            <ul>
+              <li><a href="single-page.html">Dresses</a></li>
+              <li><a href="single-page.html">Tops</a></li>
+              <li><a href="single-page.html">Sweaters/Knits</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="single-page.html">accessories</a></li>
+      <li><a href="single-page.html">featured</a></li>
+      <li><a href="single-page.html">hot deals</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="arrivals flex align">
+  <div class="inside flex align">
+    <span>New Arrivals </span>
+    <p>
+      Home / Men /
+      <span>New Arrivals</span>
+    </p>
+  </div>
+</div>
+<div class="checkout flex align">
+  <div class="grid">
+    <div class="top flex">
+      <div class="titles">
+        <ul>
+          <li>Product Details	</li>
+          <li>unite Price</li>
+          <li>Quantity</li>
+          <li>shipping</li>
+          <li>Subtotal</li>
+          <li>ACTION</li>
+        </ul>
+      </div>
+      <div class="item flex">
+        <img class="img" src="../img/cart/cart-1.png" alt="cart-1">
+        <div class="product details flex">
+          <a href="#"><span>Mango  People  T-shirt</span></a>
+          <p><strong>Color:</strong>Red</p>
+          <p><strong>Size:</strong>Xll</p>
+        </div>
+        <p class="Price flex align">$150</p>
+        <label class="Quantity flex align">
+          <input type="number" required pattern="[-+]?[0-9]" value="1">
+        </label>
+        <p class="shipping flex align">FREE</p>
+        <p  class="Subtotal flex align">$300</p>
+        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
+      </div>
+      <div class="item flex">
+        <img class="img" src="../img/cart/cart-2.png" alt="cart-2">
+        <div class="product details flex">
+          <a href="#"><span>Mango  People  T-shirt</span></a>
+          <p><strong>Color:</strong>Red</p>
+          <p><strong>Size:</strong>Xll</p>
+        </div>
+        <p class="Price flex align">$150</p>
+        <label class="Quantity flex align">
+          <input type="number" required pattern="[-+]?[0-9]" value="1">
+        </label>
+        <p class="shipping flex align">FREE</p>
+        <p  class="Subtotal flex align">$300</p>
+        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
+      </div>
+      <div class="item flex">
+        <img class="img" src="../img/cart/cart-3.png" alt="cart-3">
+        <div class="product details flex">
+          <a href="#"><span>Mango  People  T-shirt</span></a>
+          <p><strong>Color:</strong>Red</p>
+          <p><strong>Size:</strong>Xll</p>
+        </div>
+        <p class="Price flex align">$150</p>
+        <label class="Quantity flex align">
+          <input type="number" required pattern="[-+]?[0-9]" value="1">
+        </label>
+        <p class="shipping flex align">FREE</p>
+        <p  class="Subtotal flex align">$300</p>
+        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
+      </div>
+    </div>
+    <div class="bot flex">
+      <button>clear SHOPPING CART</button>
+      <button>CONTINUE SHOPPING</button>
+    </div>
+  </div>
+  <div class="processed flex">
+    <form class="address">
+      <span>Shipping Adress</span>
+      <a href="#">
+        <i class="fas fa-sort-down"></i>
+      </a>
+      <input type="text" id="city" name="city" placeholder="Bangladesh">
+      <input type="text" id="state" name="state" placeholder="State">
+      <input type="text" id="postcode" name="postcode" placeholder="Postcode / Zip">
+      <input type="submit" value="get a quote">
+    </form>
+    <form class="discount">
+      <span>coupon  discount</span>
+      <p>Enter your coupon code if you have one</p>
+      <input type="text" id="coupon" name="coupon" placeholder="Coupon code">
+      <input type="submit" value="apply coupon">
+    </form>
+    <div class="order flex">
+      <div>
+        <p>Sub total         $900</p>
+        <span>GRAND TOTAL
+        <strong>$900</strong>
+      </span>
+      </div>
+      <form>
+        <input type="submit" required value="proceed to checkout" class="submit">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="subscribe flex align">
+  <div class="bg"></div>
+  <div class="line"></div>
+  <div class="left flex">
+    <img src="../img/index/ic_women.png" alt="avatar">
+    <div class="text flex">
+      <p>
+        “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+        a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+      </p>
+      <div class="author">
+        <span>Bin Burhan</span>
+        Dhaka, Bd
+      </div>
+      <div class="select flex">
+        <a></a>
+        <a class="active"></a>
+      </div>
+    </div>
+  </div>
+  <div class="right flex align">
+    <p>
+      <span>Subscribe</span>
+      FOR OUR NEWSLETTER AND PROMOTION
+    </p>
+    <form class="flex align">
+      <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" name="email" required placeholder="Enter Your Email">
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
+</div>
+<footer>
+  <div class="top flex align">
+    <div class="left">
+      <a class="logo flex" href="../index.html">
+        <img src="../img/index/logo.png" alt="Brand logo">
+        BRAN<span>D</span>
+      </a>
+      <p>
+        Objectively transition extensive data rather than cross functional solutions.
+        Monotonectally syndicate multidisciplinary materials before go forward benefits.
+        Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.
+      </p>
+      <p>
+        Efficiently plagiarize 24/365 action items and focused infomediaries.
+        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+      </p>
+    </div>
+    <div class="right flex align">
+      <ul>
+        company
+        <li><a href="../index.html">Home </a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul>
+        INFORMATION
+        <li><a href="#">Tearms & Condition</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">How to Buy</a></li>
+        <li><a href="#">How to Sell</a></li>
+        <li><a href="#">Promotion</a></li>
+      </ul>
+      <ul>
+        SHOP CATEGORY
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Child</a></li>
+        <li><a href="#">Apparel</a></li>
+        <li><a href="#">Brows All</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bot flex">
+    <div class="left">
+      © 2018  Brand  All Rights Reserved. Made by <a href="https://ifrosta.ru">@ifrosta</a>
+    </div>
+    <a class="sitemap" href="../sitemap.xml">Sitemap</a>
+    <div class="right">
+      <a id="ic-facebook" href="#">
+        <img src="../img/index/ic-facebook.png" alt="facebook">
+      </a>
+      <a id="ic-twitter" class="active" href="#">
+        <img src="../img/index/ic-twitter.png" alt="twitter">
+      </a>
+      <a id="ic-linkedin" class="inactive" href="#">
+        <img src="../img/index/ic-linkedin.png" alt="linkedin">
+      </a>
+      <a id="ic-pinterest" href="#">
+        <img src="../img/index/ic-pinterest.png" alt="pinterest">
+      </a>
+      <a id="ic-google" href="#">
+        <img src="../img/index/ic-google.png" alt="google">
+      </a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

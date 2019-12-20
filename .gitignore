@@ -6,3 +6,15 @@
 *.idea
 *.idea/
 *desktop.ini
+js-2/final_project/public/css/single-page.min.css
+js-2/final_project/public/css/single-page.css
+js-2/final_project/public/css/shopping-cart.min.css
+js-2/final_project/public/css/shopping-cart.css
+js-2/final_project/public/css/products.min.css
+js-2/final_project/public/css/products.css
+js-2/final_project/public/css/normalize.min.css
+js-2/final_project/public/css/normalize.css
+js-2/final_project/public/css/layout.min.css
+js-2/final_project/public/css/layout.css
+js-2/final_project/public/css/checkout.min.css
+js-2/final_project/public/css/checkout.css
