@@ -19,7 +19,7 @@ Vue.component('cart', {
           })
       } else {
         let cartProduct = Object.assign({quantity: 1}, product);
-        this.$parent.putJson(`/api/cart/`, cartProduct)
+        this.$parent.postJson(`/api/cart/`, cartProduct)
           .then(data => {
             if (data.result === 1) {
               this.cartItems.push(cartProduct);
@@ -27,19 +27,22 @@ Vue.component('cart', {
           })
       }
     },
-    remove(product) {
-      this.$parent.getJson(`${API}/deleteFromBasket.json`)
-        .then(data => {
-          if (data.result === 1) {
-            if (product.quantity > 1) {
-              product.quantity--;
-            } else {
-              this.cartItems.splice(this.cartItems.indexOf(product), 1);
+    remove(item) {
+      if (item.quantity > 1) {
+        this.$parent.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
+          .then(data => {
+            if (data.result === 1) {
+              item.quantity--;
             }
-          } else {
-            console.log('error removing from Cart');
-          }
-        })
+          })
+      } else {
+        this.$parent.deleteJson(`/api/cart/${item.id_product}`)
+          .then(data => {
+            if (data.result === 1) {
+              this.cartItems.splice(this.cartItems.indexOf(item), 1);
+            }
+          })
+      }
     },
     summary() {
       let sum = 0;
