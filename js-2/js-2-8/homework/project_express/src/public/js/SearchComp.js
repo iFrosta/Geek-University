@@ -1,4 +1,4 @@
-Vue.component('search-el', {
+const search = {
   data() {
     return {
       search: '',
@@ -11,4 +11,6 @@ Vue.component('search-el', {
           <i class="fas fa-search"></i>
         </button>
       </form>`
-});
+};
+
+export default search

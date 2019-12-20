@@ -1,5 +1,16 @@
-const app = new Vue({
+import cart from './CartComp'
+import products from './ProductComp'
+import search from './SearchComp'
+import error from './ErrorComp'
+
+const app = {
   el: '#app',
+  components: {
+    cart,
+    products,
+    error,
+    'search': search
+  },
   methods: {
     getJson(url) {
       return fetch(url)
@@ -47,4 +58,6 @@ const app = new Vue({
         })
     }
   }
-});
+};
+
+export default app

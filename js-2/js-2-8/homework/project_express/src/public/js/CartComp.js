@@ -1,11 +1,30 @@
-Vue.component('cart', {
+const cartItem = {
+  props: ['cartItem', 'img'],
+  template: `<div class="cart-item">
+                <div class="product-bio">
+                  <img :src="cartItem.img ? cartItem.img : 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png'" alt="img">
+                  <div class="product-desc">
+                    <p class="product-title">{{cartItem.product_name}}</p>
+                    <p class="product-quantity">Quantity: {{cartItem.quantity}}</p>
+                    <p class="product-single-price">$ {{cartItem.price}} each</p>
+                  </div>
+                </div>
+                <div class="right-block">
+                  <p class="product-price">$ {{cartItem.quantity * cartItem.price}}</p>
+                  <button @click="$emit('remove', cartItem)" class="del-btn">&times;</button>
+                </div>
+              </div>
+            </div>`
+};
+const cart = {
   data() {
     return {
-      cartUrl: '/getBasket.json',
       cartItems: [],
-      cartCatalog: 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png',
       showCart: false,
     }
+  },
+  components: {
+    'cart-item': cartItem
   },
   methods: {
     add(product) {
@@ -76,22 +95,6 @@ Vue.component('cart', {
     <div v-if="cartItems.length" class="summary">SUBTOTAL: <strong>{{summary()}}</strong></div>
   </div>
 </div>`
-});
-Vue.component('cart-item', {
-  props: ['cartItem', 'img'],
-  template: `<div class="cart-item">
-                <div class="product-bio">
-                  <img :src="cartItem.img ? cartItem.img : 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png'" alt="img">
-                  <div class="product-desc">
-                    <p class="product-title">{{cartItem.product_name}}</p>
-                    <p class="product-quantity">Quantity: {{cartItem.quantity}}</p>
-                    <p class="product-single-price">$ {{cartItem.price}} each</p>
-                  </div>
-                </div>
-                <div class="right-block">
-                  <p class="product-price">$ {{cartItem.quantity * cartItem.price}}</p>
-                  <button @click="$emit('remove', cartItem)" class="del-btn">&times;</button>
-                </div>
-              </div>
-            </div>`
-});
+};
+
+export default cart
