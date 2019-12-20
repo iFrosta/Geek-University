@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "buildDev": "webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "buildDev": "webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js --watch",
     "buildProd": "webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "nodemon dist/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
