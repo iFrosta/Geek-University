@@ -113,7 +113,7 @@ header {
 
       color: black;
 
-      background: rgba(246, 246, 246, 0.8);
+      background: rgba(246, 246, 246, 1);
       border: 1px solid rgba(0, 0, 0, 0.2);
       box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.4);
 
@@ -129,7 +129,7 @@ header {
         height: 0;
         border-style: solid;
         border-width: 0 13px 13px 13px;
-        border-color: transparent transparent rgba(246, 246, 246, 0.8) transparent;
+        border-color: transparent transparent rgba(246, 246, 246, 1) transparent;
       }
 
       .empty, .summary {
@@ -313,7 +313,7 @@ button {
 
 main {
   z-index: 0;
-  padding: 100px 0 0 $leftWidth;
+  padding: 100px 0 0 0;
 
   height: 96vh;
 

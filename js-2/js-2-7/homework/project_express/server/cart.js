@@ -8,7 +8,7 @@ let change = (cart, req) => {
   return JSON.stringify(cart, null, 4);
 };
 let remove = (cart, req) => {
-  let find = cart.contents.find(el.id_product === +req.params.id);
+  let find = cart.contents.find(el => el.id_product === +req.params.id);
   cart.contents.splice(cart.contents.indexOf(find), 1);
   return JSON.stringify(cart, null, 4);
 };

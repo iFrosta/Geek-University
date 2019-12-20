@@ -18,20 +18,6 @@
         },
         {
             "quantity": 1,
-            "id_product": 398,
-            "product_name": "Keyboard",
-            "price": 120,
-            "img": "https://www.logitechg.com/content/dam/gaming/en/products/pro-x-keyboard/pro-x-keyboard-hero.png.imgw.1318.1318.jpeg"
-        },
-        {
-            "quantity": 1,
-            "id_product": 671,
-            "product_name": "Mouse pad",
-            "price": 20,
-            "img": "https://images-na.ssl-images-amazon.com/images/I/A16NEfK2mZL._SL1500_.jpg"
-        },
-        {
-            "quantity": 1,
             "id_product": 540,
             "product_name": "Chair",
             "price": 399,
