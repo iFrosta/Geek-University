@@ -1,0 +1,17 @@
+[
+    {
+        "time": "21 Mar 2019, 8:28:01 pm",
+        "prod_name": "Ноутбук",
+        "action": "change"
+    },
+    {
+        "time": "21 Mar 2019, 8:28:13 pm",
+        "prod_name": "Keyboard",
+        "action": "add"
+    },
+    {
+        "time": "21 Mar 2019, 8:28:18 pm",
+        "prod_name": "Keyboard",
+        "action": "remove"
+    }
+]
