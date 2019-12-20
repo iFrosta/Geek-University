@@ -31,7 +31,7 @@ app.post('/api/cart', (req, res) => {
       res.sendStatus(404, JSON.stringify({result: 0, text: err}))
     } else {
       let newCart = cart.add(JSON.parse(data), req);
-      fs.writefile('server/db/userCart.json', newCart, (err) => {
+      fs.writeFile('server/db/userCart.json', newCart, (err) => {
         if (err) {
           res.send('{"result": 0}');
         } else {
@@ -47,7 +47,7 @@ app.put('/api/cart/:id', (req, res) => {
       res.sendStatus(404, JSON.stringify({result: 0, text: err}))
     } else {
       let newCart = cart.change(JSON.parse(data), req);
-      fs.writefile('server/db/userCart.json', newCart, (err) => {
+      fs.writeFile('server/db/userCart.json', newCart, (err) => {
         if (err) {
           res.send('{"result": 0}');
         } else {

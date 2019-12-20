@@ -21,7 +21,6 @@ Vue.component('cart', {
         let cartProduct = Object.assign({quantity: 1}, product);
         this.$parent.putJson(`/api/cart/`, cartProduct)
           .then(data => {
-            console.log(data);
             if (data.result === 1) {
               this.cartItems.push(cartProduct);
             }
