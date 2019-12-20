@@ -1,0 +1,12 @@
+[
+    {
+        "time": "20 Dec 2019, 6:06:03 pm",
+        "prod_name": "Chair",
+        "action": "remove"
+    },
+    {
+        "time": "20 Dec 2019, 6:06:08 pm",
+        "prod_name": "Chair",
+        "action": "add"
+    }
+]
