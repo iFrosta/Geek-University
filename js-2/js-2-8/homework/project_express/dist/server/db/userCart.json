@@ -1,0 +1,27 @@
+{
+    "amount": 2439,
+    "countGoods": 3,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 152,
+            "product_name": "Notebook",
+            "price": 2000,
+            "img": "https://static.re-store.ru/upload/iblock/4fc/4fc2f36b75ade15f78baeefb04209361.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 532,
+            "product_name": "Mouse",
+            "price": 40,
+            "img": "https://img.mvideo.ru/Pdb/50048743b.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 540,
+            "product_name": "Chair",
+            "price": 399,
+            "img": "https://cdn11.bigcommerce.com/s-1ovkgbcja1/images/stencil/1280x1280/products/212/1965/PDP-TH-1__51615.1562964688.jpg?c=2?imbypass=on"
+        }
+    ]
+}

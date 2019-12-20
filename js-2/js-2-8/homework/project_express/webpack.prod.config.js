@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWEbpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlagin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -20,7 +20,7 @@ module.exports = {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
+        sourceMap: true
       }),
       new OptimizeCssAssetsPlugin({})
     ]
@@ -54,7 +54,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWEbpackPlugin({
+    new HtmlWebpackPlagin({
       template: 'src/public/index.html',
       filename: 'index.html',
       excludeChunks: ['server']

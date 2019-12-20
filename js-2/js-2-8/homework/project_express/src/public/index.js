@@ -1,4 +1,4 @@
-import '@babel/polyfilll'
+import '@babel/polyfill'
 import appMain from './js/app'
 import './css/main.css'
 

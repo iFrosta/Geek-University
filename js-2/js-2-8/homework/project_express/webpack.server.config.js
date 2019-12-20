@@ -12,14 +12,14 @@ module.exports = {
     filename: "[name].js"
   },
   target: "node",
-  node: { // Only for "express" app
+  node: {
     __dirname: false,
     __filename: false
   },
-  externals: [nodeExternals()], // Only for "express" app
+  externals: [nodeExternals()],
   module: {
     rules: [
-      { // Recompile ES6+ to ES5
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -30,7 +30,7 @@ module.exports = {
     new CopyPlugin([
       {
         from: 'src/server/db',
-        to: "db/[name].[ext]",
+        to: 'db/[name].[ext]',
         toType: 'template'
       }
     ])
