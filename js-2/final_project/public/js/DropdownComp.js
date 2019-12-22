@@ -65,13 +65,3 @@ const dropdown = {
 };
 
 export default dropdown
-
-// window.addEventListener("load", function() {
-//   let dropdowns = document.querySelectorAll('.dropdown');
-//
-//   dropdowns.forEach(el => {
-//     el.addEventListener('click', e => {
-//       console.log(e);
-//     })
-//   });
-// });

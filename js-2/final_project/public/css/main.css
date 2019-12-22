@@ -1654,6 +1654,9 @@ footer .bot .right #ic-google img {
 }
 .checkout > .grid > .top > .item > img {
   margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 .checkout > .grid > .top > .item > .details {
   flex-direction: column;
@@ -1717,10 +1720,17 @@ footer .bot .right #ic-google img {
   background-color: #ffffff;
 }
 .checkout > .grid > .top > .item > svg {
+  cursor: pointer;
   color: #c0c0c0;
 }
-.checkout > .grid > .top > .item > svg :hover {
+.checkout > .grid > .top > .item > svg:hover {
   color: #f16d7f;
+  fill: #f16d7f;
+}
+.checkout > .grid > .top > .item .remover:hover svg {
+  color: #f16d7f;
+  fill: #f16d7f;
+  transition: all 0.3s;
 }
 .checkout > .grid > .bot {
   margin: 40px 20px;
@@ -1875,10 +1885,12 @@ footer .bot .right #ic-google img {
   background-color: #f7f7f7;
 }
 .product .preview img {
+  z-index: 0;
   animation-duration: 2s;
   animation-name: fadeOut;
 }
 .product .details {
+  z-index: 1;
   margin-top: -70px;
   width: 1141px;
   flex-direction: column;
@@ -2030,6 +2042,7 @@ footer .bot .right #ic-google img {
   margin-top: 80px;
 }
 .items h3 {
+  margin-top: 40px !important;
   color: #4d4d4d;
   font-size: 24px;
   font-weight: 700;

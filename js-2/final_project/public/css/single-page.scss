@@ -1,22 +1,28 @@
 .product {
   flex-direction: column;
-   .preview {
+
+  .preview {
     width: 1607px;
     height: 777px;
     border: 1px solid #eaeaea;
     background-color: #f7f7f7;
+
     & img {
+      z-index: 0;
       animation-duration: 2s;
       animation-name: fadeOut;
     }
   }
+
   & .details {
+    z-index: 1;
     margin-top: -70px;
     width: 1141px;
     //padding: 0 20vw;
     flex-direction: column;
     border: 1px solid #eaeaea;
     background-color: #ffffff;
+
     & .collection {
       margin-top: 55px;
       color: #f16d7f;
@@ -25,20 +31,24 @@
       line-height: 24px;
       text-transform: uppercase;
     }
+
     & .select {
       margin: 10px 0;
+
       & a {
         display: inline-block;
         width: 33px;
         height: 1px;
         background-color: #eaeaea;
       }
+
       & .active {
         width: 63px;
         height: 3px;
         background-color: #ef5b70;
       }
     }
+
     & span {
       margin: 0 20px;
       display: inline-block;
@@ -47,10 +57,12 @@
       font-weight: 600;
       line-height: 24px;
       text-transform: uppercase;
+
       & strong {
         color: #2f2f2f;
       }
     }
+
     & h2 {
       margin: 5px 0;
       color: #4d4d4d;
@@ -59,6 +71,7 @@
       line-height: 24px;
       text-transform: uppercase;
     }
+
     & p {
       margin: 30px 0;
       max-width: 618px;
@@ -68,6 +81,7 @@
       font-weight: 400;
       line-height: 24px;
     }
+
     & .price {
       margin: 30px 0;
       color: #ef5b70;
@@ -75,6 +89,7 @@
       font-weight: 700;
       line-height: 24px;
     }
+
     & hr {
       margin: 10px 0;
       width: 642px;
@@ -82,11 +97,14 @@
       background: #eaeaea;
       border: unset;
     }
+
     & .style {
       margin-top: 30px;
       flex-direction: column;
+
       & .blocks {
         position: relative;
+
         & label {
           margin: 5px 20px;
           color: #2f2f2f;
@@ -95,6 +113,7 @@
           line-height: 24px;
           text-transform: uppercase;
         }
+
         & input {
           margin: 5px 20px;
           padding-left: 20px;
@@ -108,9 +127,11 @@
           border: 1px solid #eaeaea;
           background-color: #ffffff;
         }
+
         div {
           position: relative;
         }
+
         .color-picker {
           position: absolute;
           display: block;
@@ -120,29 +141,35 @@
           height: 12px;
           background-color: #ef5b70;
         }
+
         & a {
           position: absolute;
           color: #bcbcbc;
           top: 37px;
           right: 30px;
         }
+
         #color {
           text-transform: capitalize;
           padding-left: 40px;
           width: 114px;
         }
+
         #size {
           text-transform: uppercase;
         }
       }
+
       .wrapper {
         margin-bottom: 80px;
         position: relative;
+
         & img {
           position: absolute;
           left: 190px;
         }
       }
+
       .pink-button {
         margin: 20px 0;
         color: #ef5b70 !important;
@@ -152,10 +179,12 @@
         border: 1px solid #ef5b70;
         background-color: #ffffff;
         text-transform: none;
+
         &:hover {
           color: #ffffff !important;
           background-color: #ef5b70;
         }
+
         &::before {
 
         }
@@ -166,13 +195,16 @@
 
 .items {
   margin-top: 80px;
+
   & h3 {
+    margin-top: 40px !important;
     color: #4d4d4d;
     font-size: 24px;
     font-weight: 700;
     line-height: 20px;
     text-transform: uppercase;
   }
+
   .box {
     & img {
       width: 257px;

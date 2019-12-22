@@ -6,12 +6,14 @@ import dropdownEl from './DropdownComp.js'
 
 import error from './ErrorComp.js'
 import products from './ProductComp.js'
+import shoppingCart from './ShoppingCartComp.js'
 
 const app = new Vue({
   el: '#app',
   components: {
     products,
     error,
+    'shopping-comp': shoppingCart,
     'header-comp': headerEl,
     'nav-comp': navEl,
     'footer-comp': footerEl,

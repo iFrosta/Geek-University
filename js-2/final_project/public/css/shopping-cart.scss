@@ -45,6 +45,9 @@
                 "img Product Price Quantity shipping Subtotal ACTION";
         > img {
           margin-right: 20px;
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
         }
         > .details {
           flex-direction: column;
@@ -139,9 +142,21 @@
           }
         }
         > svg {
+          cursor: pointer;
           color: #c0c0c0;
-          & :hover {
+          &:hover {
             color: #f16d7f;
+            fill: #f16d7f;
+          }
+        }
+        .remover {
+          transition: all .3s;
+          &:hover {
+            svg {
+              color: #f16d7f;
+              fill: #f16d7f;
+              transition: all .3s;
+            }
           }
         }
       }
