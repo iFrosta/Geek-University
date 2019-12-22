@@ -151,6 +151,10 @@
     letter-spacing: 0.75px;
   }
 
+  .normal {
+    text-transform: none;
+  }
+
   h4 {
     margin: 0;
     padding: 0;
@@ -221,26 +225,32 @@
         }
       }
 
-      img {
-        width: 261px;
-        height: 279px;
-      }
+      .link {
+        flex-direction: column;
 
-      span {
-        margin-top: 15px;
-        color: #222222;
-        font-size: 13px;
-        font-weight: 400;
-        text-transform: uppercase;
-      }
+        img {
+          width: 261px;
+          height: 279px;
+        }
 
-      label {
-        margin-top: 10px;
-        margin-bottom: 15px;
-        color: #f16d7f;
-        font-size: 16px;
-        font-weight: 700;
-        text-transform: uppercase;
+        span {
+          margin-top: 15px;
+          margin-left: 10px;
+          color: #222222;
+          font-size: 13px;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+
+        label {
+          margin-top: 10px;
+          margin-left: 10px;
+          margin-bottom: 15px;
+          color: #f16d7f;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
       }
     }
   }

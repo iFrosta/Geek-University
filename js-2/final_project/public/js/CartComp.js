@@ -9,7 +9,7 @@ const cartItem = {
                 </div>
                 <label>{{cartItem.quantity}} x {{cartItem.price}}</label>
               </div>
-              <div @click="$emit('remove', cartItem)"><i class="fas fa-times-circle"></i> </div>
+              <div @click="$emit('remove', cartItem)" class="remover"><i class="fas fa-times-circle"></i> </div>
             </div>`
 };
 const cart = {
@@ -105,8 +105,8 @@ const cart = {
               <div class="total">TOTAL</div>
               <div class="price">{{summary()}}</div>
             </div>
-            <button class="pointer" onclick="window.location.href='pages/checkout.html'">CHECKOUT</button>
-            <a class="a-button" href="pages/shopping-cart.html">GO TO CART</a>
+            <button class="pointer" onclick="window.location.href='checkout.html'">CHECKOUT</button>
+            <a class="a-button" href="shopping-cart.html">GO TO CART</a>
           </div>
         </div>
       </div>`

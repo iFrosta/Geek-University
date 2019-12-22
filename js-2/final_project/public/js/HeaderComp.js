@@ -29,15 +29,15 @@ const headerComp = {
             <div class="sublist">
               <span>Women</span>
               <ul>
-                <li><a href="pages/single-page.html">Dresses</a></li>
-                <li><a href="pages/single-page.html">Tops</a></li>
-                <li><a href="pages/single-page.html">Sweaters/Knits</a></li>
-                <li><a href="pages/single-page.html">Jackets/Coats</a></li>
-                <li><a href="pages/single-page.html">Blazers</a></li>
-                <li><a href="pages/single-page.html">Denim</a></li>
-                <li><a href="pages/single-page.html">Leggings/Pants</a></li>
-                <li><a href="pages/single-page.html">Skirts/Shorts</a></li>
-                <li><a href="pages/single-page.html">Accessories </a></li>
+                <li><a href="single-page.html">Dresses</a></li>
+                <li><a href="single-page.html">Tops</a></li>
+                <li><a href="single-page.html">Sweaters/Knits</a></li>
+                <li><a href="single-page.html">Jackets/Coats</a></li>
+                <li><a href="single-page.html">Blazers</a></li>
+                <li><a href="single-page.html">Denim</a></li>
+                <li><a href="single-page.html">Leggings/Pants</a></li>
+                <li><a href="single-page.html">Skirts/Shorts</a></li>
+                <li><a href="single-page.html">Accessories </a></li>
               </ul>
             </div>
           </div>

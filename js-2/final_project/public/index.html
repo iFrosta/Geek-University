@@ -42,7 +42,15 @@
     </div>
   </div>
   <offers-comp></offers-comp>
-  <products ref="products"></products>
+  <div class="items container flex">
+    <h3 class="normal">Featured Items</h3>
+    <h4>Shop for items based on what we featured in this week</h4>
+    <products ref="products"></products>
+    <button class="flex align pointer" onclick="document.location.href='products.html'">
+      Browse All Products
+      <img src="img/index/arrow.png" alt="arrow">
+    </button>
+  </div>
   <div class="offer-tab container flex align">
     <img class="bg" src="img/index/bg-shadow.png" alt="shadow">
     <label>

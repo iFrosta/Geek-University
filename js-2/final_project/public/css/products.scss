@@ -369,6 +369,7 @@
         > .grid {
           flex-wrap: wrap;
           max-width: 846px;
+          justify-content: flex-start;
 
           & .box {
             margin: 20px 10px;

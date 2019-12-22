@@ -1,10 +1,11 @@
-import products from './ProductComp.js'
-import error from './ErrorComp.js'
-
 import headerEl from './HeaderComp.js'
 import navEl from './navComp.js'
 import footerEl from './FooterComp.js'
 import offerEl from './OffersComp.js'
+import dropdownEl from './DropdownComp.js'
+
+import error from './ErrorComp.js'
+import products from './ProductComp.js'
 
 const app = new Vue({
   el: '#app',
@@ -14,7 +15,8 @@ const app = new Vue({
     'header-comp': headerEl,
     'nav-comp': navEl,
     'footer-comp': footerEl,
-    'offers-comp': offerEl
+    'offers-comp': offerEl,
+    'dropdown-comp': dropdownEl,
   },
   methods: {
     getJson(url) {

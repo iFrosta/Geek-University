@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Brand - Cart</title>
+  <title>The Brand - Checkout</title>
   <!--
     made by ifrosta.ru @ifrosta on GeekBrains Geek-University
   -->
@@ -12,20 +12,21 @@
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/layout.min.css">
-  <link rel="stylesheet" href="../css/shopping-cart.min.css">
+  <link rel="stylesheet" href="css/layout.min.css">
+  <link rel="stylesheet" href="css/checkout.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script defer src="//use.fontawesome.com/releases/v5.10.1/js/all.js" integrity="sha384-aC/bNmpJEYrEVX5KNHN+m0CmvycQX9wDnYv8X2gdXQjrbtDP5OcU5DRiXwL6bPwr" crossorigin="anonymous"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script defer type="text/javascript" src="../js/animations.js"></script>
+  <script defer type="text/javascript" src="js/animations.js"></script>
+  <script defer type="text/javascript" src="js/checkout.js"></script>
 </head>
 <body>
 <header>
   <div class="container flex">
     <div class="left">
-      <a class="logo flex" href="../index.html">
-        <img src="../img/index/logo.png" alt="Brand logo">
+      <a class="logo flex" href="index.html">
+        <img src="img/index/logo.png" alt="Brand logo">
         BRAN<span>D</span>
       </a>
       <form id="form" action="#" class="flex">
@@ -56,14 +57,14 @@
       </form>
     </div>
     <div id="header-right" class="right">
-      <img id="cart" src="../img/index/cart.svg" alt="cart">
+      <img id="cart" src="img/index/cart.svg" alt="cart">
       <a href="single-page.html">My Account
         <i class="fas fa-sort-down"></i>
       </a>
       <div id="cart-inside" class="cart">
         <div class="items align flex">
           <div class="item flex align pointer">
-            <img src="../img/index/cart-1.png" alt="item-1">
+            <img src="img/index/cart-1.png" alt="item-1">
             <div class="info">
               <span>Rebox Zane</span>
               <div class="rating">
@@ -74,7 +75,7 @@
             <i class="fas fa-times-circle"></i>
           </div>
           <div class="item flex align pointer">
-            <img src="../img/index/cart-2.png" alt="item-1">
+            <img src="img/index/cart-2.png" alt="item-1">
             <div class="info">
               <span>Rebox Zane</span>
               <div class="rating">
@@ -100,7 +101,7 @@
 <nav>
   <div class="container">
     <ul class="menu">
-      <li><a class="active" href="../index.html">home</a></li>
+      <li><a class="active" href="index.html">home</a></li>
       <li>
         <a href="single-page.html">man</a>
         <div class="submenu">
@@ -142,7 +143,7 @@
               <li><a href="single-page.html">Jackets/Coats</a></li>
             </ul>
             <a href="single-page.html" class="sale">
-              <img src="../img/index/bg-menu.png" alt="bg-menu">
+              <img src="img/index/bg-menu.png" alt="bg-menu">
             </a>
           </div>
         </div>
@@ -244,112 +245,72 @@
 </nav>
 <div class="arrivals flex align">
   <div class="inside flex align">
-    <span>New Arrivals </span>
+    <span>Checkout </span>
     <p>
       Home / Men /
-      <span>New Arrivals</span>
+      <span>Checkout</span>
     </p>
   </div>
 </div>
-<div class="checkout flex align">
-  <div class="grid">
-    <div class="top flex">
-      <div class="titles">
-        <ul>
-          <li>Product Details	</li>
-          <li>unite Price</li>
-          <li>Quantity</li>
-          <li>shipping</li>
-          <li>Subtotal</li>
-          <li>ACTION</li>
-        </ul>
+<div class="order flex align">
+  <div class="sub-panel">
+    <span>01.   Shipping Adress</span>
+    <div class="flex">
+      <div class="left flex">
+        <span>Check as a guest or register</span>
+        <p>Register with us for future convenience</p>
+          <div class="checkbox flex align">
+            <input type="radio" value="1" name="fooby[1][]" id="guest" name="guest"
+                   checked>
+            <label for="guest"><i></i>checkout as guest</label>
+          </div>
+          <div class="checkbox flex align">
+            <input type="radio" value="1" name="fooby[1][]"  id="register" name="register">
+            <label for="register"><i></i>register</label>
+          </div>
+        <span>register and save time!</span>
+        <p>Register with us for future convenience</p>
+        <p class="under"><i class="fas fa-angle-double-right"></i>Fast and easy checkout</p>
+        <p class="under"><i class="fas fa-angle-double-right"></i>Easy access to your order history and status</p>
+        <button class="white-button">Continue</button>
       </div>
-      <div class="item flex">
-        <img class="img" src="../img/cart/cart-1.png" alt="cart-1">
-        <div class="product details flex">
-          <a href="#"><span>Mango  People  T-shirt</span></a>
-          <p><strong>Color:</strong>Red</p>
-          <p><strong>Size:</strong>Xll</p>
-        </div>
-        <p class="Price flex align">$150</p>
-        <label class="Quantity flex align">
-          <input type="number" required pattern="[-+]?[0-9]" value="1">
-        </label>
-        <p class="shipping flex align">FREE</p>
-        <p  class="Subtotal flex align">$300</p>
-        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
+      <div class="right">
+        <span>Already registered?</span>
+        <p>Please log in below</p>
+        <form class="login">
+          <label for="email">EMAIL ADDRESS</label><br>
+          <input required id="email" type="email" name="email"><br>
+          <label for="password">PASSWORD</label><br>
+          <input required id="password" type="password" name="password">
+          <p>Required Fields</p>
+          <br>
+          <input class="white-button" type="submit" value="login">
+          <a href="#">Forgot Password?</a>
+        </form>
       </div>
-      <div class="item flex">
-        <img class="img" src="../img/cart/cart-2.png" alt="cart-2">
-        <div class="product details flex">
-          <a href="#"><span>Mango  People  T-shirt</span></a>
-          <p><strong>Color:</strong>Red</p>
-          <p><strong>Size:</strong>Xll</p>
-        </div>
-        <p class="Price flex align">$150</p>
-        <label class="Quantity flex align">
-          <input type="number" required pattern="[-+]?[0-9]" value="1">
-        </label>
-        <p class="shipping flex align">FREE</p>
-        <p  class="Subtotal flex align">$300</p>
-        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
-      </div>
-      <div class="item flex">
-        <img class="img" src="../img/cart/cart-3.png" alt="cart-3">
-        <div class="product details flex">
-          <a href="#"><span>Mango  People  T-shirt</span></a>
-          <p><strong>Color:</strong>Red</p>
-          <p><strong>Size:</strong>Xll</p>
-        </div>
-        <p class="Price flex align">$150</p>
-        <label class="Quantity flex align">
-          <input type="number" required pattern="[-+]?[0-9]" value="1">
-        </label>
-        <p class="shipping flex align">FREE</p>
-        <p  class="Subtotal flex align">$300</p>
-        <i onclick="console.log('item deleted')" class="fas fa-times-circle pointer ACTION"></i>
-      </div>
-    </div>
-    <div class="bot flex">
-      <button>clear SHOPPING CART</button>
-      <button>CONTINUE SHOPPING</button>
     </div>
   </div>
-  <div class="processed flex">
-    <form class="address">
-      <span>Shipping Adress</span>
-      <a href="#">
-        <i class="fas fa-sort-down"></i>
-      </a>
-      <input type="text" id="city" name="city" placeholder="Bangladesh">
-      <input type="text" id="state" name="state" placeholder="State">
-      <input type="text" id="postcode" name="postcode" placeholder="Postcode / Zip">
-      <input type="submit" value="get a quote">
-    </form>
-    <form class="discount">
-      <span>coupon  discount</span>
-      <p>Enter your coupon code if you have one</p>
-      <input type="text" id="coupon" name="coupon" placeholder="Coupon code">
-      <input type="submit" value="apply coupon">
-    </form>
-    <div class="order flex">
-      <div>
-        <p>Sub total         $900</p>
-        <span>GRAND TOTAL
-        <strong>$900</strong>
-      </span>
-      </div>
-      <form>
-        <input type="submit" required value="proceed to checkout" class="submit">
-      </form>
-    </div>
+  <div class="sub-panel closed">
+    <span>02.   BILLING INFORMATION</span>
+  </div>
+  <div class="sub-panel closed">
+    <span>03.   SHIPPING INFORMATIONs</span>
+  </div>
+  <div class="sub-panel closed">
+    <span>04.   SHIPPING METHOD</span>
+  </div>
+  <div class="sub-panel closed">
+    <span>05.   PAYMENT METHODs</span>
+  </div>
+  <div class="sub-panel closed">
+    <span>06.   ORDER REVIEW</span>
   </div>
 </div>
 <div class="subscribe flex align">
   <div class="bg"></div>
   <div class="line"></div>
   <div class="left flex">
-    <img src="../img/index/ic_women.png" alt="avatar">
+    <img src="img/index/ic_women.png" alt="avatar">
     <div class="text flex">
       <p>
         “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
@@ -379,8 +340,8 @@
 <footer>
   <div class="top flex align">
     <div class="left">
-      <a class="logo flex" href="../index.html">
-        <img src="../img/index/logo.png" alt="Brand logo">
+      <a class="logo flex" href="index.html">
+        <img src="img/index/logo.png" alt="Brand logo">
         BRAN<span>D</span>
       </a>
       <p>
@@ -396,7 +357,7 @@
     <div class="right flex align">
       <ul>
         company
-        <li><a href="../index.html">Home </a></li>
+        <li><a href="index.html">Home </a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">How It Works</a></li>
@@ -427,19 +388,19 @@
     <a class="sitemap" href="../sitemap.xml">Sitemap</a>
     <div class="right">
       <a id="ic-facebook" href="#">
-        <img src="../img/index/ic-facebook.png" alt="facebook">
+        <img src="img/index/ic-facebook.png" alt="facebook">
       </a>
       <a id="ic-twitter" class="active" href="#">
-        <img src="../img/index/ic-twitter.png" alt="twitter">
+        <img src="img/index/ic-twitter.png" alt="twitter">
       </a>
       <a id="ic-linkedin" class="inactive" href="#">
-        <img src="../img/index/ic-linkedin.png" alt="linkedin">
+        <img src="img/index/ic-linkedin.png" alt="linkedin">
       </a>
       <a id="ic-pinterest" href="#">
-        <img src="../img/index/ic-pinterest.png" alt="pinterest">
+        <img src="img/index/ic-pinterest.png" alt="pinterest">
       </a>
       <a id="ic-google" href="#">
-        <img src="../img/index/ic-google.png" alt="google">
+        <img src="img/index/ic-google.png" alt="google">
       </a>
     </div>
   </div>

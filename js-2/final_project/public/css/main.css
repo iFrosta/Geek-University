@@ -564,15 +564,17 @@ header .flex .right .cart .items .item .info label {
   font-weight: 600;
   text-transform: uppercase;
 }
-header .flex .right .cart .items .item svg {
+header .flex .right .cart .items .item .remover svg {
   margin-right: 20px;
   color: #c0c0c0;
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
+  transition: all 0.5s ease-out;
 }
-header .flex .right .cart .items .item svg:hover {
+header .flex .right .cart .items .item .remover:hover svg {
   fill: #f16d7f;
+  color: #f16d7f;
   transition: all 0.5s ease-out;
 }
 header .flex .right .cart .items .item:hover {
@@ -1532,6 +1534,7 @@ footer .bot .right #ic-google img {
 .products .choose > .bot > .items > .grid {
   flex-wrap: wrap;
   max-width: 846px;
+  justify-content: flex-start;
 }
 .products .choose > .bot > .items > .grid .box {
   margin: 20px 10px;
@@ -2168,6 +2171,9 @@ footer .bot .right #ic-google img {
   font-weight: 700;
   letter-spacing: 0.75px;
 }
+.items .normal {
+  text-transform: none;
+}
 .items h4 {
   margin: 0;
   padding: 0;
@@ -2230,19 +2236,24 @@ footer .bot .right #ic-google img {
   box-shadow: unset !important;
   background-color: unset !important;
 }
-.items .grid .box img {
+.items .grid .box .link {
+  flex-direction: column;
+}
+.items .grid .box .link img {
   width: 261px;
   height: 279px;
 }
-.items .grid .box span {
+.items .grid .box .link span {
   margin-top: 15px;
+  margin-left: 10px;
   color: #222222;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 800;
   text-transform: uppercase;
 }
-.items .grid .box label {
+.items .grid .box .link label {
   margin-top: 10px;
+  margin-left: 10px;
   margin-bottom: 15px;
   color: #f16d7f;
   font-size: 16px;

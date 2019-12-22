@@ -23,7 +23,12 @@ $(document).ready(function () {
     else body.removeClass('sticky-margin');
   });
 
-
+  // let items = document.querySelectorAll('.box');
+  // items.forEach(el => {
+  //   console.log(el);
+  // });
+  // console.log(items);
+  
   // let sub = document.getElementById('browse-menu');
   // console.log(sub);
   //
