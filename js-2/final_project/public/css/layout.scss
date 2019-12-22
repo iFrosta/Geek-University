@@ -269,6 +269,27 @@ header {
         margin-right: 26px;
         cursor: pointer;
       }
+      button {
+        width: 130px;
+        height: 38px;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: .38px;
+        background-color: #f16d7f;
+        border: 1px solid #fff;
+        -webkit-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+        &:hover {
+          border: 1px solid #f16d7f;
+          background-color: #ffffff;
+          color: #f16d7f;
+          transition: all 0.5s ease-out;
+        }
+      }
       a {
         width: 130px;
         height: 38px;
@@ -294,12 +315,11 @@ header {
       }
       .cart {
         z-index: 101;
-        display: none;
         position: absolute;
         top: 50px;
         right: -52px;
         width: 262px;
-        height: 440px;
+        min-height: 200px;
         border-radius: 5px;
         border: 1px solid #e6e6e6;
         background-color: #ffffff;
@@ -315,6 +335,10 @@ header {
           transform: rotate(39deg) skewX(-15deg);
           border-top: 1px solid #e6e6e6;
           border-left: 1px solid #e6e6e6;
+        }
+        .empty {
+          height: 26px;
+          line-height: 44px;
         }
         .items {
           flex-direction: column;

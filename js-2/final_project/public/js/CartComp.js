@@ -1,7 +1,6 @@
 Vue.component('cart', {
   data() {
     return {
-      cartUrl: '/getBasket.json',
       cartItems: [],
       cartCatalog: 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png',
       showCart: false,
@@ -60,38 +59,45 @@ Vue.component('cart', {
         }
       });
   },
-  template: `
-<div>
-  <button @click="showCart = !showCart" class="btn-cart" type="button">Cart</button>
-  <div v-show="showCart" class="cart-block">
-    <div v-if="!cartItems.length" class="empty">Your Cart is empty! 🦊</div>
-    <cart-item 
-    class="cart-item"
-    v-for="item of cartItems" 
-    :key="item.id_product" 
-    :cart-item="item" 
-    @remove="remove">
-    </cart-item>
-    <div class="line"></div>
-    <div v-if="cartItems.length" class="summary">SUBTOTAL: <strong>{{summary()}}</strong></div>
-  </div>
-</div>`
+  template: `      
+      <div id="header-right" class="right">
+        <img @click="showCart = !showCart" id="cart" src="img/index/cart.svg" alt="cart">
+        <button class="pointer" @click="showCart = !showCart">My Account
+          <i class="fas fa-sort-down"></i>
+        </button>
+        <div v-show="showCart" id="cart-inside" class="cart">
+          <div class="items align flex">
+            <div v-if="!cartItems.length" class="empty">Your Cart is empty!</div>
+              <cart-item 
+              class="cart-item"
+              v-for="item of cartItems" 
+              :key="item.id_product" 
+              :cart-item="item" 
+              @remove="remove">
+              </cart-item>
+          </div>
+          <div class="checkout flex align">
+            <div v-if="cartItems.length" class="counter flex ">
+              <div class="total">TOTAL</div>
+              <div class="price">{{summary()}}</div>
+            </div>
+            <button class="pointer" onclick="window.location.href='pages/checkout.html'">CHECKOUT</button>
+            <a href="pages/shopping-cart.html">GO TO CART</a>
+          </div>
+        </div>
+      </div>`
 });
 Vue.component('cart-item', {
   props: ['cartItem', 'img'],
-  template: `<div class="cart-item">
-                <div class="product-bio">
-                  <img :src="cartItem.img ? cartItem.img : 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png'" alt="img">
-                  <div class="product-desc">
-                    <p class="product-title">{{cartItem.product_name}}</p>
-                    <p class="product-quantity">Quantity: {{cartItem.quantity}}</p>
-                    <p class="product-single-price">$ {{cartItem.price}} each</p>
-                  </div>
+  template: `<div class="item flex align pointer">
+              <img :src="cartItem.img" alt="item-img">
+              <div class="info">
+                <span>{{cartItem.product_name}}</span>
+                <div class="rating">
+                  <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
                 </div>
-                <div class="right-block">
-                  <p class="product-price">$ {{cartItem.quantity * cartItem.price}}</p>
-                  <button @click="$emit('remove', cartItem)" class="del-btn">&times;</button>
-                </div>
+                <label>{{cartItem.quantity}} x {{cartItem.price}}</label>
               </div>
+              <i @click="$emit('remove', cartItem)" class="fas fa-times-circle"></i>
             </div>`
 });

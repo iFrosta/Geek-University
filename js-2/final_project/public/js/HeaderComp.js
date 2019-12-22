@@ -1,19 +1,22 @@
 Vue.component('header-comp', {
-  template: `<div>
-<header>
-    <div class="container flex">
+  data() {
+    return {
+      search: '',
+    }
+  },
+  template: `<div class="container flex">
       <div class="left">
         <a class="logo flex" href="index.html">
           <img src="img/index/logo.png" alt="Brand logo">
           BRAN<span>D</span>
         </a>
-        <form id="form" action="#" class="flex">
+        <form @submit.prevent="$parent.$refs.products.filter(search)" v-on:keydown="$parent.$refs.products.filter(search)" action="#" class="flex">
           <span>Browse</span>
           <i class="fas fa-sort-down"></i>
           <label>
-            <input type="text" placeholder="Search for item...">
+            <input v-model="search" type="text" placeholder="Search for item...">
           </label>
-          <button>
+          <button type="submit">
             <i class="fas fa-search"></i>
           </button>
           <div id="browse-menu" class="submenu">
@@ -34,49 +37,11 @@ Vue.component('header-comp', {
           </div>
         </form>
       </div>
-      <div id="header-right" class="right">
-        <img id="cart" src="img/index/cart.svg" alt="cart">
-        <a href="#">My Account
-          <i class="fas fa-sort-down"></i>
-        </a>
-        <div id="cart-inside" class="cart">
-          <div class="items align flex">
-            <div class="item flex align pointer">
-              <img src="img/index/cart-1.png" alt="item-1">
-              <div class="info">
-                <span>Rebox Zane</span>
-                <div class="rating">
-                  <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>	</span>
-                </div>
-                <label>1 x $250</label>
-              </div>
-              <i class="fas fa-times-circle"></i>
-            </div>
-            <div class="item flex align pointer">
-              <img src="img/index/cart-2.png" alt="item-1">
-              <div class="info">
-                <span>Rebox Zane</span>
-                <div class="rating">
-                  <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
-                </div>
-                <label>1 x $250</label>
-              </div>
-              <i class="fas fa-times-circle"></i>
-            </div>
-          </div>
-          <div class="checkout flex align">
-            <div class="counter flex ">
-              <div class="total">TOTAL</div>
-              <div class="price">$500.00</div>
-            </div>
-            <button class="pointer" onclick="window.location.href='pages/checkout.html'">CHECKOUT</button>
-            <a href="pages/shopping-cart.html">GO TO CART</a>
-          </div>
-        </div>
-      </div>
-    </div>
-</header>
-  <nav>
+      <cart ref="cart"></cart>
+    </div>`
+});
+Vue.component('nav-comp', {
+  template: `<nav>
     <div class="container">
       <ul class="menu">
         <li><a class="active" href="#">home</a></li>
@@ -88,6 +53,5 @@ Vue.component('header-comp', {
         <li><a href="#">hot deals</a></li>
       </ul>
     </div>
-  </nav>
-</div>`
+  </nav>`
 });
