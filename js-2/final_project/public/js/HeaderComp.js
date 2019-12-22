@@ -1,8 +1,14 @@
-Vue.component('header-comp', {
+import cart from './CartComp.js'
+
+const headerComp = {
   data() {
     return {
       search: '',
+      showSub: false,
     }
+  },
+  components: {
+    cart
   },
   template: `<div class="container flex">
       <div class="left">
@@ -11,7 +17,7 @@ Vue.component('header-comp', {
           BRAN<span>D</span>
         </a>
         <form @submit.prevent="$parent.$refs.products.filter(search)" v-on:keydown="$parent.$refs.products.filter(search)" action="#" class="flex">
-          <span>Browse</span>
+          <span @click="showSub = !showSub">Browse</span>
           <i class="fas fa-sort-down"></i>
           <label>
             <input v-model="search" type="text" placeholder="Search for item...">
@@ -19,7 +25,7 @@ Vue.component('header-comp', {
           <button type="submit">
             <i class="fas fa-search"></i>
           </button>
-          <div id="browse-menu" class="submenu">
+          <div v-show="showSub" id="browse-menu" class="submenu">
             <div class="sublist">
               <span>Women</span>
               <ul>
@@ -39,19 +45,6 @@ Vue.component('header-comp', {
       </div>
       <cart ref="cart"></cart>
     </div>`
-});
-Vue.component('nav-comp', {
-  template: `<nav>
-    <div class="container">
-      <ul class="menu">
-        <li><a class="active" href="#">home</a></li>
-        <li><a href="#">man</a></li>
-        <li> <a href="#">women</a></li>
-        <li><a href="#">kids</a></li>
-        <li><a href="#">accessories</a></li>
-        <li><a href="#">featured</a></li>
-        <li><a href="#">hot deals</a></li>
-      </ul>
-    </div>
-  </nav>`
-});
+};
+
+export default headerComp

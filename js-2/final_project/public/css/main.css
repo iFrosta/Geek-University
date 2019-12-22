@@ -339,7 +339,6 @@ header .flex .left form .submenu {
   transition: all 0.5s ease-out;
   position: absolute;
   top: 67px;
-  display: none;
   padding: 20px 20px 0;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
@@ -427,6 +426,19 @@ header .flex .right img {
   margin-right: 26px;
   cursor: pointer;
 }
+header .flex .right .circle {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  clip-path: circle(50%);
+  width: 20px;
+  height: 20px;
+  background: #e96c7e;
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 20px;
+}
 header .flex .right button {
   width: 130px;
   height: 38px;
@@ -447,6 +459,10 @@ header .flex .right button:hover {
   background-color: #ffffff;
   color: #f16d7f;
   transition: all 0.5s ease-out;
+}
+header .flex .right button svg {
+  margin-left: 4px;
+  margin-bottom: 3px;
 }
 header .flex .right a {
   width: 130px;
@@ -1579,13 +1595,13 @@ footer .bot .right #ic-google img {
   text-align: center;
 }
 .offer-tab .features :nth-child(1) :first-child {
-  left: 150px;
+  left: 28px;
 }
 .offer-tab .features :nth-child(2) :first-child {
-  left: 165px;
+  left: 31px;
 }
 .offer-tab .features :nth-child(3) :first-child {
-  left: 165px;
+  left: 31px;
 }
 
 .checkout {
@@ -2298,8 +2314,8 @@ footer .bot .right #ic-google img {
 }
 .offer-tab .features .panel {
   position: relative;
-  width: 90%;
-  padding: 20px;
+  margin: 10px 0;
+  padding: 10px 20px;
 }
 .offer-tab .features .panel img {
   position: absolute;
@@ -2321,4 +2337,5 @@ footer .bot .right #ic-google img {
   font-weight: 300;
   line-height: 24px;
   letter-spacing: 0.35px;
+  text-align: left;
 }

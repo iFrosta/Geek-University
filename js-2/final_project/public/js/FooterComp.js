@@ -1,4 +1,4 @@
-Vue.component('footer-comp', {
+const footerComp = {
   template: `  <footer>
     <div class="top flex align">
       <div class="left">
@@ -66,4 +66,6 @@ Vue.component('footer-comp', {
       </div>
     </div>
   </footer>`
-});
+};
+
+export default footerComp

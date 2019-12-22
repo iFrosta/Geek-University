@@ -22,4 +22,22 @@ $(document).ready(function () {
     if (scroll >= 102) body.addClass('sticky-margin');
     else body.removeClass('sticky-margin');
   });
+
+
+  // let sub = document.getElementById('browse-menu');
+  // console.log(sub);
+  //
+  // sub.addEventListener("click", function(){
+  //   let sub = document.getElementById('browse-menu');
+  //   console.log('click');
+  //   let style = window.getComputedStyle(sub);
+  //   let subDisplay = style.getPropertyValue('display');
+  //   console.log(subDisplay);
+  //   if (subDisplay !== 'none') {
+  //     sub.style.color = 'red';
+  //   }
+  // });
+
+
+  // if(sub.has())
 });

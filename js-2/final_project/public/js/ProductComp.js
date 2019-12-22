@@ -1,9 +1,26 @@
-Vue.component('products', {
+const product = {
+  props: ['product'],
+  template: `<div class="box flex pointer">
+              <div class="add flex align">
+                <a class="add-to-cart flex align" @click="$root.$refs.header.$refs.cart.add(product)">
+                  <img src="img/index/cart_white.png" alt="cart">
+                  Add to Cart
+                </a>
+              </div>
+              <img :src="product.img" alt="item-2">
+              <span>{{product.product_name}}</span>
+              <label>$ {{product.price}}</label>
+            </div>`
+};
+const products = {
   data() {
     return {
       products: [],
       filtered: [],
     }
+  },
+  components: {
+    product
   },
   mounted() {
     this.$parent.getJson(`/api/products`)
@@ -28,18 +45,6 @@ Vue.component('products', {
                 <product v-for="item of filtered" :key="item.id_product"  :product="item"></product>
               </div>
              </div>`
-});
-Vue.component('product', {
-  props: ['product'],
-  template: `<div class="box flex pointer">
-              <div class="add flex align">
-                <a class="add-to-cart flex align" @click="$root.$refs.header.$refs.cart.add(product)">
-                  <img src="img/index/cart_white.png" alt="cart">
-                  Add to Cart
-                </a>
-              </div>
-              <img :src="product.img" alt="item-2">
-              <span>{{product.product_name}}</span>
-              <label>$ {{product.price}}</label>
-            </div>`
-});
+};
+
+export default products

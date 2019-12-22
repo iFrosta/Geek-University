@@ -1,4 +1,4 @@
-Vue.component('offers-comp', {
+const offersComp = {
   template: `<div class="offers container">
   <div class="left">
   <div class="big" onclick="window.location.href='pages/products.html'">
@@ -29,4 +29,6 @@ Vue.component('offers-comp', {
 </div>
 </div>
 </div>`
-});
+};
+
+export default offersComp

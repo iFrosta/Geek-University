@@ -1,9 +1,26 @@
-Vue.component('cart', {
+const cartItem = {
+  props: ['cartItem', 'img'],
+  template: `<div class="item flex align pointer">
+              <img :src="cartItem.img" alt="item-img">
+              <div class="info">
+                <span>{{cartItem.product_name}}</span>
+                <div class="rating">
+                  <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
+                </div>
+                <label>{{cartItem.quantity}} x {{cartItem.price}}</label>
+              </div>
+              <div @click="$emit('remove', cartItem)"><i class="fas fa-times-circle"></i> </div>
+            </div>`
+};
+const cart = {
   data() {
     return {
       cartItems: [],
       showCart: false,
     }
+  },
+  components: {
+    cartItem
   },
   methods: {
     add(product) {
@@ -42,6 +59,13 @@ Vue.component('cart', {
           })
       }
     },
+    countItems() {
+      let count = 0;
+      this.cartItems.forEach(item => {
+        count += item.quantity;
+      });
+      return  count;
+    },
     summary() {
       let sum = 0;
       this.cartItems.forEach(item => {
@@ -60,6 +84,7 @@ Vue.component('cart', {
   },
   template: `      
       <div id="header-right" class="right">
+        <div v-if="cartItems.length" class="circle">{{countItems()}}</div>
         <img @click="showCart = !showCart" id="cart" src="img/index/cart.svg" alt="cart">
         <button class="pointer" @click="showCart = !showCart">My Account
           <i class="fas fa-sort-down"></i>
@@ -85,18 +110,6 @@ Vue.component('cart', {
           </div>
         </div>
       </div>`
-});
-Vue.component('cart-item', {
-  props: ['cartItem', 'img'],
-  template: `<div class="item flex align pointer">
-              <img :src="cartItem.img" alt="item-img">
-              <div class="info">
-                <span>{{cartItem.product_name}}</span>
-                <div class="rating">
-                  <span>🟊</span><span>🟊</span><span>🟊</span><span>🟊</span><span>✰</span>
-                </div>
-                <label>{{cartItem.quantity}} x {{cartItem.price}}</label>
-              </div>
-              <i @click="$emit('remove', cartItem)" class="fas fa-times-circle"></i>
-            </div>`
-});
+};
+
+export default cart

@@ -317,8 +317,8 @@
 
     .panel {
       position: relative;
-      width: 90%;
-      padding: 20px;
+      margin: 10px 0;
+      padding: 10px 20px;
 
       img {
         position: absolute;
@@ -342,6 +342,7 @@
         font-weight: 300;
         line-height: 24px;
         letter-spacing: 0.35px;
+        text-align: left;
       }
     }
   }

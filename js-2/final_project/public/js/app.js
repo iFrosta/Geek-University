@@ -1,5 +1,21 @@
+import products from './ProductComp.js'
+import error from './ErrorComp.js'
+
+import headerEl from './HeaderComp.js'
+import navEl from './navComp.js'
+import footerEl from './FooterComp.js'
+import offerEl from './OffersComp.js'
+
 const app = new Vue({
   el: '#app',
+  components: {
+    products,
+    error,
+    'header-comp': headerEl,
+    'nav-comp': navEl,
+    'footer-comp': footerEl,
+    'offers-comp': offerEl
+  },
   methods: {
     getJson(url) {
       return fetch(url)
