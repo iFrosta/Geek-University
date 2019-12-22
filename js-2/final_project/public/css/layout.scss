@@ -510,11 +510,12 @@ nav {}
   padding: 0;
   margin: 1px 0 0;
   & >  li:hover {
-    .submenu {
-      display: flex;
-      opacity: 1;
-      transition: all 0.5s ease-out;
-    }
+
+    //.submenu {
+    //  display: flex;
+    //  opacity: 1;
+    //  transition: all 0.5s ease-out;
+    //}
   }
   li {
     position: relative;
@@ -620,7 +621,8 @@ nav {}
     padding: 10px 15px;
     text-decoration: none;
     &:hover {
-      color: #f16d7f;
+      border-bottom: 3px solid;
+      border-color: #f16d7f;
     }
   }
   .active {
