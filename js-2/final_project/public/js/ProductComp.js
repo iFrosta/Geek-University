@@ -33,7 +33,7 @@ Vue.component('product', {
   props: ['product'],
   template: `<div class="box flex pointer">
               <div class="add flex align">
-                <a class="add-to-cart flex align" @click="$root.$refs.cart.add(product)">
+                <a class="add-to-cart flex align" @click="$root.$refs.header.$refs.cart.add(product)">
                   <img src="img/index/cart_white.png" alt="cart">
                   Add to Cart
                 </a>

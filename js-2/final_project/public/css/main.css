@@ -183,6 +183,7 @@ a {
 
 button, input[type=submit] {
   cursor: pointer;
+  outline: 0;
 }
 
 .container {
@@ -515,7 +516,14 @@ header .flex .right .cart .items .item {
   border-bottom: 1px solid #e6e6e6;
 }
 header .flex .right .cart .items .item img {
-  margin-right: 28px;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin: 0 14px;
+}
+header .flex .right .cart .items .item .info {
+  max-width: 40%;
+  height: 100%;
 }
 header .flex .right .cart .items .item .info span {
   color: #222222;
@@ -541,7 +549,7 @@ header .flex .right .cart .items .item .info label {
   text-transform: uppercase;
 }
 header .flex .right .cart .items .item svg {
-  margin-left: 35px;
+  margin-right: 20px;
   color: #c0c0c0;
   font-size: 16px;
   font-weight: 400;
@@ -590,6 +598,9 @@ header .flex .right .cart .checkout button:hover {
   background-color: #f16d7f;
   color: #e6e6e6;
   transition: all 0.5s ease-out;
+}
+header .flex .right .cart .checkout .a-button {
+  margin: 0 0 10px;
 }
 header .flex .right .cart .checkout a {
   text-align: center;

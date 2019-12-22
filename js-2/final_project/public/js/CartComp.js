@@ -2,7 +2,6 @@ Vue.component('cart', {
   data() {
     return {
       cartItems: [],
-      cartCatalog: 'https://cdn3.iconfinder.com/data/icons/project-management-32/48/24-512.png',
       showCart: false,
     }
   },
@@ -10,7 +9,7 @@ Vue.component('cart', {
     add(product) {
       let find = this.cartItems.find(el => el.id_product === product.id_product);
       if (find) {
-        this.$parent.putJson(`/api/cart/${find.id_product}`, {quantity: 1})
+        this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: 1})
           .then(data => {
             if (data.result === 1) {
               find.quantity++;
@@ -18,7 +17,7 @@ Vue.component('cart', {
           })
       } else {
         let cartProduct = Object.assign({quantity: 1}, product);
-        this.$parent.postJson(`/api/cart/`, cartProduct)
+        this.$root.postJson(`/api/cart/`, cartProduct)
           .then(data => {
             if (data.result === 1) {
               this.cartItems.push(cartProduct);
@@ -28,14 +27,14 @@ Vue.component('cart', {
     },
     remove(item) {
       if (item.quantity > 1) {
-        this.$parent.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
+        this.$root.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
           .then(data => {
             if (data.result === 1) {
               item.quantity--;
             }
           })
       } else {
-        this.$parent.deleteJson(`/api/cart/${item.id_product}`)
+        this.$root.deleteJson(`/api/cart/${item.id_product}`)
           .then(data => {
             if (data.result === 1) {
               this.cartItems.splice(this.cartItems.indexOf(item), 1);
@@ -52,7 +51,7 @@ Vue.component('cart', {
     }
   },
   mounted() {
-    this.$parent.getJson(`/api/cart/`)
+    this.$root.getJson(`/api/cart/`)
       .then(data => {
         for (let el of data.contents) {
           this.cartItems.push(el);
@@ -82,7 +81,7 @@ Vue.component('cart', {
               <div class="price">{{summary()}}</div>
             </div>
             <button class="pointer" onclick="window.location.href='pages/checkout.html'">CHECKOUT</button>
-            <a href="pages/shopping-cart.html">GO TO CART</a>
+            <a class="a-button" href="pages/shopping-cart.html">GO TO CART</a>
           </div>
         </div>
       </div>`

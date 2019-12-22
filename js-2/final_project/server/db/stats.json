@@ -1,0 +1,22 @@
+[
+    {
+        "time": "22 Dec 2019, 6:40:58 pm",
+        "prod_name": "MANGO PEOPLE T-SHIRT",
+        "action": "change"
+    },
+    {
+        "time": "22 Dec 2019, 6:41:23 pm",
+        "prod_name": "MANGO PEOPLE T-SHIRT",
+        "action": "change"
+    },
+    {
+        "time": "22 Dec 2019, 6:41:28 pm",
+        "prod_name": "MANGO PEOPLE T-SHIRT",
+        "action": "add"
+    },
+    {
+        "time": "22 Dec 2019, 6:41:33 pm",
+        "prod_name": "MANGO PEOPLE T-SHIRT",
+        "action": "add"
+    }
+]

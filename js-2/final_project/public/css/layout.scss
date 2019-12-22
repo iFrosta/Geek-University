@@ -21,6 +21,7 @@ a {
 
 button, input[type=submit] {
   cursor: pointer;
+  outline: 0;
 }
 
 .container {
@@ -355,9 +356,14 @@ header {
             max-height: 120px;
             border-bottom: 1px solid #e6e6e6;
             img {
-              margin-right: 28px;
+              width: 72px;
+              height: 72px;
+              object-fit: contain;
+              margin: 0 14px;
             }
             .info {
+              max-width: 40%;
+              height: 100%;
              & span {
                 color: #222222;
                 font-size: 12px;
@@ -383,7 +389,7 @@ header {
               }
             }
             svg {
-              margin-left: 35px;
+              margin-right: 20px;
               color: #c0c0c0;
               font-size: 16px;
               font-weight: 400;
@@ -433,6 +439,9 @@ header {
               color: #e6e6e6;
               transition: all 0.5s ease-out;
             }
+          }
+          .a-button {
+            margin: 0 0 10px;
           }
           a {
             text-align: center;
