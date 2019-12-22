@@ -72,6 +72,16 @@ const cart = {
         sum += item.quantity * item.price;
       });
       return '$' + sum;
+    },
+    clear() {
+      // this.cartItems = [];
+      this.$root.deleteJson(`/api/cart/`)
+        .then(data => {
+          if (data.result === 1) {
+            console.log(this.cartItems);
+            // this.cartItems.splice(this.cartItems.indexOf(item), 1);
+          }
+        })
     }
   },
   mounted() {

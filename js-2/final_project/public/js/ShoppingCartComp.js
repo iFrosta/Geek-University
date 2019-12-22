@@ -1,4 +1,4 @@
-const cartItem = {
+const cartItem = { // TODO Change input to count items correctly
   props: ['cartItem', 'img'],
   template: `<div class="item flex">
               <img class="img" :src="cartItem.img" alt="item-img">
@@ -8,7 +8,7 @@ const cartItem = {
                 <p><strong>Size:</strong>Xll</p>
               </div>
               <p class="Price flex align">$ {{cartItem.price}}</p>
-              <label class="Quantity flex align">
+              <label class="Quantity flex align"> 
                 <input type="number" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.add(cartItem)" :value="cartItem.quantity">
               </label>
               <p class="shipping flex align">FREE</p>
@@ -78,9 +78,6 @@ const shoppingCart = {
       });
       return '$' + sum;
     },
-    clearCart() {
-      this.cartItems = [];
-    },
     checkCoupon(string) {
       let coupon = document.getElementById('coupon');
       if (string === 'FREE100') {
@@ -110,7 +107,7 @@ const shoppingCart = {
             <li>ACTION</li>
           </ul>
         </div>
-        <div v-if="!cartItems.length" class="empty">Your Cart is empty!</div>
+        <!--<div v-if="!cartItems.length" class="empty">Your Cart is empty!</div>-->
           <cart-item 
           class="cart-item"
           v-for="item of cartItems" 
@@ -120,7 +117,7 @@ const shoppingCart = {
           </cart-item>
         </div>
       <div class="bot flex">
-        <button @click="clearCart()">CLEAR SHOPPING CART</button>
+        <button @click="$root.$refs.header.$refs.cart.clear()">CLEAR SHOPPING CART</button>
         <button>CONTINUE SHOPPING</button>
       </div>
         <div class="processed flex">
