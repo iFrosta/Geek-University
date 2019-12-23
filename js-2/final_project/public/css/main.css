@@ -1727,6 +1727,9 @@ footer .bot .right #ic-google img {
   color: #f16d7f;
   fill: #f16d7f;
 }
+.checkout > .grid > .top > .item .remover {
+  transition: all 0.3s;
+}
 .checkout > .grid > .top > .item .remover:hover svg {
   color: #f16d7f;
   fill: #f16d7f;

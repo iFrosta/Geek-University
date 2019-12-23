@@ -9,7 +9,7 @@ const cartItem = {
               </div>
               <p class="Price flex align">$ {{cartItem.price}}</p>
               <label class="Quantity flex align"> 
-                <input type="number" :id="cartItem.id_product" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.change(cartItem)" :value="cartItem.quantity">
+                <input type="number" :id="cartItem.id_product" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.change(cartItem);" :value="cartItem.quantity">
               </label>
               <p class="shipping flex align">FREE</p>
               <p class="Subtotal flex align">{{cartItem.quantity * cartItem.price}}</p>
@@ -99,7 +99,7 @@ const shoppingCart = {
         }
       });
   },
-  template: `<div class="grid">
+  template: `<div class="grid" :key="componentKey">
       <div class="top flex">
         <div class="titles">
           <ul>

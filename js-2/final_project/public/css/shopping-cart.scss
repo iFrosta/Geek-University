@@ -1,10 +1,12 @@
 .checkout {
   margin: 80px 0;
   flex-direction: column;
+
   > .grid {
 
     > .top {
       flex-direction: column;
+
       > .titles {
         color: #222222;
         font-size: 13px;
@@ -13,23 +15,29 @@
         text-transform: uppercase;
         letter-spacing: -0.2px;
         border-bottom: 1px solid #eaeaea;
+
         > ul {
           display: flex;
+
           & :first-child {
             margin-right: 300px;
           }
+
           & :nth-child(5) {
             margin-left: 80px;
           }
+
           & :last-child {
-          margin-left: 50px;
-        }
+            margin-left: 50px;
+          }
+
           > li {
             margin-left: 90px;
             list-style-type: none;
           }
         }
       }
+
       > .item {
         margin-top: 20px;
         padding-bottom: 20px;
@@ -41,14 +49,15 @@
         //grid-template-columns: repeat(7, 1fr);
         grid-template-columns: 120px 464px 160px 179px 112px 186px;
         grid-template-rows: 1fr; /* Three rows, two with explicit widths */
-        grid-template-areas:
-                "img Product Price Quantity shipping Subtotal ACTION";
+        grid-template-areas: "img Product Price Quantity shipping Subtotal ACTION";
+
         > img {
           margin-right: 20px;
           width: 100px;
           height: 100px;
           object-fit: contain;
         }
+
         > .details {
           flex-direction: column;
           //> span {
@@ -65,6 +74,7 @@
             text-transform: uppercase;
             margin-bottom: 30px;
           }
+
           > p {
             margin: 0;
             padding: 0;
@@ -72,6 +82,7 @@
             font-size: 13px;
             font-weight: 300;
             line-height: 20px;
+
             > strong {
               color: #222222;
               font-weight: 600;
@@ -79,27 +90,35 @@
             }
           }
         }
+
         & .img {
           grid-area: img;
         }
+
         & .Product {
           grid-area: Product;
         }
+
         & .Price {
           grid-area: Price;
         }
+
         & .Quantity {
           grid-area: Quantity;
         }
+
         & .shipping {
           grid-area: shipping;
         }
+
         & .Subtotal {
           grid-area: Subtotal;
         }
+
         & > .ACTION {
           grid-area: ACTION;
         }
+
         //& :nth-child(1) {
         //  grid-area: img;
         //}
@@ -127,6 +146,7 @@
           font-weight: 400;
           line-height: 20px;
         }
+
         > label {
 
           input {
@@ -141,16 +161,20 @@
             background-color: #ffffff;
           }
         }
+
         > svg {
           cursor: pointer;
           color: #c0c0c0;
+
           &:hover {
             color: #f16d7f;
             fill: #f16d7f;
           }
         }
+
         .remover {
           transition: all .3s;
+
           &:hover {
             svg {
               color: #f16d7f;
@@ -161,9 +185,11 @@
         }
       }
     }
+
     > .bot {
       margin: 40px 20px;
       justify-content: space-between;
+
       & button {
         width: 235px;
         height: 50px;
@@ -175,6 +201,7 @@
         text-transform: uppercase;
         cursor: pointer;
         transition: all 0.3s ease-out;
+
         &:hover {
           border: 1px solid #eaeaea;
           background-color: #f16d7f;
@@ -184,14 +211,17 @@
       }
     }
   }
+
   .processed {
 
     & form {
       margin: 0 30px;
       display: flex;
       flex-direction: column;
+
       & a {
         position: relative;
+
         & svg {
           position: absolute;
           right: 15px;
@@ -199,9 +229,11 @@
           color: #bdbdbd;
         }
       }
+
       & :nth-child(2) {
         margin-top: 20px;
       }
+
       & input {
         margin: 10px 0;
         width: 355px;
@@ -209,11 +241,13 @@
         border: 1px solid #eaeaea;
         background-color: #ffffff;
       }
+
       & input[type=text] {
         width: 355-46px;
         padding: 0 30px 0 16px;
         text-transform: capitalize;
       }
+
       & input[type=submit] {
         width: 100px;
         height: 35px;
@@ -224,10 +258,12 @@
         font-weight: 900;
         text-transform: uppercase;
       }
+
       & input:focus {
         outline: none !important;
         color: #5d5d5d;
       }
+
       & input::placeholder {
         margin-bottom: 11px;
         color: #a4a4a4;
@@ -235,6 +271,7 @@
         font-weight: 300;
         letter-spacing: 0.35px;
       }
+
       span {
         color: #222222;
         font-size: 16px;
@@ -242,9 +279,11 @@
         text-transform: uppercase;
       }
     }
+
     & .address {
 
     }
+
     & .discount {
       & p {
         color: #000000;
@@ -252,6 +291,7 @@
         font-weight: 300;
       }
     }
+
     & .order {
       margin-left: 10px;
       flex-direction: column;
@@ -261,6 +301,7 @@
       width: 360px;
       height: 214px;
       background-color: #f5f3f3;
+
       & .submit {
         margin-top: 20px;
         margin-right: 15px;
@@ -272,6 +313,7 @@
         font-weight: 700;
         text-transform: uppercase;
         transition: all 0.3s ease-out;
+
         &:hover {
           border: 1px solid #f16d7f;
           background-color: #eaeaea;
@@ -279,32 +321,37 @@
           transition: all 0.3s ease-out;
         }
       }
+
       & div {
         position: relative;
         margin-right: 50px;
         text-align: right;
         padding-bottom: 20px;
+
         &::after {
           display: block;
           position: absolute;
           top: 70px;
           right: 0;
-          content:"";
+          content: "";
           width: 272px;
           height: 1px;
           background-color: #e6e6e6;
         }
+
         & p {
           color: #4a4a4a;
           font-size: 11px;
           font-weight: 400;
           text-transform: uppercase;
         }
+
         & span {
           color: #222222;
           font-size: 16px;
           font-weight: 700;
           text-transform: uppercase;
+
           & strong {
             color: #f16d7f;
           }
