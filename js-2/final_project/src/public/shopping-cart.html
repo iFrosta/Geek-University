@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Brand - Cart</title>
+  <!--
+    made by ifrosta.ru @ifrosta on GeekBrains Geek-University
+  -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="//use.fontawesome.com/releases/v5.10.1/js/all.js"
+          integrity="sha384-aC/bNmpJEYrEVX5KNHN+m0CmvycQX9wDnYv8X2gdXQjrbtDP5OcU5DRiXwL6bPwr"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+<main id="app">
+  <header>
+    <header-comp ref="header"></header-comp>
+  </header>
+  <nav-comp></nav-comp>
+  <div class="arrivals flex align">
+    <div class="inside flex align">
+      <span>Shopping cart </span>
+      <p>
+        Home / Men /
+        <span>Shopping cart</span>
+      </p>
+    </div>
+  </div>
+  <div class="checkout flex align">
+    <shopping-comp ref="shopping"></shopping-comp>
+  </div>
+  <div class="subscribe flex align">
+    <div class="bg"></div>
+    <div class="line"></div>
+    <div class="left flex">
+      <img src="img/index/ic_women.png" alt="avatar">
+      <div class="text flex">
+        <p>
+          “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+          a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+        </p>
+        <div class="author">
+          <span>Bin Burhan</span>
+          Dhaka, Bd
+        </div>
+        <div class="select flex">
+          <a></a>
+          <a class="active"></a>
+        </div>
+      </div>
+    </div>
+    <div class="right flex align">
+      <p>
+        <span>Subscribe</span>
+        FOR OUR NEWSLETTER AND PROMOTION
+      </p>
+      <form class="flex align">
+        <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+               name="email" required placeholder="Enter Your Email">
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+  </div>
+  <footer-comp></footer-comp>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
