@@ -12,14 +12,9 @@ let remove = (cart, req) => {
   cart.contents.splice(cart.contents.indexOf(find), 1);
   return {name: find.product_name, newCart: JSON.stringify(cart, null, 4)};
 };
-let clear = (cart) => { // TODO Clear all cart method
-  cart.contents = {};
-  return {name: find.product_name, newCart: JSON.stringify(cart, null, 4)};
-};
 
 module.exports = {
   add,
   change,
-  remove,
-  clear
+  remove
 };

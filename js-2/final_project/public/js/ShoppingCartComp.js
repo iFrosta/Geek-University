@@ -1,4 +1,4 @@
-const cartItem = { // TODO Change input to count items correctly
+const cartItem = {
   props: ['cartItem', 'img'],
   template: `<div class="item flex">
               <img class="img" :src="cartItem.img" alt="item-img">
@@ -9,7 +9,7 @@ const cartItem = { // TODO Change input to count items correctly
               </div>
               <p class="Price flex align">$ {{cartItem.price}}</p>
               <label class="Quantity flex align"> 
-                <input type="number" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.add(cartItem)" :value="cartItem.quantity">
+                <input type="number" :id="cartItem.id_product" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.change(cartItem)" :value="cartItem.quantity">
               </label>
               <p class="shipping flex align">FREE</p>
               <p class="Subtotal flex align">{{cartItem.quantity * cartItem.price}}</p>
@@ -21,7 +21,8 @@ const shoppingCart = {
     return {
       cartItems: [],
       showCart: false,
-      coupon: ''
+      coupon: '',
+      componentKey: 0,
     }
   },
   components: {
@@ -85,6 +86,9 @@ const shoppingCart = {
       } else {
         coupon.style.border = '1px solid red'
       }
+    },
+    forceRerender() {
+      this.componentKey += 1;
     }
   },
   mounted() {

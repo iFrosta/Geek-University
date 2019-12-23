@@ -59,12 +59,56 @@ const cart = {
           })
       }
     },
+    change(product) {
+      let find = this.cartItems.find(el => el.id_product === product.id_product);
+      let input = document.getElementById(`${product.id_product}`);
+      console.log(find.quantity);
+      console.log(parseInt(input.value));
+      if (find) {
+        if (+input.value === 0 || +input.value === null) {
+          this.$root.deleteJson(`/api/cart/${product.id_product}`)
+            .then(data => {
+              if (data.result === 1) {
+                this.cartItems.splice(this.cartItems.indexOf(product), 1);
+              }
+            })
+        } else {
+          let set = Math.abs(find.quantity - +input.value);
+          if (find.quantity < +input.value) {
+            console.log('plus', set);
+            this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: set})
+              .then(data => {
+                if (data.result === 1) {
+                  find.quantity = +input.value;
+                }
+              })
+          } else {
+            console.log('minus', set);
+            if (product.quantity > 1) {
+              this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: -set})
+                .then(data => {
+                  if (data.result === 1) {
+                    find.quantity = +input.value;
+                  }
+                })
+            } else {
+              this.$root.deleteJson(`/api/cart/${product.id_product}`)
+                .then(data => {
+                  if (data.result === 1) {
+                    this.cartItems.splice(this.cartItems.indexOf(product), 1);
+                  }
+                })
+            }
+          }
+        }
+      }
+    },
     countItems() {
       let count = 0;
       this.cartItems.forEach(item => {
         count += item.quantity;
       });
-      return  count;
+      return count;
     },
     summary() {
       let sum = 0;
@@ -73,13 +117,12 @@ const cart = {
       });
       return '$' + sum;
     },
-    clear() {
+    clear() { // TODO Clear all cart method
       // this.cartItems = [];
-      this.$root.deleteJson(`/api/cart/`)
+      this.$root.putJson(`/api/cart/`)
         .then(data => {
           if (data.result === 1) {
-            console.log(this.cartItems);
-            // this.cartItems.splice(this.cartItems.indexOf(item), 1);
+            this.cartItems = {};
           }
         })
     }

@@ -6,7 +6,6 @@ const actions = {
   add: cart.add,
   change: cart.change,
   remove: cart.remove,
-  clear: cart.clear
 };
 
 let handler = (req, res, action, file) => {

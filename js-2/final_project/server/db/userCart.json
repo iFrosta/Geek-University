@@ -1,5 +1,5 @@
 {
-    "amount": 104,
+    "amount": 5,
     "countGoods": 2,
     "contents": [
         {
@@ -15,20 +15,6 @@
             "product_name": "MANGO PEOPLE T-SHIRT",
             "price": 52,
             "img": "img/items/item_5.png"
-        },
-        {
-            "quantity": 1,
-            "id_product": 4,
-            "product_name": "MANGO PEOPLE T-SHIRT",
-            "price": 52,
-            "img": "img/items/item_4.png"
-        },
-        {
-            "quantity": 1,
-            "id_product": 3,
-            "product_name": "MANGO PEOPLE T-SHIRT",
-            "price": 52,
-            "img": "img/items/item_3.png"
         }
     ]
 }
