@@ -43,18 +43,27 @@ const cart = {
       }
     },
     remove(item) {
-      if (item.quantity > 1) {
-        this.$root.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
-          .then(data => {
-            if (data.result === 1) {
-              item.quantity--;
-            }
-          })
+      if (item !== undefined) {
+        if (item.quantity > 1) {
+          this.$root.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
+            .then(data => {
+              if (data.result === 1) {
+                item.quantity--;
+              }
+            })
+        } else {
+          this.$root.deleteJson(`/api/cart/${item.id_product}`)
+            .then(data => {
+              if (data.result === 1) {
+                this.cartItems.splice(this.cartItems.indexOf(item), 1);
+              }
+            })
+        }
       } else {
-        this.$root.deleteJson(`/api/cart/${item.id_product}`)
+        this.$root.deleteJson(`/api/cart/99999999`)
           .then(data => {
             if (data.result === 1) {
-              this.cartItems.splice(this.cartItems.indexOf(item), 1);
+              this.cartItems = [];
             }
           })
       }
@@ -118,19 +127,30 @@ const cart = {
       return '$' + sum;
     },
     clear() {
-      let buffer = [];
-      this.$root.getJson(`/api/cart/`)
-        .then(data => {
-          for (let el of data.contents) {
-            console.log(el.id_product);
-            this.$root.deleteJson(`/api/cart/${el.id_product}`)
-              .then(data => {
-                if (data.result === 1) {
-                  this.cartItems.splice(this.cartItems.indexOf(el), 1);
-                }
-              })
-          }
-        });
+      console.log('cleared');
+      // if (item === 'all') {
+      //   this.$root.putJson(`/api/cart/`, {contents: []})
+      //     .then(data => {
+      //       if (data.result === 1) {
+      //         this.cartItems = [];
+      //       }
+      //     })
+      // }
+      // this.$root.getJson(`/api/cart/`)
+      //   .then(data => {
+      //     for (let el of data.contents) {
+      //       console.log(el);
+      //       console.log(data.contents.length);
+      //       buffer.push(el.id_product);
+      //       console.log(buffer);
+      //       this.$root.deleteJson(`/api/cart/${el.id_product}`)
+      //         .then(data => {
+      //           if (data.result === 1) {
+      //             this.cartItems.splice(this.cartItems.indexOf(el), 1);
+      //           }
+      //         })
+      //     }
+      //   });
     }
   },
   mounted() {

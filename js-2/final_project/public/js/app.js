@@ -65,6 +65,6 @@ const app = new Vue({
         .catch(error => {
           this.$refs.error.setError(error);
         })
-    }
+    },
   }
 });

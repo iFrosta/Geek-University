@@ -23,6 +23,7 @@ const shoppingCart = {
       showCart: false,
       coupon: '',
       componentKey: 0,
+      all: 'all',
     }
   },
   components: {
@@ -121,7 +122,7 @@ const shoppingCart = {
           </cart-item>
         </div>
       <div class="bot flex">
-        <button @click="$root.$refs.header.$refs.cart.clear()">CLEAR SHOPPING CART</button>
+        <button @click="$root.$refs.header.$refs.cart.remove()">CLEAR SHOPPING CART</button>
         <button>CONTINUE SHOPPING</button>
       </div>
         <div class="processed flex">
