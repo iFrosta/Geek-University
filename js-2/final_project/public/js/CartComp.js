@@ -71,8 +71,6 @@ const cart = {
     change(product) {
       let find = this.cartItems.find(el => el.id_product === product.id_product);
       let input = document.getElementById(`${product.id_product}`);
-      // console.log(find.quantity);
-      // console.log(parseInt(input.value));
       if (find) {
         if (+input.value === 0 || +input.value === null) {
           this.$root.deleteJson(`/api/cart/${product.id_product}`)
@@ -84,7 +82,6 @@ const cart = {
         } else {
           let set = Math.abs(find.quantity - +input.value);
           if (find.quantity < +input.value) {
-            // console.log('plus', set);
             this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: set})
               .then(data => {
                 if (data.result === 1) {
@@ -92,7 +89,6 @@ const cart = {
                 }
               })
           } else {
-            // console.log('minus', set);
             if (product.quantity > 1) {
               this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: -set})
                 .then(data => {
@@ -126,32 +122,6 @@ const cart = {
       });
       return '$' + sum;
     },
-    clear() {
-      console.log('cleared');
-      // if (item === 'all') {
-      //   this.$root.putJson(`/api/cart/`, {contents: []})
-      //     .then(data => {
-      //       if (data.result === 1) {
-      //         this.cartItems = [];
-      //       }
-      //     })
-      // }
-      // this.$root.getJson(`/api/cart/`)
-      //   .then(data => {
-      //     for (let el of data.contents) {
-      //       console.log(el);
-      //       console.log(data.contents.length);
-      //       buffer.push(el.id_product);
-      //       console.log(buffer);
-      //       this.$root.deleteJson(`/api/cart/${el.id_product}`)
-      //         .then(data => {
-      //           if (data.result === 1) {
-      //             this.cartItems.splice(this.cartItems.indexOf(el), 1);
-      //           }
-      //         })
-      //     }
-      //   });
-    }
   },
   mounted() {
     this.$root.getJson(`/api/cart/`)

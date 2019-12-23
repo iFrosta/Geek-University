@@ -9,7 +9,7 @@ const cartItem = {
               </div>
               <p class="Price flex align">$ {{cartItem.price}}</p>
               <label class="Quantity flex align"> 
-                <input type="number" :id="cartItem.id_product" required pattern="[-+]?[0-9]" @change="$root.$refs.header.$refs.cart.change(cartItem);" :value="cartItem.quantity">
+                <input type="number" :id="cartItem.id_product" required pattern="[-+]?[0-9]" @change="$root.$refs.shopping.change(cartItem);" :value="cartItem.quantity">
               </label>
               <p class="shipping flex align">FREE</p>
               <p class="Subtotal flex align">{{cartItem.quantity * cartItem.price}}</p>
@@ -22,8 +22,6 @@ const shoppingCart = {
       cartItems: [],
       showCart: false,
       coupon: '',
-      componentKey: 0,
-      all: 'all',
     }
   },
   components: {
@@ -66,6 +64,46 @@ const shoppingCart = {
           })
       }
     },
+    change(product) {
+      let find = this.cartItems.find(el => el.id_product === product.id_product);
+      let input = document.getElementById(`${product.id_product}`);
+      if (find) {
+        if (+input.value === 0 || +input.value === null) {
+          this.$root.deleteJson(`/api/cart/${product.id_product}`)
+            .then(data => {
+              if (data.result === 1) {
+                this.cartItems.splice(this.cartItems.indexOf(product), 1);
+              }
+            })
+        } else {
+          let set = Math.abs(find.quantity - +input.value);
+          if (find.quantity < +input.value) {
+            this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: set})
+              .then(data => {
+                if (data.result === 1) {
+                  find.quantity = +input.value;
+                }
+              })
+          } else {
+            if (product.quantity > 1) {
+              this.$root.putJson(`/api/cart/${find.id_product}`, {quantity: -set})
+                .then(data => {
+                  if (data.result === 1) {
+                    find.quantity = +input.value;
+                  }
+                })
+            } else {
+              this.$root.deleteJson(`/api/cart/${product.id_product}`)
+                .then(data => {
+                  if (data.result === 1) {
+                    this.cartItems.splice(this.cartItems.indexOf(product), 1);
+                  }
+                })
+            }
+          }
+        }
+      }
+    },
     countItems() {
       let count = 0;
       this.cartItems.forEach(item => {
@@ -88,9 +126,6 @@ const shoppingCart = {
         coupon.style.border = '1px solid red'
       }
     },
-    forceRerender() {
-      this.componentKey += 1;
-    }
   },
   mounted() {
     this.$root.getJson(`/api/cart/`)
@@ -100,7 +135,7 @@ const shoppingCart = {
         }
       });
   },
-  template: `<div class="grid" :key="componentKey">
+  template: `<div class="grid">
       <div class="top flex">
         <div class="titles">
           <ul>
